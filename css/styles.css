@@ -33,27 +33,7 @@ h1 {
     font-size: 18px;
 }
 
-#answer {
-    font-family: monospace;
-    word-wrap: break-word; /* Ensures long words break */
-    overflow-y: auto; /* Allow vertical scrolling */
-    white-space: pre-wrap; /* Maintain whitespace and wrap text */
-    max-width: 100%; /* Ensure the container does not overflow horizontally */
-    height: auto; /* Allow the container to grow with the content */
-    max-height: 400px; /* Maximum height with scrolling */
-    padding: 10px;
-    background-color: #eef; /* Subtle background for answers */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-}
 
-.answer-container {
-    word-wrap: break-word; /* Ensures that long words break if necessary */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    padding: 10px;
-    font-size: 16px; /* Adjust font size to your preference */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-}
 
 #controls {
     display: flex;
@@ -72,7 +52,17 @@ button {
     margin: 5px;
     flex: 1 1 48%; /* Adjust button width for smaller screens */
 }
-
+#answer {
+    font-family: monospace;
+    word-wrap: break-word; /* Ensures long words break */
+    overflow-y: auto; /* Allow vertical scrolling */
+    white-space: pre-wrap; /* Maintain whitespace and wrap text */
+    max-width: 100%; /* Keep text inside container width */
+    height: auto; /* Allow the container to grow with the content */
+    max-height: 400px; /* Maximum height with scrolling */
+    padding: 10px;
+    background-color: #eef; /* Subtle background for answers */
+}
 button:hover {
     background-color: #45a049;
 }

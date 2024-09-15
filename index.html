@@ -21,9 +21,12 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
         }
         h1 {
             color: #333;
+            font-size: 24px;
         }
         button {
             padding: 10px 20px;
@@ -42,6 +45,7 @@
         #question, #answer, #correct-count, #reviewed-questions {
             margin-top: 20px;
             font-size: 18px;
+            word-wrap: break-word;
         }
         #answer {
             color: #007BFF;
@@ -49,6 +53,32 @@
         .count-buttons {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 20px;
+            }
+            button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+            #question, #answer, #correct-count, #reviewed-questions {
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 18px;
+            }
+            button {
+                width: 100%;
+                margin: 5px 0;
+                font-size: 14px;
+            }
+            .count-buttons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>

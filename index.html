@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Question and Answer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #question, #answer {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        #answer {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Random Question and Answer</h1>
+        <button id="ask-btn">Ask</button>
+        <button id="answer-btn">Answer</button>
+        <div id="question"></div>
+        <div id="answer"></div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Shallow Copy vs Deep Copy",
+                answer: `Shallow Copy:
+                • Points to the same memory address as the original variable.
+                • Modifying the shallow copy can affect the original object.
+                • Usage: copy.copy(original_object)
+
+                Deep Copy:
+                • Creates a completely independent copy of the object, with different memory addresses.
+                • Modifying the deep copy will not affect the original object.
+                • Usage: copy.deepcopy(original_object)`
+            },
+            {
+                question: "Authentication vs Authorization",
+                answer: `Authentication:
+                • Process of verifying "Who you are."
+                • Typically involves credentials like username and password.
+
+                Authorization:
+                • Determines "What you are allowed to do."
+                • Defines access levels and permissions.`
+            },
+            {
+                question: "List vs Tuple",
+                answer: `List:
+                • Mutable: Can be modified after creation (e.g., add/remove elements).
+                • Syntax: Square brackets [].
+                • Example: my_list = [1, 2, 3]
+
+                Tuple:
+                • Immutable: Cannot be modified after creation.
+                • Syntax: Parentheses ().
+                • Example: my_tuple = (1, 2, 3)`
+            },
+            {
+                question: "Push vs Pop",
+                answer: `Push:
+                • Adds an element to the top of a stack.
+                • Example: stack.append(10)
+
+                Pop:
+                • Removes and returns the top element from the stack.
+                • Example: top_element = stack.pop()`
+            },
+            {
+                question: "Implicit Wait vs Explicit Wait",
+                answer: `Implicit Wait:
+                • WebDriver waits for a specified time for an element before throwing an exception.
+                • Applies to all elements globally in the script.
+                • Example: driver.implicitly_wait(10)
+
+                Explicit Wait:
+                • WebDriver waits for a specific condition (e.g., element being clickable).
+                • Targeted to specific elements.
+                • Example: element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, 'submit')))`
+            },
+            // Add more question and answers here from your provided list.
+        ];
+
+        const askBtn = document.getElementById('ask-btn');
+        const answerBtn = document.getElementById('answer-btn');
+        const questionDiv = document.getElementById('question');
+        const answerDiv = document.getElementById('answer');
+
+        let currentQuestion = null;
+
+        askBtn.addEventListener('click', () => {
+            // Select a random question
+            const randomIndex = Math.floor(Math.random() * questions.length);
+            currentQuestion = questions[randomIndex];
+            questionDiv.innerHTML = `<strong>Question:</strong> ${currentQuestion.question}`;
+            answerDiv.innerHTML = ''; // Clear the answer
+        });
+
+        answerBtn.addEventListener('click', () => {
+            if (currentQuestion) {
+                answerDiv.innerHTML = `<strong>Answer:</strong><pre>${currentQuestion.answer}</pre>`;
+            } else {
+                answerDiv.innerHTML = 'Please click "Ask" to get a question first!';
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -3,96 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Question and Answer</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to the updated external CSS -->
+    <title>Q&A Page</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-    <div class="container">
-        <h1>Darr Ke Aage Jeet Hai...</h1>
-
-        <!-- Question and Answer Section -->
-        <div class="qna-section">
-            <div class="qna">
-                <h3>Question:</h3>
-                <p id="question"></p>
-            </div>
-
-            <div class="answer">
-                <h3>Answer:</h3>
-                <p id="answer"></p>
-            </div>
-
-            <!-- Buttons for interaction -->
-            <button id="ask-btn">Ask</button>
-            <button id="answer-btn">Answer</button>
-            <button id="correct-btn">Correct</button>
-            <button id="review-btn">Review</button>
-
-            <!-- Correct Answers and Reviewed Questions -->
-            <div id="correct-count">Correct Answers: 0</div>
-            <div id="reviewed-questions">Reviewed Questions:</div>
+    <header>
+        <h1>Q&A Application</h1>
+    </header>
+    
+    <main class="container">
+        <div class="question-section">
+            <div id="question"></div>
+            <button id="ask-btn">Ask Question</button>
+            <button id="answer-btn">Show Answer</button>
+            <button id="correct-btn">Mark Correct</button>
+            <button id="review-btn">Review Question</button>
         </div>
-    </div>
-
-    <script>
-        let questions = [];
-        const askBtn = document.getElementById('ask-btn');
-        const answerBtn = document.getElementById('answer-btn');
-        const correctBtn = document.getElementById('correct-btn');
-        const reviewBtn = document.getElementById('review-btn');
-        const questionDiv = document.getElementById('question');
-        const answerDiv = document.getElementById('answer');
-        const correctCountDiv = document.getElementById('correct-count');
-        const reviewedQuestionsDiv = document.getElementById('reviewed-questions');
-
-        let currentQuestion = null;
-        let correctCount = 0;
-        let reviewedQuestions = [];
-
-        // Fetch questions from the questions.json file
-        fetch('questions.json')
-            .then(response => response.json())
-            .then(data => {
-                questions = data;
-            })
-            .catch(error => console.error('Error fetching the questions:', error));
-
-        // Show a random question when "Ask" is clicked
-        askBtn.addEventListener('click', () => {
-            if (questions.length > 0) {
-                const randomIndex = Math.floor(Math.random() * questions.length);
-                currentQuestion = questions[randomIndex];
-                questionDiv.textContent = currentQuestion.question;
-                answerDiv.textContent = ''; // Clear the answer
-            } else {
-                questionDiv.textContent = 'No questions available!';
-            }
-        });
-
-        // Show the answer when "Answer" is clicked
-        answerBtn.addEventListener('click', () => {
-            if (currentQuestion) {
-                answerDiv.textContent = currentQuestion.answer;
-            } else {
-                answerDiv.textContent = 'Please click "Ask" to get a question first!';
-            }
-        });
-
-        // Increment correct count when "Correct" is clicked
-        correctBtn.addEventListener('click', () => {
-            correctCount++;
-            correctCountDiv.textContent = `Correct Answers: ${correctCount}`;
-        });
-
-        // Save the current question for review when "Review" is clicked
-        reviewBtn.addEventListener('click', () => {
-            if (currentQuestion && !reviewedQuestions.includes(currentQuestion.question)) {
-                reviewedQuestions.push(currentQuestion.question);
-                reviewedQuestionsDiv.innerHTML = `Reviewed Questions:<ul>${reviewedQuestions.map(q => `<li>${q}</li>`).join('')}</ul>`;
-            }
-        });
-    </script>
-
+        
+        <div id="answer" class="answer-section"></div>
+        
+        <div id="correct-count" class="correct-count">Correct Answers: 0</div>
+        
+        <div id="reviewed-questions" class="reviewed-questions">
+            <h2>Reviewed Questions</h2>
+            <ul></ul>
+        </div>
+    </main>
+    
+    <script src="js/script.js"></script>
 </body>
 </html>

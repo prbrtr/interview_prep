@@ -1,0 +1,22 @@
+[
+    {
+        "question": "Shallow Copy vs Deep Copy",
+        "answer": "Shallow Copy:\n• Points to the same memory address as the original variable.\n• Modifying the shallow copy can affect the original object.\n• Usage: copy.copy(original_object)\n\nDeep Copy:\n• Creates a completely independent copy of the object, with different memory addresses.\n• Modifying the deep copy will not affect the original object.\n• Usage: copy.deepcopy(original_object)"
+    },
+    {
+        "question": "Authentication vs Authorization",
+        "answer": "Authentication:\n• Process of verifying 'Who you are.'\n• Typically involves credentials like username and password.\n\nAuthorization:\n• Determines 'What you are allowed to do.'\n• Defines access levels and permissions."
+    },
+    {
+        "question": "List vs Tuple",
+        "answer": "List:\n• Mutable: Can be modified after creation (e.g., add/remove elements).\n• Syntax: Square brackets [].\n• Example: my_list = [1, 2, 3]\n\nTuple:\n• Immutable: Cannot be modified after creation.\n• Syntax: Parentheses ().\n• Example: my_tuple = (1, 2, 3)"
+    },
+    {
+        "question": "Push vs Pop",
+        "answer": "Push:\n• Adds an element to the top of a stack.\n• Example: stack.append(10)\n\nPop:\n• Removes and returns the top element from the stack.\n• Example: top_element = stack.pop()"
+    },
+    {
+        "question": "Implicit Wait vs Explicit Wait",
+        "answer": "Implicit Wait:\n• WebDriver waits for a specified time for an element before throwing an exception.\n• Applies to all elements globally in the script.\n• Example: driver.implicitly_wait(10)\n\nExplicit Wait:\n• WebDriver waits for a specific condition (e.g., element being clickable).\n• Targeted to specific elements.\n• Example: element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, 'submit')))"
+    }
+]

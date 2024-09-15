@@ -13,7 +13,6 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    overflow: hidden; /* Ensures content stays within bounds */
 }
 
 h1 {
@@ -36,11 +35,14 @@ h1 {
 
 #answer {
     font-family: monospace;
-    word-wrap: break-word; /* Break long words */
-    overflow-y: auto; /* Scroll vertically if content is long */
-    white-space: pre-wrap; /* Ensure line breaks and code formatting is preserved */
-    max-width: 100%; /* Keep answer content inside the container */
-    max-height: none; /* Ensure container height grows as needed */
+    word-wrap: break-word; /* Ensures long words break */
+    overflow-y: auto; /* Allow vertical scrolling */
+    white-space: pre-wrap; /* Maintain whitespace and wrap text */
+    max-width: 100%; /* Keep text inside container width */
+    height: auto; /* Allow the container to grow with the content */
+    max-height: 400px; /* Maximum height with scrolling */
+    padding: 10px;
+    background-color: #eef; /* Subtle background for answers */
 }
 
 #controls {
@@ -75,7 +77,7 @@ button:hover {
     list-style-type: square;
 }
 
-/* For mobile devices */
+/* Mobile adjustments */
 @media only screen and (max-width: 600px) {
     .container {
         width: 100%;
@@ -92,15 +94,15 @@ button:hover {
 
     #controls {
         flex-direction: column; /* Stack buttons vertically */
-        align-items: stretch; /* Make buttons take full width */
+        align-items: stretch; /* Full width buttons on small screens */
     }
 
     button {
-        width: 100%; /* Full-width buttons on mobile */
+        width: 100%;
         margin: 10px 0;
     }
 
     #answer {
-        font-size: 14px; /* Slightly smaller font for mobile */
+        font-size: 14px; /* Smaller font for better readability on mobile */
     }
 }

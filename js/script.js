@@ -9,54 +9,53 @@ const correctCountDiv = document.getElementById('correct-count');
 const reviewedQuestionsDiv = document.getElementById('reviewed-questions');
 
 let currentQuestion = null;
+let lastQuestion = null;  // To track the last question shown
 let correctCount = 0;
 let reviewedQuestions = [];
 
 // Fetch questions from the JSON file
-fetch('data/questions.json') // Adjust path if necessary
+fetch('data/questions.json') // Ensure this is the correct path
     .then(response => response.json())
     .then(data => {
         questions = data;
     });
 
-// Show a random question when "Ask" is clicked
+// Show a random question when "Ask Question" is clicked
 askBtn.addEventListener('click', () => {
     const randomIndex = Math.floor(Math.random() * questions.length);
     currentQuestion = questions[randomIndex];
     questionDiv.innerHTML = `<strong>Question:</strong> ${currentQuestion.question}`;
-    answerDiv.innerHTML = ''; // Clear the answer
+    answerDiv.innerHTML = ''; // Clear previous answer
 });
 
-// Show the answers when "Answer" is clicked
+// Show the answer when "Show Answer" is clicked
 answerBtn.addEventListener('click', () => {
     if (currentQuestion) {
-        // Show all answers and render code blocks as preformatted text
-        const answersHtml = currentQuestion.answers.map(answer => {
-            return `<div><strong>Answer:</strong><pre>${escapeHtml(answer)}</pre></div>`;
-        }).join('<hr>');
+        const answersHtml = currentQuestion.answers.map(answer => `<pre>${escapeHtml(answer)}</pre>`).join('<hr>');
         answerDiv.innerHTML = answersHtml;
     } else {
-        answerDiv.innerHTML = 'Please click "Ask" to get a question first!';
+        answerDiv.innerHTML = 'Please click "Ask Question" to get a question first!';
     }
 });
 
-// Increment correct count when "Correct" is clicked
+// Mark correct when "Mark Correct" is clicked (only for new questions)
 correctBtn.addEventListener('click', () => {
-    if (currentQuestion && !reviewedQuestions.includes(currentQuestion.question)) {
+    if (currentQuestion && currentQuestion !== lastQuestion) {
         correctCount++;
         correctCountDiv.innerHTML = `Correct Answers: ${correctCount}`;
+        lastQuestion = currentQuestion;  // Set last question as the current one
     }
 });
 
-// Save the current question for review when "Review" is clicked
+// Review the current question when "Review Question" is clicked
 reviewBtn.addEventListener('click', () => {
     if (currentQuestion && !reviewedQuestions.includes(currentQuestion.question)) {
         reviewedQuestions.push(currentQuestion.question);
-        reviewedQuestionsDiv.innerHTML = `Reviewed Questions:<br>${reviewedQuestions.map(q => `<li>${q}</li>`).join('')}`;
+        reviewedQuestionsDiv.innerHTML = `Reviewed Questions:<ul>${reviewedQuestions.map(q => `<li>${q}</li>`).join('')}</ul>`;
     }
 });
 
-// Function to escape HTML special characters to display code correctly
+// Function to escape HTML entities
 function escapeHtml(text) {
     var map = {
         '&': '&amp;',

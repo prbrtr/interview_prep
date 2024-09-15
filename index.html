@@ -3,105 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Question and Answer with Count</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        .container {
-            text-align: center;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 600px; /* Ensure the box has a limit */
-            word-wrap: break-word; /* Ensure long words are wrapped */
-        }
-        h1 {
-            color: #333;
-            font-size: 24px;
-        }
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        #question, #answer, #correct-count, #reviewed-questions {
-            margin-top: 20px;
-            font-size: 18px;
-            white-space: pre-wrap; /* Prevents overflow for answers */
-            word-wrap: break-word; /* Handles long words properly */
-        }
-        #answer {
-            color: #007BFF;
-        }
-        .count-buttons {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 20px;
-            }
-            button {
-                padding: 8px 15px;
-                font-size: 14px;
-            }
-            #question, #answer, #correct-count, #reviewed-questions {
-                font-size: 16px;
-            }
-        }
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 18px;
-            }
-            button {
-                width: 100%;
-                margin: 5px 0;
-                font-size: 14px;
-            }
-            .count-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <title>Random Question and Answer</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
 </head>
 <body>
 
     <div class="container">
         <h1>Darr Ke Aage Jeet Hai...</h1>
-        <button id="ask-btn">Ask</button>
-        <button id="answer-btn">Answer</button>
-        <div id="question"></div>
-        <div id="answer"></div>
-        
-        <!-- Buttons for counting correct answers and marking for review -->
-        <div class="count-buttons">
+
+        <!-- Question and Answer Section -->
+        <div class="qna-section">
+            <div class="qna">
+                <h3>Question:</h3>
+                <p id="question"></p>
+            </div>
+
+            <div class="answer">
+                <h3>Answer:</h3>
+                <p id="answer"></p>
+            </div>
+
+            <!-- Buttons for interaction -->
+            <button id="ask-btn">Ask</button>
+            <button id="answer-btn">Answer</button>
             <button id="correct-btn">Correct</button>
             <button id="review-btn">Review</button>
+
+            <!-- Correct Answers and Reviewed Questions -->
+            <div id="correct-count">Correct Answers: 0</div>
+            <div id="reviewed-questions">Reviewed Questions:</div>
         </div>
-        
-        <!-- Display for correct count and reviewed questions -->
-        <div id="correct-count">Correct Answers: 0</div>
-        <div id="reviewed-questions">Reviewed Questions:</div>
     </div>
 
     <script>
@@ -119,41 +50,46 @@
         let correctCount = 0;
         let reviewedQuestions = [];
 
-        // Fetch questions from the JSON file
-        fetch('questions.json')
-            .then(response => response.json())
-            .then(data => {
-                questions = data;
-            });
+        // Fetch questions from the JSON file (for demonstration, this is mocked data)
+        questions = [
+            {
+                question: "Shallow Copy vs Deep Copy?",
+                answer: "Shallow Copy points to the same memory address, Deep Copy creates a new instance."
+            },
+            {
+                question: "What is a Generator in Python?",
+                answer: "A generator is a function that returns an iterator that yields a sequence of values."
+            }
+        ];
 
         // Show a random question when "Ask" is clicked
         askBtn.addEventListener('click', () => {
             const randomIndex = Math.floor(Math.random() * questions.length);
             currentQuestion = questions[randomIndex];
-            questionDiv.innerHTML = `<strong>Question:</strong> ${currentQuestion.question}`;
-            answerDiv.innerHTML = ''; // Clear the answer
+            questionDiv.textContent = currentQuestion.question;
+            answerDiv.textContent = ''; // Clear the answer
         });
 
         // Show the answer when "Answer" is clicked
         answerBtn.addEventListener('click', () => {
             if (currentQuestion) {
-                answerDiv.innerHTML = `<strong>Answer:</strong><pre>${currentQuestion.answer}</pre>`;
+                answerDiv.textContent = currentQuestion.answer;
             } else {
-                answerDiv.innerHTML = 'Please click "Ask" to get a question first!';
+                answerDiv.textContent = 'Please click "Ask" to get a question first!';
             }
         });
 
         // Increment correct count when "Correct" is clicked
         correctBtn.addEventListener('click', () => {
             correctCount++;
-            correctCountDiv.innerHTML = `Correct Answers: ${correctCount}`;
+            correctCountDiv.textContent = `Correct Answers: ${correctCount}`;
         });
 
         // Save the current question for review when "Review" is clicked
         reviewBtn.addEventListener('click', () => {
             if (currentQuestion && !reviewedQuestions.includes(currentQuestion.question)) {
                 reviewedQuestions.push(currentQuestion.question);
-                reviewedQuestionsDiv.innerHTML = `Reviewed Questions:<br>${reviewedQuestions.map(q => `<li>${q}</li>`).join('')}`;
+                reviewedQuestionsDiv.innerHTML = `Reviewed Questions:<ul>${reviewedQuestions.map(q => `<li>${q}</li>`).join('')}</ul>`;
             }
         });
     </script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Question and Answer</title>
+    <title>Random Question and Answer with Count</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,12 +39,16 @@
         button:hover {
             background-color: #45a049;
         }
-        #question, #answer {
+        #question, #answer, #correct-count, #reviewed-questions {
             margin-top: 20px;
             font-size: 18px;
         }
         #answer {
             color: #007BFF;
+        }
+        .count-buttons {
+            display: flex;
+            justify-content: space-around;
         }
     </style>
 </head>
@@ -56,89 +60,68 @@
         <button id="answer-btn">Answer</button>
         <div id="question"></div>
         <div id="answer"></div>
+        
+        <!-- Buttons for counting correct answers and marking for review -->
+        <div class="count-buttons">
+            <button id="correct-btn">Correct</button>
+            <button id="review-btn">Review</button>
+        </div>
+        
+        <!-- Display for correct count and reviewed questions -->
+        <div id="correct-count">Correct Answers: 0</div>
+        <div id="reviewed-questions">Reviewed Questions:</div>
     </div>
 
     <script>
-        const questions = [
-            {
-                question: "Shallow Copy vs Deep Copy",
-                answer: `Shallow Copy:
-                • Points to the same memory address as the original variable.
-                • Modifying the shallow copy can affect the original object.
-                • Usage: copy.copy(original_object)
-
-                Deep Copy:
-                • Creates a completely independent copy of the object, with different memory addresses.
-                • Modifying the deep copy will not affect the original object.
-                • Usage: copy.deepcopy(original_object)`
-            },
-            {
-                question: "Authentication vs Authorization",
-                answer: `Authentication:
-                • Process of verifying "Who you are."
-                • Typically involves credentials like username and password.
-
-                Authorization:
-                • Determines "What you are allowed to do."
-                • Defines access levels and permissions.`
-            },
-            {
-                question: "List vs Tuple",
-                answer: `List:
-                • Mutable: Can be modified after creation (e.g., add/remove elements).
-                • Syntax: Square brackets [].
-                • Example: my_list = [1, 2, 3]
-
-                Tuple:
-                • Immutable: Cannot be modified after creation.
-                • Syntax: Parentheses ().
-                • Example: my_tuple = (1, 2, 3)`
-            },
-            {
-                question: "Push vs Pop",
-                answer: `Push:
-                • Adds an element to the top of a stack.
-                • Example: stack.append(10)
-
-                Pop:
-                • Removes and returns the top element from the stack.
-                • Example: top_element = stack.pop()`
-            },
-            {
-                question: "Implicit Wait vs Explicit Wait",
-                answer: `Implicit Wait:
-                • WebDriver waits for a specified time for an element before throwing an exception.
-                • Applies to all elements globally in the script.
-                • Example: driver.implicitly_wait(10)
-
-                Explicit Wait:
-                • WebDriver waits for a specific condition (e.g., element being clickable).
-                • Targeted to specific elements.
-                • Example: element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, 'submit')))`
-            },
-            // Add more question and answers here from your provided list.
-        ];
-
+        let questions = [];
         const askBtn = document.getElementById('ask-btn');
         const answerBtn = document.getElementById('answer-btn');
+        const correctBtn = document.getElementById('correct-btn');
+        const reviewBtn = document.getElementById('review-btn');
         const questionDiv = document.getElementById('question');
         const answerDiv = document.getElementById('answer');
+        const correctCountDiv = document.getElementById('correct-count');
+        const reviewedQuestionsDiv = document.getElementById('reviewed-questions');
 
         let currentQuestion = null;
+        let correctCount = 0;
+        let reviewedQuestions = [];
 
+        // Fetch questions from the JSON file
+        fetch('questions.json')
+            .then(response => response.json())
+            .then(data => {
+                questions = data;
+            });
+
+        // Show a random question when "Ask" is clicked
         askBtn.addEventListener('click', () => {
-            // Select a random question
             const randomIndex = Math.floor(Math.random() * questions.length);
             currentQuestion = questions[randomIndex];
             questionDiv.innerHTML = `<strong>Question:</strong> ${currentQuestion.question}`;
             answerDiv.innerHTML = ''; // Clear the answer
         });
 
+        // Show the answer when "Answer" is clicked
         answerBtn.addEventListener('click', () => {
             if (currentQuestion) {
                 answerDiv.innerHTML = `<strong>Answer:</strong><pre>${currentQuestion.answer}</pre>`;
             } else {
                 answerDiv.innerHTML = 'Please click "Ask" to get a question first!';
+            }
+        });
+
+        // Increment correct count when "Correct" is clicked
+        correctBtn.addEventListener('click', () => {
+            correctCount++;
+            correctCountDiv.innerHTML = `Correct Answers: ${correctCount}`;
+        });
+
+        // Save the current question for review when "Review" is clicked
+        reviewBtn.addEventListener('click', () => {
+            if (currentQuestion && !reviewedQuestions.includes(currentQuestion.question)) {
+                reviewedQuestions.push(currentQuestion.question);
+                reviewedQuestionsDiv.innerHTML = `Reviewed Questions:<br>${reviewedQuestions.map(q => `<li>${q}</li>`).join('')}`;
             }
         });
     </script>

@@ -13,6 +13,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensures content stays within bounds */
 }
 
 h1 {
@@ -35,16 +36,17 @@ h1 {
 
 #answer {
     font-family: monospace;
-    word-wrap: break-word; /* Prevents horizontal scrolling */
-    max-height: none; /* Allows the answer to expand vertically */
-    overflow-y: auto;
-    white-space: pre-wrap; /* Ensures line breaks in code are preserved */
+    word-wrap: break-word; /* Break long words */
+    overflow-y: auto; /* Scroll vertically if content is long */
+    white-space: pre-wrap; /* Ensure line breaks and code formatting is preserved */
+    max-width: 100%; /* Keep answer content inside the container */
+    max-height: none; /* Ensure container height grows as needed */
 }
 
 #controls {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Allow buttons to wrap */
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
     margin-bottom: 20px;
 }
 
@@ -55,8 +57,8 @@ button {
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    margin: 5px; /* Add spacing between buttons */
-    flex: 1 1 45%; /* Allow button width adjustment */
+    margin: 5px;
+    flex: 1 1 48%; /* Adjust button width for smaller screens */
 }
 
 button:hover {
@@ -73,7 +75,7 @@ button:hover {
     list-style-type: square;
 }
 
-/* Media queries for mobile view */
+/* For mobile devices */
 @media only screen and (max-width: 600px) {
     .container {
         width: 100%;
@@ -90,11 +92,15 @@ button:hover {
 
     #controls {
         flex-direction: column; /* Stack buttons vertically */
-        align-items: stretch;   /* Make buttons full-width */
+        align-items: stretch; /* Make buttons take full width */
     }
 
     button {
-        width: 100%; /* Full-width buttons in mobile */
-        margin: 10px 0; /* Spacing between buttons */
+        width: 100%; /* Full-width buttons on mobile */
+        margin: 10px 0;
+    }
+
+    #answer {
+        font-size: 14px; /* Slightly smaller font for mobile */
     }
 }

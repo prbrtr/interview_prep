@@ -1,413 +1,51 @@
 [
+
     {
+
         "question": "What is the difference between Shallow Copy and Deep Copy?",
+
         "answers": [
+
             "Shallow Copy:",
+
             "  • A shallow copy creates a new object but does not create copies of nested objects. Instead, it references the original nested objects.",
+
             "  • Modifying the nested objects in the shallow copy will affect the original object because they both reference the same nested objects.",
+
             "  • Usage: You use `copy.copy(original_object)` from the `copy` module to create a shallow copy.",
+
             "Deep Copy:",
+
             "  • A deep copy creates a new object and recursively creates copies of all objects found within the original object, resulting in a completely independent object.",
+
             "  • Modifying the nested objects in the deep copy will not affect the original object, as they are completely separate.",
+
             "  • Usage: You use `copy.deepcopy(original_object)` from the `copy` module to create a deep copy."
+
         ]
-    },
-    {
-        "question": "What is the difference between Authentication and Authorization?",
-        "answers": [
-            "Authentication:",
-            "  • Authentication is the process of verifying the identity of a user or system. It answers the question 'Who are you?'",
-            "  • Typically involves checking credentials such as username and password, biometric data, or other security tokens.",
-            "Authorization:",
-            "  • Authorization determines what an authenticated user or system is allowed to do. It answers the question 'What are you allowed to do?'",
-            "  • It involves setting permissions and access levels based on roles, policies, and user attributes."
-        ]
-    },
-    {
-        "question": "What is the difference between List and Tuple?",
-        "answers": [
-            "List:",
-            "  • Lists are mutable, meaning their elements can be changed after the list is created. This includes adding, removing, or modifying elements.",
-            "  • Syntax: Lists are created using square brackets `[]`.",
-            "  • Example: `my_list = [1, 2, 3]`",
-            "Tuple:",
-            "  • Tuples are immutable, meaning once they are created, their elements cannot be changed. This ensures data integrity and can be useful as dictionary keys.",
-            "  • Syntax: Tuples are created using parentheses `()`.",
-            "  • Example: `my_tuple = (1, 2, 3)`"
-        ]
-    },
-    {
-        "question": "What is the difference between Push and Pop?",
-        "answers": [
-            "Push:",
-            "  • Push is an operation that adds an element to the top of a stack. It is commonly used in stack data structures.",
-            "  • Syntax in Python: `stack.append(element)`",
-            "  • Example: `stack.append(10)`",
-            "Pop:",
-            "  • Pop is an operation that removes and returns the top element from a stack. It is also used in stack data structures.",
-            "  • Syntax in Python: `element = stack.pop()`",
-            "  • Example: `top_element = stack.pop()`"
-        ]
-    },
-    {
-        "question": "What is the difference between Implicit Wait and Explicit Wait in Selenium?",
-        "answers": [
-            "Implicit Wait:",
-            "  • Implicit wait is a global wait that is applied to all elements in the script. It instructs WebDriver to wait for a specified amount of time before throwing a `NoSuchElementException`.",
-            "  • It sets a default waiting time for the lifetime of the WebDriver object.",
-            "  • Example: `driver.implicitly_wait(10)`",
-            "Explicit Wait:",
-            "  • Explicit wait is a more flexible wait that is applied only to specific conditions and elements. It waits for a defined condition to be met before proceeding.",
-            "  • It is used for waiting for elements to be clickable, visible, or present, based on specific conditions.",
-            "  • Example:\n    ```python\n    from selenium.webdriver.support.ui import WebDriverWait\n    from selenium.webdriver.support import expected_conditions as EC\n    element = WebDriverWait(driver, 10).until(\n        EC.element_to_be_clickable((By.ID, 'submit'))\n    )\n    ```"
-        ]
-    },
-    {
-        "question": "What is the difference between XPath and CSS Selector in Selenium?",
-        "answers": [
-            "XPath:",
-            "  • XPath is a language for navigating through elements and attributes in XML documents. It provides powerful ways to select elements using complex queries.",
-            "  • It can navigate through the hierarchy of elements, which can be very flexible but potentially slower than CSS selectors.",
-            "  • Example: `element = driver.find_element_by_xpath(\"//div[@id='content']\")`",
-            "CSS Selector:",
-            "  • CSS Selector is a pattern used to select elements based on their CSS attributes. It is generally faster and more efficient for locating elements compared to XPath.",
-            "  • It is more straightforward for selecting elements by ID, class, or other attributes.",
-            "  • Example: `element = driver.find_element_by_css_selector(\"div#content\")`"
-        ]
-    },
-    {
-        "question": "What is the Page Object Model (POM)?",
-        "answers": [
-            "Page Object Model (POM) is a design pattern used in Selenium that creates an object repository for web elements. It helps in maintaining the code and reduces duplication by representing the UI elements as objects.",
-            "In POM, each page of the application is represented by a class, and the elements on that page are represented by variables within the class. Methods for interacting with those elements are also included in the class.",
-            "This approach enhances code maintainability and readability by separating the test logic from the page-specific code."
-        ]
-    },
-    {
-        "question": "What is the Fibonacci series?",
-        "answers": [
-            "The Fibonacci series is a sequence of numbers where each number is the sum of the two preceding ones, starting from 0 and 1. It often appears in various natural phenomena and mathematical problems.",
-            "Code Example:\n    ```python\n    def fibonacci(n):\n        a, b = 0, 1\n        sequence = []\n        for _ in range(n):\n            sequence.append(a)\n            a, b = b, a + b\n        return sequence\n    \n    print(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n    ```"
-        ]
-    },
-    {
-        "question": "How do you remove vowels from a string in Python?",
-        "answers": [
-            "To remove vowels from a string, you can use a list comprehension to filter out vowels and then join the remaining characters back into a string.",
-            "Code Example:\n    ```python\n    def remove_vowels(s):\n        vowels = 'aeiouAEIOU'\n        return ''.join([char for char in s if char not in vowels])\n    \n    print(remove_vowels('Automation Testing'))  # Output: 'tmtn Tstng'\n    ```"
-        ]
-    },
-    {
-        "question": "How do you return the sum of even numbers in a list?",
-        "answers": [
-            "To calculate the sum of all even numbers in a list, you can use a generator expression to filter out even numbers and then apply the `sum()` function.",
-            "Code Example:\n    ```python\n    def sum_of_evens(lst):\n        return sum(num for num in lst if num % 2 == 0)\n    \n    print(sum_of_evens([1, 2, 3, 4, 5, 6]))  # Output: 12\n    ```"
-        ]
-    },
-    {
-        "question": "What is a Binary Tree?",
-        "answers": [
-            "A binary tree is a hierarchical data structure in which each node has at most two children, referred to as the left child and the right child. It is used for efficient searching, sorting, and organizing data.",
-            "The binary tree structure allows for operations like insertion, deletion, and traversal to be performed efficiently, often in logarithmic time."
-        ]
-    },
-    {
-        "question": "What is a Heap Tree?",
-        "answers": [
-            "A heap tree is a special type of binary tree where the parent node is either greater than (in a max heap) or less than (in a min heap) its children. This property makes heaps useful for implementing priority queues.",
-            "In a max heap, the largest element is always at the root, while in a min heap, the smallest element is at the root. This structure supports efficient priority-based operations like insertion and extraction."
-        ]
-    },
-    {
-        "question": "How do you find the largest number in a linked list?",
-        "answers": [
-            "To find the largest number in a linked list, you need to traverse the list from the head node to the end, keeping track of the largest value encountered.",
-            "Here’s a detailed approach:",
-            "  1. Initialize a variable `largest` with the data value of the head node.",
-            "  2. Iterate through each node of the list.",
-            "  3. Compare the `data` of the current node with `largest`. If the current node’s data is greater, update `largest`.",
-            "  4. Move to the next node and repeat the comparison until the end of the list is reached.",
-            "  5. Return the `largest` value found.",
-            "Code Example:\n```python\nclass Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef find_largest(head):\n    largest = head.data\n    while head:\n        if head.data > largest:\n            largest = head.data\n        head = head.next\n    return largest\n\n# Linked list: 1 -> 5 -> 3 -> 9 -> 2\nhead = Node(1)\nhead.next = Node(5)\nhead.next.next = Node(3)\nhead.next.next.next = Node(9)\nhead.next.next.next.next = Node(2)\nprint(find_largest(head))  # Output: 9\n```"
-        ]
-    },
-    {
-        "question": "How do you extract numbers from a string using regex and sum them?",
-        "answers": [
-            "To extract numbers from a string and sum them, use regular expressions to find all numeric substrings, convert them to integers, and then sum them up.",
-            "Here’s how you can achieve this:",
-            "  1. Use `re.findall()` to search the string for all sequences of digits.",
-            "  2. `re.findall()` returns a list of these digit sequences as strings.",
-            "  3. Convert these string representations of numbers to integers using `map(int, ...)`.",
-            "  4. Use the `sum()` function to get the total of these integers.",
-            "Code Example:\n```python\nimport re\n\ndef sum_numbers(s):\n    numbers = re.findall(r'\\d+', s)\n    return sum(map(int, numbers))\n\ns = 'giuwh55kdhkuw88nsbhksw51545'\nprint(sum_numbers(s))  # Output: 51688\n```"
-        ]
-    },
-    {
-        "question": "What is a Generator in Python?",
-        "answers": [
-            "A generator in Python is a special type of iterator that allows you to iterate over a sequence of values without storing them all in memory at once.",
-            "Generators use the `yield` keyword to produce a series of values lazily. Each call to `next()` retrieves the next value in the sequence.",
-            "Here’s how generators work:",
-            "  1. Define a generator function using the `def` keyword and include one or more `yield` statements.",
-            "  2. Each `yield` produces a value and suspends the function’s state, allowing it to resume where it left off on the next call to `next()`.",
-            "  3. Generators are useful for handling large datasets or streams of data efficiently without consuming excessive memory.",
-            "Code Example:\n```python\ndef my_generator():\n    yield 1\n    yield 2\n    yield 3\n\ngen = my_generator()\nprint(next(gen))  # Output: 1\nprint(next(gen))  # Output: 2\n```"
-        ]
-    },
-    {
-        "question": "What is an Interface in Python?",
-        "answers": [
-            "In Python, an interface is often implemented using Abstract Base Classes (ABCs) from the `abc` module.",
-            "An interface defines a set of abstract methods that must be implemented by any class that inherits from it. This approach ensures a consistent API and enforces certain behavior across different classes.",
-            "Here’s how to work with interfaces in Python:",
-            "  1. Use the `ABC` class and the `abstractmethod` decorator from the `abc` module to define abstract methods.",
-            "  2. A class inheriting from an ABC must provide implementations for all abstract methods.",
-            "  3. This design pattern promotes code reusability and enforces a contract for subclasses.",
-            "Code Example:\n```python\nfrom abc import ABC, abstractmethod\n\nclass MyInterface(ABC):\n    @abstractmethod\n    def do_something(self):\n        pass\n\nclass ConcreteClass(MyInterface):\n    def do_something(self):\n        print('Doing something')\n\nobj = ConcreteClass()\nobj.do_something()  # Output: Doing something\n```"
-        ]
-    },
-    {
-        "question": "What are the types of Selenium testing?",
-        "answers": [
-            "In Selenium, different types of testing ensure the quality and functionality of applications. They include:",
-            "Functional Testing:",
-            "  - **Smoke Testing:** Quick tests to ensure that the basic functionalities of the application work after a build. It helps to determine if the build is stable enough for more rigorous testing.",
-            "  - **Sanity Testing:** Focused on verifying that specific functionalities are working correctly after changes or bug fixes. It ensures that recent changes do not disrupt the existing functionality.",
-            "  - **Regression Testing:** Comprehensive testing to ensure that new code changes have not adversely affected existing functionalities. This is crucial for maintaining overall application stability.",
-            "  - **Database Testing:** Checks the integrity and correctness of data in the database. It includes validating database content, schema, and integrity constraints.",
-            "  - **Compatibility Testing:** Assesses the application’s compatibility across different operating systems, browsers, and devices to ensure a consistent user experience.",
-            "  - **Cross-Browser Testing:** Ensures that the application works properly across various web browsers, addressing differences in browser behavior and rendering.",
-            "Unit Testing:",
-            "  - **Unit Testing:** Focuses on testing individual components or units of code for correctness. It verifies that each unit functions as expected in isolation.",
-            "Parallel Testing:",
-            "  - **Parallel Testing:** Executes multiple test cases simultaneously across different environments to speed up the testing process and reduce time to market.",
-            "Data-Driven Testing:",
-            "  - **Data-Driven Testing:** Involves running the same test with multiple sets of data to ensure that the application behaves correctly under various input conditions."
-        ]
-    },
-    {
-        "question": "What is the difference between Sanity Testing and Regression Testing?",
-        "answers": [
-            "Sanity Testing:",
-            "  - **Purpose:** Verifies that specific functionalities are working correctly after changes such as bug fixes or updates.",
-            "  - **Scope:** Narrow and focused on particular functionalities or recent changes.",
-            "  - **Execution:** Typically performed after receiving a new build or bug fix to ensure that the issue has been addressed.",
-            "Regression Testing:",
-            "  - **Purpose:** Ensures that recent code changes have not introduced new bugs or issues in existing functionalities.",
-            "  - **Scope:** Broad and covers all or most of the application’s functionalities to ensure overall stability.",
-            "  - **Execution:** Conducted after bug fixes, updates, or changes in the application to confirm that no new issues have been introduced."
-        ]
-    },
-    {
-        "question": "How do you fetch a list of city names from a dropdown using Selenium?",
-        "answers": [
-            "To fetch city names from a dropdown, you need to interact with the dropdown element and extract the options.",
-            "Here’s a detailed approach:",
-            "  1. **Setup WebDriver:** Initialize the Selenium WebDriver and navigate to the target webpage.",
-            "  2. **Locate Dropdown:** Use a suitable locator to find the dropdown element.",
-            "  3. **Interact with Dropdown:** Create a `Select` object to interact with the dropdown.",
-            "  4. **Extract Options:** Iterate through the `options` property of the `Select` object to get the text of each option.",
-            "  5. **Print Results:** Output the list of city names.",
-            "Code Example:\n```python\nfrom selenium import webdriver\nfrom selenium.webdriver.support.ui import Select\n\n# Set up the WebDriver\n driver = webdriver.Chrome()\n driver.get('URL_OF_YOUR_PAGE')\n\n# Locate the dropdown element\n dropdown = Select(driver.find_element_by_id('dropdown_id'))\n\n# Fetch all city names from the dropdown\n city_names = [option.text for option in dropdown.options]\n print(city_names)\n\n# Close the WebDriver\n driver.quit()\n```"
-        ]
-    },
-    {
-        "question": "What are the common types of exceptions in Selenium?",
-        "answers": [
-            "Here are some common Selenium exceptions and their meanings:",
-            "  - **NoSuchElementException:** Raised when Selenium is unable to locate an element using the provided locator.",
-            "  - **TimeoutException:** Occurs when an element does not appear within the specified time frame.",
-            "  - **ElementNotInteractableException:** Raised when an element is present in the DOM but cannot be interacted with.",
-            "  - **StaleElementReferenceException:** Triggered when an element reference is no longer valid, often due to a page update or DOM change.",
-            "  - **InvalidSelectorException:** Raised when a provided selector is invalid or incorrectly formatted."
-        ]
-    },
-    {
-        "question": "How do you handle iframes in Selenium?",
-        "answers": [
-            "Handling iframes involves switching the context from the main content to the iframe and vice versa.",
-            "Here’s a detailed approach:",
-            "  1. **Setup WebDriver:** Initialize the WebDriver and navigate to the target page containing the iframe.",
-            "  2. **Switch to Iframe:** Use `driver.switch_to.frame()` to switch the context to the iframe using its ID or name.",
-            "  3. **Perform Actions:** Interact with elements inside the iframe as needed.",
-            "  4. **Switch Back:** After completing actions within the iframe, use `driver.switch_to.default_content()` to return to the main content.",
-            "Code Example:\n```python\nfrom selenium import webdriver\n\n# Set up the WebDriver\n driver = webdriver.Chrome()\n driver.get('URL_OF_YOUR_PAGE')\n\n# Switch to the iframe\n driver.switch_to.frame('iframe_id_or_name')\n\n# Perform actions inside the iframe\n element = driver.find_element_by_id('element_id')\n element.click()\n\n# Switch back to the main content\n driver.switch_to.default_content()\n\n# Close the WebDriver\n driver.quit()\n```"
-        ]
-    },
-    {
-        "question": "What is the difference between PUT and POST in API testing?",
-        "answers": [
-            "PUT:",
-            "  - **Purpose:** Used to update or replace a resource at a specified URL.",
-            "  - **Idempotent:** Multiple identical requests will result in the same state of the resource.",
-            "  - **Usage:** Ideal for updating or creating a resource with a specific identifier.",
-            "POST:",
-            "  - **Purpose:** Submits data to create a new resource at the server.",
-            "  - **Non-idempotent:** Multiple identical requests may result in multiple resources being created.",
-            "  - **Usage:** Used for creating new resources or submitting data to be processed by the server."
-        ]
-    },
-    {
-        "question": "What are the different locators available in Selenium?",
-        "answers": [
-            "Selenium provides several locators to find elements on a web page:",
-            "  - **ID:** `find_element_by_id('element_id')` - Locates elements using the HTML `id` attribute.",
-            "  - **Name:** `find_element_by_name('element_name')` - Locates elements using the `name` attribute.",
-            "  - **Class Name:** `find_element_by_class_name('class_name')` - Locates elements using the `class` attribute.",
-            "  - **Tag Name:** `find_element_by_tag_name('tag_name')` - Locates elements using the HTML tag name.",
-            "  - **Link Text:** `find_element_by_link_text('link_text')` - Locates links using the full text of the link.",
-            "  - **Partial Link Text:** `find_element_by_partial_link_text('partial_text')` - Locates links using a partial match of the link text.",
-            "  - **XPath:** `find_element_by_xpath('//tag[@attribute=\"value\"]')` - Locates elements using XPath expressions.",
-            "  - **CSS Selector:** `find_element_by_css_selector('tag#id.class')` - Locates elements using CSS selectors."
-        ]
-    },
-    {
-        "question": "How do you play a YouTube video with Selenium?",
-        "answers": [
-            "To play a YouTube video using Selenium, you need to interact with the play button element on the video page.",
-            "Here’s a detailed approach:",
-            "  1. **Setup WebDriver:** Initialize the WebDriver and navigate to the YouTube video URL.",
-            "  2. **Locate Play Button:** Find the play button element using its XPath or CSS selector.",
-            "  3. **Click Play Button:** Simulate a click on the play button to start the video.",
-            "  4. **Keep Browser Open:** Optionally, keep the browser open to watch the video or perform additional actions.",
-            "Code Example:\n```python\nfrom selenium import webdriver\n\n# Set up the WebDriver\n driver = webdriver.Chrome()\n driver.get('URL_OF_YOUR_YOUTUBE_VIDEO')\n\n# Locate and click the play button\n play_button = driver.find_element_by_xpath('//button[@class=\"ytp-play-button ytp-button\"]')\n play_button.click()\n\n# Keep the browser open\n input(\"Press Enter to exit...\")\n\n# Close the WebDriver\n driver.quit()\n```"
-        ]
+
     },
 
-  {
-    "question": "Play YouTube Video with Selenium",
-    "answers": [
-      "To automate playing a YouTube video using Selenium, you need to interact with the YouTube page elements.",
-      "Here's a sample code to play a video:\n\n```python\nfrom selenium import webdriver\n\n# Initialize the WebDriver\ndriver = webdriver.Chrome()\n# Navigate to the YouTube video URL\ndriver.get('URL_OF_YOUR_YOUTUBE_VIDEO')\n\n# Find the play button and click it\nplay_button = driver.find_element_by_xpath('//button[@class=\"ytp-play-button ytp-button\"]')\nplay_button.click()\n\n# Keep the browser open for interaction\ninput(\"Press Enter to exit...\")\n\n# Close the WebDriver\ndriver.quit()\n```"
-    ]
-  },
-  {
-    "question": "unittest vs pytest",
-    "answers": [
-      "When comparing unittest and pytest, both have their strengths, but pytest often stands out for its simplicity and powerful features.",
-      "unittest is part of Python’s standard library, which means no additional installation is required. It’s well-suited for those who need a straightforward testing framework. However, it can be verbose and less flexible compared to pytest.",
-      "pytest is a third-party testing framework that offers a more concise syntax and rich set of features. It supports fixtures, detailed reporting, and a wide range of plugins, which can greatly enhance testing capabilities.",
-      "Code example using unittest:\n\n```python\nimport unittest\n\nclass TestExample(unittest.TestCase):\n    def test_addition(self):\n        self.assertEqual(1 + 1, 2)\n\nif __name__ == '__main__':\n    unittest.main()\n```\n\nCode example using pytest:\n\n```python\ndef test_addition():\n    assert 1 + 1 == 2\n```"
-    ]
-  },
-  {
-    "question": "Embedded Systems: Raspberry Pi, Arduino, and Pin Configuration",
-    "answers": [
-      "In embedded systems, Raspberry Pi and Arduino are commonly used for various projects. Each has different applications and pin configurations.",
-      "The Raspberry Pi is a versatile, small computer with GPIO pins that can be used for interfacing with various hardware. It is often used for projects requiring a full operating system and more computational power.",
-      "Arduino, on the other hand, is a microcontroller board suitable for simpler, real-time tasks. It has digital and analog pins for input/output operations, making it ideal for electronics projects.",
-      "Example for Raspberry Pi GPIO control:\n\n```python\nimport RPi.GPIO as GPIO\n\n# Set up GPIO mode\nGPIO.setmode(GPIO.BCM)\n# Configure pin 18 as an output\nGPIO.setup(18, GPIO.OUT)\n# Set pin 18 high\nGPIO.output(18, GPIO.HIGH)\n```\n\nExample for Arduino sketch:\n\n```cpp\nvoid setup() {\n  pinMode(13, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(13, HIGH);\n  delay(1000);\n  digitalWrite(13, LOW);\n  delay(1000);\n}\n```"
-    ]
-  },
-  {
-    "question": "Create Python File with Setup and Teardown Example",
-    "answers": [
-      "In Python's unittest framework, setup and teardown methods help prepare the environment before each test and clean up afterward. Here’s an example illustrating how to use these methods effectively:",
-      "The `setUpClass` and `tearDownClass` methods are run once before and after all tests in the class, respectively. The `setUp` and `tearDown` methods are run before and after each individual test.",
-      "Code example:\n\n```python\nimport unittest\n\nclass TestExample(unittest.TestCase):\n    @classmethod\n    def setUpClass(cls):\n        print(\"Setup for the entire test class.\")\n\n    def setUp(self):\n        print(\"Setup for individual test.\")\n\n    def test1(self):\n        print(\"Running test1\")\n\n    def tearDown(self):\n        print(\"Teardown for individual test.\")\n\n    @classmethod\n    def tearDownClass(cls):\n        print(\"Teardown for the entire test class.\")\n\nif __name__ == '__main__':\n    unittest.main()\n```"
-    ]
-  },
-  {
-    "question": "API Testing, Models, Admin, and Types of APIs",
-    "answers": [
-      "API testing involves verifying that APIs work as expected, ensuring they handle requests and responses correctly.",
-      "Models in the context of APIs define the structure of data, including validation rules and relationships.",
-      "Admin functionalities pertain to the management and administrative operations within the API or application.",
-      "Different types of APIs include:",
-      "  - REST API: Uses HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations.",
-      "  - SOAP API: Relies on XML-based messaging for communication.",
-      "  - GraphQL: Allows clients to request only the data they need, making it flexible and efficient.",
-      "Code example for REST API testing:\n\n```python\nimport requests\n\nresponse = requests.get('https://api.example.com/resource')\nprint(response.json())\n```"
-    ]
-  },
-  {
-    "question": "Flipkart Testing Using Selenium and Unit Test",
-    "answers": [
-      "To test the Flipkart website using Selenium and unittest in Python, follow these steps:",
-      "1. **Setup**: Ensure you have Selenium and a compatible WebDriver installed.",
-    ]
-  },
-  {
-    "question": "Find Repeating Words",
-    "answers": [
-      "To find repeating words in a text, you can use the `Counter` class from the `collections` module.",
-      "Here’s a Python example:\n\n```python\nfrom collections import Counter\n\ndef find_repeating_words(text):\n    \"\"\" Find repeating words in a given text. \"\"\"\n    words = text.split()\n    word_count = Counter(words)\n    return {word: count for word, count in word_count.items() if count > 1}\n\ntext = \"this is a test this test is only a test\"\nprint(find_repeating_words(text))\n# Output: {'this': 3, 'test': 3, 'is': 2, 'a': 2}\n```"
-    ]
-  },
-  {
-    "question": "Print Characters in Shell Script",
-    "answers": [
-      "To print each character of a string in a shell script, you can use a loop to iterate through the string.",
-      "Here’s a shell script example:\n\n```sh\n#!/bin/bash\n# Print each character of a string\nstring=\"Hello\"\nfor (( i=0; i<${#string}; i++ )); do\n    echo \"${string:$i:1}\"\ndone\n```"
-    ]
-  },
-  {
-    "question": "Sort [0, 1, 3, 4]",
-    "answers": [
-      "To sort a list or array, you can use built-in functions or commands in Python and shell scripts.",
-      "Python Example:\n\n```python\nnumbers = [0, 1, 3, 4]\nsorted_numbers = sorted(numbers)\nprint(sorted_numbers)\n# Output: [0, 1, 3, 4]\n```",
-      "Shell Script Example:\n\n```sh\n#!/bin/bash\n# Sort an array\narr=(0 1 3 4)\nsorted_arr=($(for i in \"${arr[@]}\"; do echo $i; done | sort -n))\necho \"${sorted_arr[@]}\"\n```"
-    ]
-  },
-  {
-    "question": "Palindrome",
-    "answers": [
-      "To check if a string is a palindrome, you can compare the string with its reverse.",
-      "Python Example:\n\n```python\ndef is_palindrome(s):\n    \"\"\" Check if a string is a palindrome. \"\"\"\n    return s == s[::-1]\n\nprint(is_palindrome(\"radar\"))  # Output: True\nprint(is_palindrome(\"hello\"))  # Output: False\n```"
-    ]
-  },
-  {
-    "question": "Lambda Function",
-    "answers": [
-      "Lambda functions are anonymous functions defined with the `lambda` keyword. They can have any number of arguments but only one expression.",
-      "Example:\n\n```python\n# Lambda function to add two numbers\nadd = lambda x, y: x + y\nprint(add(5, 3))  # Output: 8\n```"
-    ]
-  },
-  {
-    "question": "OOP Inheritance",
-    "answers": [
-      "Object-Oriented Programming (OOP) inheritance allows a class (derived class) to inherit attributes and methods from another class (base class).",
-      "Python Example:\n\n```python\n# Base class\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n    def speak(self):\n        return \"Some sound\"\n\n# Derived class\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\n# Creating an instance of Dog\nmy_dog = Dog(\"Buddy\")\nprint(my_dog.name)  # Output: Buddy\nprint(my_dog.speak())  # Output: Woof\n```"
-    ]
-  },
-  {
-    "question": "Hard Link vs. Soft Link",
-    "answers": [
-      "Hard Link:\n- **Definition**: A hard link is a directory entry that associates a file name with an inode. Hard links are indistinguishable from the original file.\n- **Characteristics**:\n  - Share the same inode number as the original file.\n  - Changes are reflected in all hard links.\n  - Cannot span different filesystems or be created for directories (except by root).\n- **Example**:\n\n```bash\n# Create a file\necho \"Hello World\" > original.txt\n# Create a hard link\nln original.txt hardlink.txt\n# Both files are identical\ncat original.txt  # Outputs: Hello World\ncat hardlink.txt  # Outputs: Hello World\n```",
-      "Soft Link (Symbolic Link):\n- **Definition**: A soft link (or symbolic link) contains a reference to another file or directory in the form of a path. It acts as a shortcut.\n- **Characteristics**:\n  - Has a different inode number and stores the path to the target file.\n  - Becomes a broken link if the original file is moved or deleted.\n  - Can span different filesystems and link to directories.\n- **Example**:\n\n```bash\n# Create a file\necho \"Hello World\" > original.txt\n# Create a soft link\nln -s original.txt softlink.txt\n# The soft link points to the original file\ncat softlink.txt  # Outputs: Hello World\n```"
-    ]
-  },
-  {
-    "question": "How to create a soft link and verify it?",
-    "answers": [
-      "To create a soft link (symbolic link) and verify it, you can use the following commands:",
-      "1. **Create a file**:\n\n```bash\necho \"Hello World\" > original.txt\n```",
-      "2. **Create a soft link**:\n\n```bash\nln -s original.txt softlink.txt\n```",
-      "3. **Verify the soft link**:\n\n```bash\ncat softlink.txt  # Outputs: Hello World\n```"
-    ]
-  },
-  {
-    "question": "How to run a command on Server 1 from Server 2 using SSH?",
-    "answers": [
-      "To run commands on one server (Server 1) from another server (Server 2) using SSH, follow these steps:",
-      "1. **Ensure SSH Access**:\n- Make sure Server 1 allows SSH connections from Server 2 and that you have SSH access (username and password or SSH keys).",
-      "2. **Run Command from Server 2**:\n\n```bash\nssh user@server1 \"your-command-here\"\n# Example: Check disk usage on Server 1\nssh user@server1 \"df -h\"\n```",
-      "3. **SSH Key Authentication (Optional for Automation)**:\n   - **Generate SSH Key Pair on Server 2**:\n\n```bash\nssh-keygen -t rsa -b 2048\n```",
-      "   - **Copy the Public Key to Server 1**:\n\n```bash\nssh-copy-id user@server1\n```",
-      "   - **Run Commands Without Password**:\n\n```bash\nssh user@server1 \"your-command-here\"\n```"
-    ]
-  },
-  {
-    "question": "How to set up a CI/CD pipeline that creates, clones, and deletes Git repositories using GitHub Actions?",
-    "answers": [
-      "To set up a CI/CD pipeline for creating, cloning, and deleting Git repositories using GitHub Actions, follow these steps:",
-      "1. **Create Two Git Repositories**:\n   - First, create two repositories on GitHub. Assume they are named `repo1` and `repo2`.",
-      "2. **Set Up GitHub Actions**:\n   - GitHub Actions automates tasks within GitHub. Create a workflow file in your repository to handle cloning and deleting repositories.",
-      "3. **Define Workflow**:\n   - Create a `.github/workflows` directory in your main repository, and within it, create a file named `ci-cd-pipeline.yml`. Here’s a sample GitHub Actions workflow:",
-      "4. **Explanation**:\n   - **Trigger**: The workflow runs on every push to the repository.\n   - **Jobs and Steps**:\n     - **Checkout code**: Checks out the code from your GitHub repository where this workflow file is stored.\n     - **Set up Git**: Configures Git user settings.\n     - **Clone repo1**: Clones the first repository and prints a success message.\n     - **Clone repo2**: Clones the second repository and prints a success message.\n     - **Delete repo1**: Deletes the first repository from the local workspace.\n     - **Delete repo2**: Deletes the second repository from the local workspace.",
-      "5. **Running the Workflow**:\n   - **Commit the Workflow File**: Push the `.github/workflows/ci-cd-pipeline.yml` file to your main repository.\n   - **Monitor the Pipeline**: Navigate to the 'Actions' tab of your GitHub repository to see the workflow running.\n   - **Verify**: After the workflow runs, check that both repositories were cloned and then deleted as expected.",
-      "6. **Notes**:\n   - Replace `yourusername` with your GitHub username or organization name.\n   - Ensure the repositories are public or you’ve set up appropriate authentication if they are private.\n   - Adjust the workflow based on your actual requirements or environment."
-    ]
-  },
+    {
+
+        "question": "What is the difference between Authentication and Authorization?",
+
+        "answers": [
+
+            "Authentication:",
+
+            "  • Authentication is the process of verifying the identity of a user or system. It answers the question 'Who are you?'",
+
+            "  • Typically involves checking credentials such as username and password, biometric data, or other security tokens.",
+
+            "Authorization:",
+
+            "  • Authorization determines what an authenticated user or system is allowed to do. It answers the question 'What are you allowed to do?'",
+
+            "  • It involves setting permissions and access levels based on roles, policies, and user attributes."
+
+        ]
+
+    },
+
 ]

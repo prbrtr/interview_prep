@@ -166,7 +166,7 @@
             "  3. This design pattern promotes code reusability and enforces a contract for subclasses.",
             "Code Example:\n```python\nfrom abc import ABC, abstractmethod\n\nclass MyInterface(ABC):\n    @abstractmethod\n    def do_something(self):\n        pass\n\nclass ConcreteClass(MyInterface):\n    def do_something(self):\n        print('Doing something')\n\nobj = ConcreteClass()\nobj.do_something()  # Output: Doing something\n```"
         ]
-    }
+    },
     {
         "question": "What are the types of Selenium testing?",
         "answers": [
@@ -320,7 +320,7 @@
       "  - GraphQL: Allows clients to request only the data they need, making it flexible and efficient.",
       "Code example for REST API testing:\n\n```python\nimport requests\n\nresponse = requests.get('https://api.example.com/resource')\nprint(response.json())\n```"
     ]
-  }
+  },
   {
     "question": "Flipkart Testing Using Selenium and Unit Test",
     "answers": [
@@ -411,5 +411,5 @@
       "5. **Running the Workflow**:\n   - **Commit the Workflow File**: Push the `.github/workflows/ci-cd-pipeline.yml` file to your main repository.\n   - **Monitor the Pipeline**: Navigate to the 'Actions' tab of your GitHub repository to see the workflow running.\n   - **Verify**: After the workflow runs, check that both repositories were cloned and then deleted as expected.",
       "6. **Notes**:\n   - Replace `yourusername` with your GitHub username or organization name.\n   - Ensure the repositories are public or you’ve set up appropriate authentication if they are private.\n   - Adjust the workflow based on your actual requirements or environment."
     ]
-  }
+  },
 ]

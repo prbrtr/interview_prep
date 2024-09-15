@@ -44,6 +44,13 @@ h1 {
     padding: 10px;
     background-color: #eef; /* Subtle background for answers */
 }
+.answer-container {
+    white-space: pre-wrap; /* Makes long lines wrap to the next line */
+    word-wrap: break-word; /* Ensures that long words break if necessary */
+    overflow-x: auto; /* Adds horizontal scroll only when needed */
+    padding: 10px;
+    font-size: 16px; /* Adjust font size to your preference */
+}
 
 #controls {
     display: flex;

@@ -1,79 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
-:root {
-    --primary: #3DCFD3;
-    --secondary: black;
-    --dark: #161616;
-    --pure: #FFFFFF;
-    --ternary: #898989;
-    --light: #F2F2F2;
-}
+/* Add your desired styles here */
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--light);
-    padding: 2rem;
-    color: var(--secondary);
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
 }
 
 .container {
-    max-width: 1152px;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 2rem;
-    background-color: var(--pure);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
 h1 {
     text-align: center;
-    color: var(--primary);
-    margin-bottom: 2rem;
+    color: #333;
 }
 
+/* Styling for the Question and Answer section */
 .qna-section {
-    background-color: var(--pure);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
-.qna, .answer {
-    margin-bottom: 1.5rem;
-    padding: 1.5rem;
-    background-color: var(--light);
-    border: 1px solid var(--ternary);
-    border-radius: 8px;
-    word-wrap: break-word; /* Prevent overflow */
-    white-space: pre-wrap; /* Preserve formatting */
+.qna h3, .answer h3 {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Swapping fonts for questions and answers */
+#question {
+    font-family: 'Courier New', Courier, monospace; /* Use monospace font for questions */
+    font-size: 1.1em;
+    color: #333;
+}
+
+#answer {
+    font-family: 'Georgia', serif; /* Use serif font for answers */
+    font-size: 1.1em;
+    color: #555;
 }
 
 button {
-    background-color: var(--primary);
-    color: var(--pure);
+    margin: 5px;
     padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
     border: none;
     border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    margin-right: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #1e8c8e;
+    background-color: #218838;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    margin-top: 3rem;
-    color: var(--ternary);
+/* Styling for the correct count and reviewed questions */
+#correct-count {
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
+#reviewed-questions {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+#reviewed-questions ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }

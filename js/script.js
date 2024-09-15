@@ -30,7 +30,10 @@ askBtn.addEventListener('click', () => {
 // Show the answers when "Answer" is clicked
 answerBtn.addEventListener('click', () => {
     if (currentQuestion) {
-        const answersHtml = currentQuestion.answers.map(answer => `<div><strong>Answer:</strong><pre>${answer}</pre></div>`).join('<hr>');
+        // Show all answers and render code blocks as preformatted text
+        const answersHtml = currentQuestion.answers.map(answer => {
+            return `<div><strong>Answer:</strong><pre>${escapeHtml(answer)}</pre></div>`;
+        }).join('<hr>');
         answerDiv.innerHTML = answersHtml;
     } else {
         answerDiv.innerHTML = 'Please click "Ask" to get a question first!';
@@ -52,3 +55,15 @@ reviewBtn.addEventListener('click', () => {
         reviewedQuestionsDiv.innerHTML = `Reviewed Questions:<br>${reviewedQuestions.map(q => `<li>${q}</li>`).join('')}`;
     }
 });
+
+// Function to escape HTML special characters to display code correctly
+function escapeHtml(text) {
+    var map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}

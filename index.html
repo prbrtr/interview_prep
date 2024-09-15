@@ -22,7 +22,8 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 90%;
-            max-width: 500px;
+            max-width: 600px; /* Ensure the box has a limit */
+            word-wrap: break-word; /* Ensure long words are wrapped */
         }
         h1 {
             color: #333;
@@ -45,7 +46,8 @@
         #question, #answer, #correct-count, #reviewed-questions {
             margin-top: 20px;
             font-size: 18px;
-            word-wrap: break-word;
+            white-space: pre-wrap; /* Prevents overflow for answers */
+            word-wrap: break-word; /* Handles long words properly */
         }
         #answer {
             color: #007BFF;

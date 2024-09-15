@@ -1,18 +1,176 @@
-[
+{
+  "questions": [
     {
-        "question": "What is a palindrome?",
-        "answers": [
-            "A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization.",
-            "Example: 'racecar' is a palindrome.",
-            "Code example:\n\n```python\n# Python function to check if a string is a palindrome\ndef is_palindrome(s):\n    s = s.lower()\n    return s == s[::-1]\n```"
-        ]
+      "question": "What is the difference between Shallow Copy and Deep Copy?",
+      "answers": [
+        {
+          "type": "text",
+          "content": "Shallow Copy: Points to the same memory address as the original variable. Modifying the shallow copy can affect the original object. Usage: copy.copy(original_object)"
+        },
+        {
+          "type": "text",
+          "content": "Deep Copy: Creates a completely independent copy of the object, with different memory addresses. Modifying the deep copy will not affect the original object. Usage: copy.deepcopy(original_object)"
+        }
+      ]
     },
     {
-        "question": "What is the Fibonacci series?",
-        "answers": [
-            "The Fibonacci series is a sequence of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1.",
-            "Example: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...",
-            "Code example:\n\n```python\n# Python function to generate Fibonacci series\ndef fibonacci(n):\n    a, b = 0, 1\n    series = []\n    while a < n:\n        series.append(a)\n        a, b = b, a + b\n    return series\n```"
-        ]
+      "question": "What is the difference between Authentication and Authorization?",
+      "answers": [
+        {
+          "type": "text",
+          "content": "Authentication: Process of verifying 'Who you are.' Typically involves credentials like username and password."
+        },
+        {
+          "type": "text",
+          "content": "Authorization: Determines 'What you are allowed to do.' Defines access levels and permissions."
+        }
+      ]
+    },
+    {
+      "question": "What is the difference between List and Tuple?",
+      "answers": [
+        {
+          "type": "text",
+          "content": "List: Mutable: Can be modified after creation (e.g., add/remove elements). Syntax: Square brackets []. Example: my_list = [1, 2, 3]"
+        },
+        {
+          "type": "text",
+          "content": "Tuple: Immutable: Cannot be modified after creation. Syntax: Parentheses (). Example: my_tuple = (1, 2, 3)"
+        }
+      ]
+    },
+    {
+      "question": "What is the difference between Push and Pop in a stack?",
+      "answers": [
+        {
+          "type": "text",
+          "content": "Push: Adds an element to the top of a stack. Example: stack.append(10)"
+        },
+        {
+          "type": "text",
+          "content": "Pop: Removes and returns the top element from the stack. Example: top_element = stack.pop()"
+        }
+      ]
+    },
+    {
+      "question": "What is the difference between Implicit Wait and Explicit Wait in Selenium?",
+      "answers": [
+        {
+          "type": "text",
+          "content": "Implicit Wait: WebDriver waits for a specified time for an element before throwing an exception. Applies to all elements globally in the script. Example: driver.implicitly_wait(10)"
+        },
+        {
+          "type": "text",
+          "content": "Explicit Wait: WebDriver waits for a specific condition (e.g., element being clickable). Targeted to specific elements. Example: element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, 'submit')))"
+        }
+      ]
+    },
+    {
+      "question": "What is the difference between XPath and CSS Selector?",
+      "answers": [
+        {
+          "type": "text",
+          "content": "XPath: Can navigate through elements in an XML structure. Example: element = driver.find_element_by_xpath('//div[@id='content']')"
+        },
+        {
+          "type": "text",
+          "content": "CSS Selector: Generally faster and preferred for locating elements based on style attributes. Example: element = driver.find_element_by_css_selector('div#content')"
+        }
+      ]
+    },
+    {
+      "question": "What is the Page Object Model (POM) in Selenium?",
+      "answers": [
+        {
+          "type": "text",
+          "content": "Page Object Model (POM) is a design pattern in Selenium that creates an object repository for storing all web elements. It improves code maintenance and reduces code duplication by representing UI elements as objects."
+        }
+      ]
+    },
+    {
+      "question": "Write a function to generate the Fibonacci series.",
+      "answers": [
+        {
+          "type": "code",
+          "content": "def fibonacci(n):\n    a, b = 0, 1\n    sequence = []\n    for _ in range(n):\n        sequence.append(a)\n        a, b = b, a + b\n    return sequence\n\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]"
+        }
+      ]
+    },
+    {
+      "question": "Write a function to remove vowels from a string.",
+      "answers": [
+        {
+          "type": "code",
+          "content": "def remove_vowels(s):\n    vowels = 'aeiouAEIOU'\n    return ''.join([char for char in s if char not in vowels])\n\nprint(remove_vowels('Automation Testing'))  # Output: 'tmtn Tstng'"
+        }
+      ]
+    },
+    {
+      "question": "Write a function to return the sum of all even numbers in a list.",
+      "answers": [
+        {
+          "type": "code",
+          "content": "def sum_of_evens(lst):\n    return sum(num for num in lst if num % 2 == 0)\n\nprint(sum_of_evens([1, 2, 3, 4, 5, 6]))  # Output: 12"
+        }
+      ]
+    },
+    {
+      "question": "What is a Binary Tree?",
+      "answers": [
+        {
+          "type": "text",
+          "content": "A Binary Tree is a data structure where each node has at most two children. It is used for efficient searching and sorting."
+        }
+      ]
+    },
+    {
+      "question": "What is a Heap Tree?",
+      "answers": [
+        {
+          "type": "text",
+          "content": "A Heap Tree is a special type of binary tree where the parent node is either greater (max heap) or less (min heap) than its children. It is used to implement priority queues."
+        }
+      ]
+    },
+    {
+      "question": "Write a function to find the largest number in a linked list.",
+      "answers": [
+        {
+          "type": "code",
+          "content": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef find_largest(head):\n    largest = head.data\n    while head:\n        if head.data > largest:\n            largest = head.data\n        head = head.next\n    return largest\n\n# Linked list: 1 -> 5 -> 3 -> 9 -> 2\nhead = Node(1)\nhead.next = Node(5)\nhead.next.next = Node(3)\nhead.next.next.next = Node(9)\nhead.next.next.next.next = Node(2)\nprint(find_largest(head))  # Output: 9"
+        }
+      ]
+    },
+    {
+      "question": "Write a function to extract numbers from a string using regex and sum them.",
+      "answers": [
+        {
+          "type": "code",
+          "content": "import re\n\ndef sum_numbers(s):\n    numbers = re.findall(r'\\d+', s)\n    return sum(map(int, numbers))\n\ns = 'giuwh55kdhkuw88nsbhksw51545'\nprint(sum_numbers(s))  # Output: 51688"
+        }
+      ]
+    },
+    {
+      "question": "What is a Generator?",
+      "answers": [
+        {
+          "type": "text",
+          "content": "A generator is a function that returns an iterator that yields a sequence of values using the 'yield' keyword."
+        },
+        {
+          "type": "code",
+          "content": "def my_generator():\n    yield 1\n    yield 2\n    yield 3\n\ngen = my_generator()\nprint(next(gen))  # Output: 1\nprint(next(gen))  # Output: 2"
+        }
+      ]
+    },
+    {
+      "question": "What is an Interface in Python?",
+      "answers": [
+        {
+          "type": "text",
+          "content": "An interface in Python is often represented by abstract base classes (ABCs) in the abc module. An interface contains abstract methods that must be implemented by any class that inherits it."
+        }
+      ]
     }
-]
+  ]
+}

@@ -50,24 +50,24 @@
         let correctCount = 0;
         let reviewedQuestions = [];
 
-        // Fetch questions from the JSON file (for demonstration, this is mocked data)
-        questions = [
-            {
-                question: "Shallow Copy vs Deep Copy?",
-                answer: "Shallow Copy points to the same memory address, Deep Copy creates a new instance."
-            },
-            {
-                question: "What is a Generator in Python?",
-                answer: "A generator is a function that returns an iterator that yields a sequence of values."
-            }
-        ];
+        // Fetch questions from the questions.json file
+        fetch('questions.json')
+            .then(response => response.json())
+            .then(data => {
+                questions = data;
+            })
+            .catch(error => console.error('Error fetching the questions:', error));
 
         // Show a random question when "Ask" is clicked
         askBtn.addEventListener('click', () => {
-            const randomIndex = Math.floor(Math.random() * questions.length);
-            currentQuestion = questions[randomIndex];
-            questionDiv.textContent = currentQuestion.question;
-            answerDiv.textContent = ''; // Clear the answer
+            if (questions.length > 0) {
+                const randomIndex = Math.floor(Math.random() * questions.length);
+                currentQuestion = questions[randomIndex];
+                questionDiv.textContent = currentQuestion.question;
+                answerDiv.textContent = ''; // Clear the answer
+            } else {
+                questionDiv.textContent = 'No questions available!';
+            }
         });
 
         // Show the answer when "Answer" is clicked

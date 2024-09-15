@@ -29,22 +29,22 @@ h1 {
     border: 1px solid #ccc;
     padding: 15px;
     border-radius: 5px;
-    min-height: 80px;
     background-color: #f9f9f9;
     font-size: 18px;
-    overflow-y: auto;
 }
 
 #answer {
     font-family: monospace;
     word-wrap: break-word; /* Prevents horizontal scrolling */
-    max-height: 200px; /* Limit the height */
-    overflow-y: auto; /* Add scrollbar if content exceeds height */
+    max-height: none; /* Allows the answer to expand vertically */
+    overflow-y: auto;
+    white-space: pre-wrap; /* Ensures line breaks in code are preserved */
 }
 
 #controls {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap; /* Allow buttons to wrap */
     margin-bottom: 20px;
 }
 
@@ -55,6 +55,8 @@ button {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    margin: 5px; /* Add spacing between buttons */
+    flex: 1 1 45%; /* Allow button width adjustment */
 }
 
 button:hover {
@@ -71,13 +73,28 @@ button:hover {
     list-style-type: square;
 }
 
+/* Media queries for mobile view */
 @media only screen and (max-width: 600px) {
     .container {
         width: 100%;
         padding: 10px;
     }
 
+    h1 {
+        font-size: 20px;
+    }
+
     .question-box, .answer-box {
         font-size: 16px;
+    }
+
+    #controls {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: stretch;   /* Make buttons full-width */
+    }
+
+    button {
+        width: 100%; /* Full-width buttons in mobile */
+        margin: 10px 0; /* Spacing between buttons */
     }
 }

@@ -94,5 +94,131 @@
         "answers": [
             "An interface in Python is often represented by abstract base\nclasses (ABCs) in the abc module. An interface contains\nabstract methods that must be implemented by any class that\ninherits it."
         ]
+    },
+    {
+        "question": "Selenium Testing Types?",
+        "answers": [
+            "Functional Testing:\n\u2022 Smoke Testing: Basic tests to check if the application\nbuild is stable and can proceed with further testing.\n\u2022 Sanity Testing: Verifies that specific functionalities\nwork correctly after changes or bug fixes.\n\u2022 Regression Testing: Ensures that new changes have not\nadversely affected existing functionalities.\n\u2022 Database Testing: Validates data integrity and correctness\nin the database.\n\u2022 Compatibility Testing: Checks the application\u2019s\ncompatibility with different operating systems, browsers,\nand devices.\n\u2022 Cross-Browser Testing: Ensures that the application works\ncorrectly across different web browsers.\nUnit Testing:\n\u2022 Focuses on testing individual components or units of code\nfor correctness.\nParallel Testing:\n\u2022 Involves executing multiple test cases simultaneously\nacross different environments to speed up the testing\nprocess.\nData-Driven Testing:\n\u2022 Tests the application with multiple sets of data to ensure\nit behaves correctly with different inputs."
+        ]
+    },
+    {
+        "question": "Sanity Testing vs. Regression Testing?",
+        "answers": [
+            "Sanity Testing:\n\u2022 Purpose: Verifies that specific functionalities are\nworking correctly after changes.\n\u2022 Scope: Narrow and focused on particular functionalities or\nbug fixes.\n\u2022 Execution: Often done after receiving a new build or bug\nfix.\nRegression Testing:\n\u2022 Purpose: Ensures that recent code changes have not\nintroduced new bugs in existing functionalities.\n\u2022 Scope: Broad and covers all or most of the application\u2019s\nfunctionalities.\n\u2022 Execution: Performed after bug fixes, updates, or changes\nin the application."
+        ]
+    },
+    {
+        "question": "Fetch List of City Names from Dropdown Using Selenium?",
+        "answers": [
+            "Example:\nfrom selenium import webdriver\nfrom selenium.webdriver.support.ui import Select\n# Set up the WebDriver\ndriver = webdriver.Chrome()\ndriver.get('URL_OF_YOUR_PAGE')\n# Locate the dropdown element\ndropdown = Select(driver.find_element_by_id('dropdown_id'))\n# Fetch all city names from the dropdown\ncity_names = [option.text for option in dropdown.options]\nprint(city_names)\n# Close the WebDriver\ndriver.quit()"
+        ]
+    },
+    {
+        "question": "Types of Exceptions in Selenium?",
+        "answers": [
+            "\u2022 NoSuchElementException: Raised when an element cannot be\nfound.\n\u2022 TimeoutException: Raised when an element does not appear\nwithin the specified time.\n\u2022 ElementNotInteractableException: Raised when an element is\nnot interactable.\n\u2022 StaleElementReferenceException: Raised when a reference to\nan element is stale.\n\u2022 InvalidSelectorException: Raised when a selector is\ninvalid."
+        ]
+    },
+    {
+        "question": "Handling Iframes in Selenium?",
+        "answers": [
+            "Example:\nfrom selenium import webdriver\n# Set up the WebDriver\ndriver = webdriver.Chrome()\ndriver.get('URL_OF_YOUR_PAGE')\n# Switch to the iframe\ndriver.switch_to.frame('iframe_id_or_name')\n# Perform actions inside the iframe\nelement = driver.find_element_by_id('element_id')\nelement.click()\n# Switch back to the main content\ndriver.switch_to.default_content()\n# Close the WebDriver\ndriver.quit()"
+        ]
+    },
+    {
+        "question": "PUT vs. POST in API Testing?",
+        "answers": [
+            "PUT:\n\u2022 Purpose: Updates or replaces a resource at a specific URL.\n\u2022 Idempotent: Multiple identical requests result in the same\nstate.\n\u2022 Usage: When updating or creating a resource with a\nspecific identifier.\nPOST:\n\u2022 Purpose: Submits data to create a new resource.\n\u2022 Non-idempotent: Multiple identical requests may create\nmultiple resources.\n\u2022 Usage: When creating a new resource or submitting data to\nbe processed."
+        ]
+    },
+    {
+        "question": "Locators in Selenium?",
+        "answers": [
+            "\u2022 ID: find_element_by_id('element_id')\n\u2022 Name: find_element_by_name('element_name')\n\u2022 Class Name: find_element_by_class_name('class_name')\n\u2022 Tag Name: find_element_by_tag_name('tag_name')\n\u2022 Link Text: find_element_by_link_text('link_text')\n\u2022 Partial Link Text:\nfind_element_by_partial_link_text('partial_text')\n\u2022 XPath: find_element_by_xpath('//tag[@attribute=\"value\"]')\n\u2022 CSS Selector: find_element_by_css_selector('tag#id.class')"
+        ]
+    },
+    {
+        "question": "Play YouTube Video with Selenium?",
+        "answers": [
+            "Example:\nfrom selenium import webdriver\n# Set up the WebDriver\ndriver = webdriver.Chrome()\ndriver.get('URL_OF_YOUR_YOUTUBE_VIDEO')\n# Locate and click the play button\nplay_button =\ndriver.find_element_by_xpath('//button[@class=\"ytp-play-\nbutton ytp-button\"]')\nplay_button.click()\n# Keep the browser open\ninput(\"Press Enter to exit...\")\n# Close the WebDriver\ndriver.quit()"
+        ]
+    },
+    {
+        "question": "unittest vs pytest?",
+        "answers": [
+            "unittest:\n\u2022 Benefits: Built-in module, well-integrated with Python,\nsupports test discovery.\n\u2022 Disadvantages: Verbose syntax, less flexible compared to\npytest.\nExample:\nimport unittest\nclass TestExample(unittest.TestCase):\ndef test_addition(self):\nself.assertEqual(1 + 1, 2)\nif __name__ == '__main__':\nunittest.main()\npytest:\n\u2022 Benefits: Simple and easy syntax, supports fixtures,\ndetailed reporting, and rich plugin ecosystem.\n\u2022 Disadvantages: Requires installation, might be less\nfamiliar to those used to unittest.\nExample:\ndef test_addition():\nassert 1 + 1 == 2"
+        ]
+    },
+    {
+        "question": "Embedded Systems: Raspberry Pi, Arduino, and Pin Configuration?",
+        "answers": [
+            "Raspberry Pi:\n\u2022 Description: A small, affordable computer used for various\nprojects.\n\u2022 Pin Configuration: GPIO pins for interfacing with external\nhardware (e.g., LEDs, sensors).\nExample:\nimport RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BCM)\nGPIO.setup(18, GPIO.OUT)\nGPIO.output(18, GPIO.HIGH)\nArduino:\n\u2022 Description: A microcontroller board used for building\nelectronic projects.\n\u2022 Pin Configuration: Digital and analog pins for\ninput/output operations.\nExample:\nvoid setup() {\npinMode(13, OUTPUT);\n}\nvoid loop() {\ndigitalWrite(13, HIGH);\ndelay(1000);\ndigitalWrite(13, LOW);\ndelay(1000);\n}"
+        ]
+    },
+    {
+        "question": "Create Python File with Setup and Teardown Example?",
+        "answers": [
+            "Example:\nimport unittest\nclass TestExample(unittest.TestCase):\n@classmethod\ndef setUpClass(cls):\nprint(\"Setup for the entire test class.\")\ndef setUp(self):\nprint(\"Setup for individual test.\")\ndef test1(self):\nprint(\"Running test1\")\ndef tearDown(self):\nprint(\"Teardown for individual test.\")\n@classmethod\ndef tearDownClass(cls):\nprint(\"Teardown for the entire test class.\")\nif __name__ == '__main__':\nunittest.main()\nExplanation:\n\u2022 setUpClass and tearDownClass are class methods that run\nonce before and after all tests in the class.\n\u2022 setUp and tearDown methods run before and after each test\nmethod."
+        ]
+    },
+    {
+        "question": "API Testing, Models, Admin, and Types of APIs?",
+        "answers": [
+            "API Testing:\n\u2022 Definition: Verifies that APIs function correctly,\nhandling requests and responses as expected.\nModels:\n\u2022 Definition: Define the structure of the data handled by\nthe API, including data validation and relationships.\nAdmin:\n\u2022 Definition: Refers to administrative operations or\nmanagement functionalities within the API or application.\nTypes of APIs:\n\u2022 REST API: Uses HTTP requests for CRUD operations.\n\u2022 SOAP API: Uses XML-based messaging protocol.\n\u2022 GraphQL: Allows querying specific data requirements.\nExample:\nimport requests\nresponse = requests.get('https://api.example.com/resource')\nprint(response.json())"
+        ]
+    },
+    {
+        "question": "How do you test adding items to the cart on Flipkart using Selenium and Python?",
+        "answers": [
+            "To test adding items to the cart on Flipkart using Selenium\nand Python, follow these steps:\n1. Setup: Ensure you have Selenium and a compatible\nWebDriver installed.\n2. Python Test Script with Selenium:\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.common.keys import Keys\nimport unittest\nimport time\nclass TestFlipkartCart(unittest.TestCase):\ndef setUp(self):\n# Initialize the WebDriver (Chrome in this case)\nself.driver = webdriver.Chrome()\nself.driver.get(\"https://www.flipkart.com\")\ndef test_add_top_selling_item_to_cart(self):\ndriver = self.driver\n# Close the login popup\ntime.sleep(2)  # Allow time for the popup to load\nclose_button = driver.find_element(By.CSS_SELECTOR,\n\"button._2KpZ6l._2doB4z\")\nclose_button.click()\n# Search for top-selling cameras\nsearch_box = driver.find_element(By.NAME, \"q\")\nsearch_box.send_keys(\"top selling camera\")\nsearch_box.send_keys(Keys.RETURN)\n# Wait for results to load\ntime.sleep(5)\n# Try to click on the first item in the search results\ntry:\nfirst_item = driver.find_element(By.XPATH, \"//div[@data-\nid][1]\")\nfirst_item.click()\ntime.sleep(5)\n# Try to click 'Add to Cart' button\ntry:\nadd_to_cart_button = driver.find_element(By.XPATH,\n\"//button[text()='ADD TO CART']\")\nadd_to_cart_button.click()\ntime.sleep(5)\n# Check if item has been added to the cart\ncart_message = driver.find_element(By.CSS_SELECTOR,\n\"span._2YxCDZ\")\nprint(cart_message.text)\nexcept Exception as e:\nprint(f\"Failed to add item to cart: {e}\")\nexcept Exception as e:\nprint(f\"Failed to find or click on the item: {e}\")\n# Try to search for top-selling books\nsearch_box = driver.find_element(By.NAME, \"q\")\nsearch_box.clear()\nsearch_box.send_keys(\"top selling book\")\nsearch_box.send_keys(Keys.RETURN)\n# Wait for results to load\ntime.sleep(5)\n# Try to click on the first item in the search results\ntry:\nfirst_item = driver.find_element(By.XPATH, \"//div[@data-\nid][1]\")\nfirst_item.click()\ntime.sleep(5)\n# Try to click 'Add to Cart' button\ntry:\nadd_to_cart_button = driver.find_element(By.XPATH,\n\"//button[text()='ADD TO CART']\")\nadd_to_cart_button.click()\ntime.sleep(5)\n# Check if item has been added to the cart\ncart_message = driver.find_element(By.CSS_SELECTOR,\n\"span._2YxCDZ\")\nprint(cart_message.text)\nexcept Exception as e:\nprint(f\"Failed to add item to cart: {e}\")\nexcept Exception as e:\nprint(f\"Failed to find or click on the item: {e}\")\ndef tearDown(self):\n# Close the WebDriver\nself.driver.quit()\nif __name__ == '__main__':\nunittest.main()\nThis script performs the following actions:\nInitializes the WebDriver and opens Flipkart.\nCloses the login popup.\nSearches for top-selling cameras and books.\nAttempts to add the first search result item to the cart.\nPrints the cart message to verify that the item has been\nadded."
+        ]
+    },
+    {
+        "question": "How can you find repeating words in a text using Python?",
+        "answers": [
+            "To find repeating words in a text using Python, you can use\nthe collections.Counter class to count the occurrences of\neach word. Here's a simple example:\nfrom collections import Counter\ndef find_repeating_words(text):\n\"\"\"Find repeating words in a given text.\"\"\"\nwords = text.split()\nword_count = Counter(words)\nreturn {word: count for word, count in word_count.items() if\ncount > 1}\ntext = \"this is a test this test is only a test\"\nprint(find_repeating_words(text))\nThis script will output:\n{'this': 3, 'test': 3, 'is': 2, 'a': 2}"
+        ]
+    },
+    {
+        "question": "How can you print each character of a string in a Shell script?",
+        "answers": [
+            "To print each character of a string in a Shell script, you\ncan use a loop to iterate over each character. Here\u2019s an\nexample:\n#!/bin/bash\n# Print each character of a string\nstring=\"Hello\"\nfor (( i=0; i<${#string}; i++ )); do\necho \"${string:$i:1}\"\ndone"
+        ]
+    },
+    {
+        "question": "How do you sort an array [0, 1, 3, 4] using Python and Shell script?",
+        "answers": [
+            "In Python, you can sort an array as follows:\nnumbers = [0, 1, 3, 4]\nsorted_numbers = sorted(numbers)\nprint(sorted_numbers)\nThis will output:\n[0, 1, 3, 4]\nIn Shell script, you can sort an array as follows:\n#!/bin/bash\n# Sort an array\narr=(0 1 3 4)\nsorted_arr=($(for i in \"${arr[@]}\"; do echo $i; done | sort\n-n))\necho \"${sorted_arr[@]}\""
+        ]
+    },
+    {
+        "question": "How do you check if a string is a palindrome in Python?",
+        "answers": [
+            "To check if a string is a palindrome in Python, you can use\nthe following function:\ndef is_palindrome(s):\n\"\"\"Check if a string is a palindrome.\"\"\"\nreturn s == s[::-1]\nprint(is_palindrome(\"radar\"))  # Output: True\nprint(is_palindrome(\"hello\"))  # Output: False"
+        ]
+    },
+    {
+        "question": "How do you create a lambda function to add two numbers in Python?",
+        "answers": [
+            "To create a lambda function for adding two numbers, you can\nuse the following code:\n# Lambda function to add two numbers\nadd = lambda x, y: x + y\nprint(add(5, 3))  # Output: 8"
+        ]
+    },
+    {
+        "question": "How do you demonstrate OOP inheritance with Python?",
+        "answers": [
+            "Here\u2019s an example demonstrating OOP inheritance in Python:\n# Base class\nclass Animal:\ndef __init__(self, name):\nself.name = name\ndef speak(self):\nreturn \"Some sound\"\n# Derived class\nclass Dog(Animal):\ndef speak(self):\nreturn \"Woof\"\n# Creating an instance of Dog\nmy_dog = Dog(\"Buddy\")\nprint(my_dog.name)  # Output: Buddy\nprint(my_dog.speak())  # Output: Woof"
+        ]
+    },
+    {
+        "question": "What is the difference between a hard link and a soft link?",
+        "answers": [
+            "Hard Link\nDefinition: A hard link is a directory entry that associates\na file name with an inode. It points directly to the file's\ninode.\nCharacteristics:\nShares the same inode number as the original file.\nChanges to the file are reflected in all hard links.\nThe file is only deleted when all hard links are removed.\nCannot span different filesystems or be created for\ndirectories (except by root in some cases).\nExample:\n# Create a file\necho \"Hello World\" > original.txt\n# Create a hard link\nln original.txt hardlink.txt\n# Both files are identical\ncat original.txt    # Outputs: Hello World\ncat hardlink.txt    # Outputs: Hello World\nSoft Link (Symbolic Link)\nDefinition: A soft link (or symbolic link) is a special file\nthat contains a reference to another file or directory in\nthe form of a path.\nCharacteristics:\nHas a different inode number and stores the path to the\ntarget file.\nBecomes a broken link if the original file is moved or\ndeleted.\nCan span different filesystems and link to directories.\nExample:\n# Create a file\necho \"Hello World\" > original.txt\n# Create a soft link\nln -s original.txt softlink.txt\n# The soft link points to the original file\ncat softlink.txt    # Outputs: Hello World"
+        ]
+    },
+    {
+        "question": "How do you run a command on Server 1 from Server 2 using SSH?",
+        "answers": [
+            "To run a command on Server 1 from Server 2 using SSH, use\nthe following command:\nssh user@server1 \"your-command-here\"\n# Example: Check disk usage on Server 1\nssh user@server1 \"df -h\"\nExplanation:\nuser is the username on Server 1.\nserver1 is the hostname or IP address of Server 1.\n\"your-command-here\" is the command you want to execute on\nServer 1.\nOptional for Automation: Set up SSH key-based authentication\nto avoid entering a password each time:\n1. Generate SSH Key Pair on Server 2:\nssh-keygen -t rsa -b 2048\n2. Copy the Public Key to Server 1:\nssh-copy-id user@server1\n3. Run Commands Without Password:\nssh user@server1 \"your-command-here\""
+        ]
     }
 ]

@@ -1,31 +1,16 @@
 [
-
     {
-
         "question": "What is the difference between Shallow Copy and Deep Copy?",
-
         "answers": [
-
             "Shallow Copy:",
-
-            "  • A shallow copy creates a new object but does not creep copy."
-
+            "  • A shallow copy creates a new object but does not deep copy."
         ]
-
     },
-
     {
-
         "question": "What is the difference between Authentication and Authorization?",
-
         "answers": [
-
             "Authentication:",
-
-            "  • Authentication is the process of verify"
-
+            "  • Authentication is the process of verifying identity."
         ]
-
-    },
-
+    }
 ]

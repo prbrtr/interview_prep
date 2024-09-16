@@ -1,29 +1,11 @@
 [
-
     {
-
         "question": "What is the difference between Shallow Copy and Deep Copy?",
-
         "answers": [
-
-            "Shallow Copy:",
-
-            "   A shallow copy creates a new object but does not create copies of nested objects. Instead, it references the original nested objects.",
-
-            "  Modifying the nested objects in the shallow copy will affect the original object because they both reference the same nested objects.",
-
-            "   Usage: You use `copy.copy(original_object)` from the `copy` module to create a shallow copy.",
-
-            "Deep Copy:",
-
-            "   A deep copy creates a new object and recursively creates copies of all objects found within the original object, resulting in a completely independent object.",
-
-            "   Modifying the nested objects in the deep copy will not affect the original object, as they are completely separate.",
-
-            "  Usage: You use `copy.deepcopy(original_object)` from the `copy` module to create a deep copy."
-
+            "Shallow Copy:\nA shallow copy creates a new object but does not create copies of nested objects.\nInstead, it references the original nested objects.\n",
+            "Modifying the nested objects in the shallow copy will affect the original object\nbecause they both reference the same nested objects.\n",
+            "Deep Copy:\nA deep copy creates a new object and recursively creates copies of all objects found within the original object,\nresulting in a completely independent object.\n",
+            "Modifying the nested objects in the deep copy will not affect the original object,\nas they are completely separate.\n"
         ]
-
-    },
-
+    }
 ]

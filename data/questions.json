@@ -1,14 +1,14 @@
 [
     {
-        "question": "What is the difference between Shallow Copy and Deep Copy?",
+        "question": "What is Deep Copy and Shallow Copy?",
         "answers": [
-            "Shallow Copy:\nA shallow copy creates a new object, but it only copies the references of nested objects (if any) in the original object.\nThis means that while the outer object is a new instance, the nested objects are not copied and are shared between the original and copied object.\nIf you modify a nested object in the shallow copy, it will affect the same object in the original.\nUsage: You can use `copy.copy()` from the `copy` module to create a shallow copy in Python.\nExample:\n```python\nimport copy\nlist1 = [[1, 2, 3], [4, 5, 6]]\nlist2 = copy.copy(list1)\nlist2[0][0] = 'X'\n# This change affects list1 as well because both list1 and list2 share the same inner lists.\n```",
-            
-            "Shallow Copy Use Case:\nA shallow copy is useful when you want to make a new object that shares some structure with the original, especially for non-mutable objects.\nFor instance, if you have a large structure but only a small part of it is mutable, you may not want the overhead of copying the entire structure.\nHowever, caution is necessary when working with mutable objects within the shallow copy, as changes to shared objects will be reflected in both copies.\nThis can lead to unintended side effects.\n",
-
-            "Deep Copy:\nA deep copy creates a completely independent copy of the original object.\nIt recursively copies all nested objects, so the new object and all of its sub-objects are fully independent of the original.\nModifications to the deep copy will not affect the original, and vice versa.\nUsage: You use `copy.deepcopy()` from the `copy` module to create a deep copy in Python.\nExample:\n```python\nimport copy\nlist1 = [[1, 2, 3], [4, 5, 6]]\nlist2 = copy.deepcopy(list1)\nlist2[0][0] = 'X'\n# This change does not affect list1 because list1 and list2 are completely independent.\n```",
-
-            "Deep Copy Use Case:\nA deep copy is essential when you need an entirely new object with no shared references to the original.\nIt is especially useful in situations where the data structure contains many nested mutable objects that need to be altered independently.\nHowever, creating a deep copy can be more expensive in terms of memory and performance, particularly for large or complex objects, as every element is duplicated.\nCare should be taken when deciding whether a deep copy is necessary or whether a shallow copy suffices."
+            "In Python, Shallow Copy creates a new object but still\nreferences the original data inside it. So, changes to the\nshallow copy affect the original object.\nA Deep Copy makes a completely independent copy of the\noriginal object, including all nested objects. Changes made\nto the deep copy don't affect the original object.\nCode Example:\nimport copy\noriginal_list = [[1, 2], [3, 4]]\nshallow_copy = copy.copy(original_list)\ndeep_copy = copy.deepcopy(original_list)\nshallow_copy[0][0] = 100\ndeep_copy[1][0] = 200\nprint(\"Original:\", original_list)   # [[100, 2], [3, 4]]\nprint(\"Shallow:\", shallow_copy)     # [[100, 2], [3, 4]]\nprint(\"Deep:\", deep_copy)           # [[1, 2], [200, 4]]\nHere, changing the shallow copy affects the original, but\nchanging the deep copy does not."
+        ]
+    },
+    {
+        "question": "Authorization vs. Authentication?",
+        "answers": [
+            "Authentication is the process of verifying the identity of a\nuser or system. It answers the question, \"Who are you?\" This\nis typically done through methods such as usernames and\npasswords, biometrics, or security tokens. Authorization, on\nthe other hand, determines what an authenticated user or\nsystem is allowed to do. It answers the question, \"What are\nyou allowed to do?\" Authorization is concerned with\npermissions and access control, defining what resources or\nactions an authenticated user can access or perform."
         ]
     }
 ]

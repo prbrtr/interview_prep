@@ -8,19 +8,19 @@
 
             "Shallow Copy:",
 
-            "  • A shallow copy creates a new object but does not create copies of nested objects. Instead, it references the original nested objects.",
+            "   A shallow copy creates a new object but does not create copies of nested objects. Instead, it references the original nested objects.",
 
-            "  • Modifying the nested objects in the shallow copy will affect the original object because they both reference the same nested objects.",
+            "  Modifying the nested objects in the shallow copy will affect the original object because they both reference the same nested objects.",
 
-            "  • Usage: You use `copy.copy(original_object)` from the `copy` module to create a shallow copy.",
+            "   Usage: You use `copy.copy(original_object)` from the `copy` module to create a shallow copy.",
 
             "Deep Copy:",
 
-            "  • A deep copy creates a new object and recursively creates copies of all objects found within the original object, resulting in a completely independent object.",
+            "   A deep copy creates a new object and recursively creates copies of all objects found within the original object, resulting in a completely independent object.",
 
-            "  • Modifying the nested objects in the deep copy will not affect the original object, as they are completely separate.",
+            "   Modifying the nested objects in the deep copy will not affect the original object, as they are completely separate.",
 
-            "  • Usage: You use `copy.deepcopy(original_object)` from the `copy` module to create a deep copy."
+            "  Usage: You use `copy.deepcopy(original_object)` from the `copy` module to create a deep copy."
 
         ]
 

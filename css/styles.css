@@ -1,15 +1,24 @@
+:root {
+    --primary: #3DCFD3;
+    --secondary: black;
+    --dark: #161616;
+    --pure: #FFFFFF;
+    --ternary: #898989;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: var(--pure);
+    color: var(--dark);
 }
 
 .container {
     width: 90%;
     max-width: 700px;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: var(--pure);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -18,66 +27,83 @@ body {
 h1 {
     font-size: 24px;
     text-align: center;
-    color: #333;
+    color: var(--dark);
 }
 
-#question-area, #answer-area {
+.question-section {
     margin-bottom: 20px;
 }
 
-/* Question and answer boxes with scrolling for large content */
 .question-box, .answer-box {
-    border: 1px solid #ccc;
+    border: 1px solid var(--ternary);
     padding: 15px;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: var(--primary);
     font-size: 18px;
-    max-height: 400px; /* Limit height for large content */
-    overflow-y: auto; /* Add scroll for overflow */
-    white-space: pre-wrap; /* Preserve line breaks and wrapping */
-    word-wrap: break-word; /* Break long words */
+    max-height: 400px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: var(--dark);
 }
 
-/* Controls for buttons */
 #controls {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 button {
     padding: 10px 15px;
-    background-color: #4CAF50;
+    background-color: var(--primary);
     border: none;
-    color: white;
+    color: var(--pure);
     border-radius: 5px;
     cursor: pointer;
     margin: 5px;
-    flex: 1 1 48%; /* Adjust button width for smaller screens */
+    flex: 1 1 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+button i {
+    margin-right: 5px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: var(--ternary);
 }
 
-/* Styling for the answer area */
 #answer {
     font-family: monospace;
-    word-wrap: break-word; /* Ensure long words break */
-    overflow-y: auto; /* Enable vertical scrolling */
-    white-space: pre-wrap; /* Preserve whitespace and wrap text */
-    max-width: 100%; /* Ensure text stays within container width */
-    height: auto; /* Allow the container to grow with the content */
-    max-height: 400px; /* Limit the maximum height with scrolling */
+    word-wrap: break-word;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
     padding: 10px;
-    background-color: #eef; /* Subtle background for answers */
+    background-color: var(--pure);
+    color: var(--dark);
 }
 
-/* Styling for correct answer count and reviewed questions */
-#correct-count, #reviewed-questions {
-    padding: 10px;
-    border: 1px solid #ddd;
+#stats {
+    font-size: 16px;
+    color: var(--ternary);
+    margin-top: 20px;
+}
+
+#reviewed-questions {
+    margin-top: 20px;
+}
+
+#reviewed-questions h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--dark);
 }
 
 #reviewed-questions ul {
@@ -89,7 +115,17 @@ button:hover {
     margin-bottom: 5px;
 }
 
-/* Mobile adjustments */
+.all-questions-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.all-questions-buttons button {
+    flex: 1 1 48%;
+}
+
 @media only screen and (max-width: 600px) {
     .container {
         width: 100%;
@@ -105,8 +141,8 @@ button:hover {
     }
 
     #controls {
-        flex-direction: column; /* Stack buttons vertically on small screens */
-        align-items: stretch; /* Full width buttons on small screens */
+        flex-direction: column;
+        align-items: stretch;
     }
 
     button {
@@ -115,6 +151,6 @@ button:hover {
     }
 
     #answer {
-        font-size: 14px; /* Smaller font for better readability on mobile */
+        font-size: 14px;
     }
 }

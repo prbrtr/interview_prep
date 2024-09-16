@@ -220,5 +220,41 @@
         "answers": [
             "To run a command on Server 1 from Server 2 using SSH, use\nthe following command:\nssh user@server1 \"your-command-here\"\n# Example: Check disk usage on Server 1\nssh user@server1 \"df -h\"\nExplanation:\nuser is the username on Server 1.\nserver1 is the hostname or IP address of Server 1.\n\"your-command-here\" is the command you want to execute on\nServer 1.\nOptional for Automation: Set up SSH key-based authentication\nto avoid entering a password each time:\n1. Generate SSH Key Pair on Server 2:\nssh-keygen -t rsa -b 2048\n2. Copy the Public Key to Server 1:\nssh-copy-id user@server1\n3. Run Commands Without Password:\nssh user@server1 \"your-command-here\""
         ]
+    },
+    {
+        "question": "Solve through regular expression, lambda expression, and normal with Python.",
+        "answers": [
+            "1. Inp = 'welcome'\nOut = 'wlcom'\n\nNormal Python:\nresult = ''.join([ch for ch in 'welcome' if ch not in\n'aeiou'])\nLambda:\nresult = ''.join(list(filter(lambda ch: ch not in 'aeiou',\n'welcome')))\nRegex:\nimport re\nresult = re.sub(r'[aeiou]', '', 'welcome')"
+        ]
+    },
+    {
+        "question": "Inp = [a, aa, aaa, aaaa]",
+        "answers": [
+            "Out = [1a, 2a, 3a, 4a]\n\nNormal Python:\nresult = [f'{i + 1}a' for i in range(len(['a', 'aa', 'aaa',\n'aaaa']))]\nLambda:\nresult = list(map(lambda i: f'{i + 1}a', range(len(['a',\n'aa', 'aaa', 'aaaa'])))"
+        ]
+    },
+    {
+        "question": "Inp = [ab12, ab13, bda53, abv65]",
+        "answers": [
+            "Out = [ab, ab, bda, abv]\n\nNormal Python:\nresult = [i[:3] for i in ['ab12', 'ab13', 'bda53', 'abv65']]\nLambda:\nresult = list(map(lambda s: s[:3], ['ab12', 'ab13', 'bda53',\n'abv65']))\nRegex:\nimport re\nresult = [re.match(r'[a-z]+', i).group() for i in ['ab12',\n'ab13', 'bda53', 'abv65']]"
+        ]
+    },
+    {
+        "question": "x = {a:6, b:7}, y = {c:5, a:8}",
+        "answers": [
+            "Output = {a:14, b:7, c:5}\n\nNormal Python:\nx = {'a': 6, 'b': 7}\ny = {'c': 5, 'a': 8}\nresult = {k: x.get(k, 0) + y.get(k, 0) for k in set(x) |\nset(y)}\nLambda:\nresult = {k: (lambda a, b: a + b if a and b else a or\nb)(x.get(k), y.get(k)) for k in set(x) | set(y)}"
+        ]
+    },
+    {
+        "question": "Print the pattern:",
+        "answers": [
+            "1\n12\n123\n321\n4321\n12345\n\nfor i in range(1, 6):\nprint(''.join(map(str, range(1, i + 1))))\nif i >= 3:\nprint(''.join(map(str, range(i, 0, -1))))"
+        ]
+    },
+    {
+        "question": "Str1 = 'UST is software company located in Whitefield. You can come by metro from pattandur agrahara. And by bus also'",
+        "answers": [
+            "Str2 = 'you can enter through Nexus mall'\n1. Common words in both strings\n2. Remove duplicate words from both strings\n3. Print output vertically and horizontally\n\n1. Common words:\nstr1_words = set(Str1.lower().split())\nstr2_words = set(Str2.lower().split())\ncommon_words = str1_words.intersection(str2_words)\nprint(common_words)\n2. Remove duplicates:\nunique_str1 = ' '.join(set(Str1.split()))\nunique_str2 = ' '.join(set(Str2.split()))\nprint(unique_str1)\nprint(unique_str2)\n3. Vertical & Horizontal print:\n# Horizontal\nprint(f\"Horizontal:\\n{unique_str1} \\n{unique_str2}\")\n# Vertical\nprint(\"\\nVertical:\")\nfor word in unique_str1.split():\nprint(word)"
+        ]
     }
 ]

@@ -12,7 +12,7 @@ body {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -25,16 +25,20 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Question and answer boxes with scrolling for large content */
 .question-box, .answer-box {
     border: 1px solid #ccc;
     padding: 15px;
     border-radius: 5px;
     background-color: #f9f9f9;
     font-size: 18px;
+    max-height: 400px; /* Limit height for large content */
+    overflow-y: auto; /* Add scroll for overflow */
+    white-space: pre-wrap; /* Preserve line breaks and wrapping */
+    word-wrap: break-word; /* Break long words */
 }
 
-
-
+/* Controls for buttons */
 #controls {
     display: flex;
     justify-content: space-between;
@@ -52,29 +56,37 @@ button {
     margin: 5px;
     flex: 1 1 48%; /* Adjust button width for smaller screens */
 }
-#answer {
-    font-family: monospace;
-    word-wrap: break-word; /* Ensures long words break */
-    overflow-y: auto; /* Allow vertical scrolling */
-    white-space: pre-wrap; /* Maintain whitespace and wrap text */
-    max-width: 100%; /* Keep text inside container width */
-    height: auto; /* Allow the container to grow with the content */
-    max-height: 400px; /* Maximum height with scrolling */
-    padding: 10px;
-    background-color: #eef; /* Subtle background for answers */
-}
+
 button:hover {
     background-color: #45a049;
 }
 
-#stats {
-    font-size: 16px;
-    color: #555;
+/* Styling for the answer area */
+#answer {
+    font-family: monospace;
+    word-wrap: break-word; /* Ensure long words break */
+    overflow-y: auto; /* Enable vertical scrolling */
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+    max-width: 100%; /* Ensure text stays within container width */
+    height: auto; /* Allow the container to grow with the content */
+    max-height: 400px; /* Limit the maximum height with scrolling */
+    padding: 10px;
+    background-color: #eef; /* Subtle background for answers */
+}
+
+/* Styling for correct answer count and reviewed questions */
+#correct-count, #reviewed-questions {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+#reviewed-questions ul {
+    list-style-type: square;
+    padding-left: 20px;
 }
 
 #reviewed-questions li {
     margin-bottom: 5px;
-    list-style-type: square;
 }
 
 /* Mobile adjustments */
@@ -93,7 +105,7 @@ button:hover {
     }
 
     #controls {
-        flex-direction: column; /* Stack buttons vertically */
+        flex-direction: column; /* Stack buttons vertically on small screens */
         align-items: stretch; /* Full width buttons on small screens */
     }
 

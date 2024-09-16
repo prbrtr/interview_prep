@@ -12,6 +12,7 @@ body {
     padding: 0;
     background-color: var(--pure);
     color: var(--dark);
+    text-align: center; /* Center text by default */
 }
 
 .container {
@@ -22,15 +23,15 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Left-align text within the container for readability */
 }
 
 h1 {
     font-size: 24px;
-    text-align: center;
-    color: var(--dark);
+    color: var(--primary);
 }
 
-.question-section {
+.note-section {
     margin-bottom: 20px;
 }
 
@@ -38,18 +39,18 @@ h1 {
     border: 1px solid var(--ternary);
     padding: 15px;
     border-radius: 5px;
-    background-color: var(--primary);
+    background-color: var(--pure);
     font-size: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    color: var(--dark);
+    margin: 0 auto; /* Center the boxes within the container */
+    max-width: 100%; /* Ensure the boxes do not exceed container width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    word-wrap: break-word; /* Ensure long words break and do not overflow */
+    overflow-wrap: break-word; /* Handle long words more effectively */
 }
 
 #controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 20px;
 }
@@ -63,47 +64,21 @@ button {
     cursor: pointer;
     margin: 5px;
     flex: 1 1 48%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-}
-
-button i {
-    margin-right: 5px;
+    text-align: center;
 }
 
 button:hover {
-    background-color: var(--ternary);
-}
-
-#answer {
-    font-family: monospace;
-    word-wrap: break-word;
-    overflow-y: auto;
-    white-space: pre-wrap;
-    max-width: 100%;
-    height: auto;
-    max-height: 400px;
-    padding: 10px;
-    background-color: var(--pure);
-    color: var(--dark);
+    background-color: #45a049;
 }
 
 #stats {
     font-size: 16px;
     color: var(--ternary);
-    margin-top: 20px;
+    text-align: center;
 }
 
 #reviewed-questions {
     margin-top: 20px;
-}
-
-#reviewed-questions h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: var(--dark);
 }
 
 #reviewed-questions ul {
@@ -111,21 +86,21 @@ button:hover {
     padding-left: 20px;
 }
 
-#reviewed-questions li {
-    margin-bottom: 5px;
-}
-
 .all-questions-buttons {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .all-questions-buttons button {
-    flex: 1 1 48%;
+    background-color: var(--secondary);
+    color: var(--pure);
+    padding: 10px 20px;
 }
 
+.all-questions-buttons button:hover {
+    background-color: var(--ternary);
+}
+
+/* Mobile adjustments */
 @media only screen and (max-width: 600px) {
     .container {
         width: 100%;
@@ -150,7 +125,7 @@ button:hover {
         margin: 10px 0;
     }
 
-    #answer {
+    #stats {
         font-size: 14px;
     }
 }

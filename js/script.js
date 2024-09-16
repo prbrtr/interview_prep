@@ -14,18 +14,26 @@ let correctCount = 0;
 let reviewedQuestions = [];
 
 // Fetch questions from the JSON file
-fetch('data/questions.json') // Ensure this is the correct path
+fetch('data/questions.json')
     .then(response => response.json())
     .then(data => {
         questions = data;
+    })
+    .catch(error => {
+        console.error('Error fetching questions:', error);
+        questionDiv.innerHTML = `<strong>Error:</strong> Unable to fetch questions at this time.`;
     });
 
 // Show a random question when "Ask Question" is clicked
 askBtn.addEventListener('click', () => {
-    const randomIndex = Math.floor(Math.random() * questions.length);
-    currentQuestion = questions[randomIndex];
-    questionDiv.innerHTML = `<strong>Question:</strong> ${currentQuestion.question}`;
-    answerDiv.innerHTML = ''; // Clear previous answer
+    if (questions.length > 0) {
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        currentQuestion = questions[randomIndex];
+        questionDiv.innerHTML = `<strong>Question:</strong> ${currentQuestion.question}`;
+        answerDiv.innerHTML = ''; // Clear previous answer
+    } else {
+        questionDiv.innerHTML = '<strong>Error:</strong> No questions available.';
+    }
 });
 
 // Show the answer when "Show Answer" is clicked

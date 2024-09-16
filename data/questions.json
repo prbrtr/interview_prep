@@ -10,5 +10,89 @@
         "answers": [
             "Authentication is the process of verifying the identity of a\nuser or system. It answers the question, \"Who are you?\" This\nis typically done through methods such as usernames and\npasswords, biometrics, or security tokens. Authorization, on\nthe other hand, determines what an authenticated user or\nsystem is allowed to do. It answers the question, \"What are\nyou allowed to do?\" Authorization is concerned with\npermissions and access control, defining what resources or\nactions an authenticated user can access or perform."
         ]
+    },
+    {
+        "question": "List vs Tuple?",
+        "answers": [
+            "List:\n\u2022 Mutable: Can be modified after creation (e.g., add/remove\nelements).\n\u2022 Syntax: Square brackets [].\n\u2022 Example: my_list = [1, 2, 3]\nTuple:\n\u2022 Immutable: Cannot be modified after creation.\n\u2022 Syntax: Parentheses ().\n\u2022 Example: my_tuple = (1, 2, 3)"
+        ]
+    },
+    {
+        "question": "Push vs Pop?",
+        "answers": [
+            "Push:\n\u2022 Adds an element to the top of a stack.\n\u2022 Example: stack.append(10)\nPop:\n\u2022 Removes and returns the top element from the stack.\n\u2022 Example: top_element = stack.pop()"
+        ]
+    },
+    {
+        "question": "Implicit Wait vs Explicit Wait?",
+        "answers": [
+            "Implicit Wait:\n\u2022 WebDriver waits for a specified time for an element before\nthrowing an exception.\n\u2022 Applies to all elements globally in the script.\n\u2022 Example: driver.implicitly_wait(10)\nExplicit Wait:\n\u2022 WebDriver waits for a specific condition (e.g., element\nbeing clickable).\n\u2022 Targeted to specific elements.\n\u2022 Example: element = WebDriverWait(driver,\n10).until(EC.element_to_be_clickable((By.ID, 'submit')))"
+        ]
+    },
+    {
+        "question": "XPath vs CSS Selector?",
+        "answers": [
+            "XPath:\n\u2022 Can navigate through elements in an XML structure.\n\u2022 Example: element =\ndriver.find_element_by_xpath(\"//div[@id='content']\")\nCSS Selector:\n\u2022 Generally faster and preferred for locating elements based\non style attributes.\n\u2022 Example: element =\ndriver.find_element_by_css_selector(\"div#content\")"
+        ]
+    },
+    {
+        "question": "Page Object Model (POM)?",
+        "answers": [
+            "A design pattern in Selenium that creates an object\nrepository for storing all web elements. It improves code\nmaintenance and reduces code duplication by representing UI\nelements as objects."
+        ]
+    },
+    {
+        "question": "Fibonacci Series?",
+        "answers": [
+            "A sequence where each number is the sum of the two preceding\nones, starting from 0 and 1.\nExample:\ndef fibonacci(n):\na, b = 0, 1\nsequence = []\nfor _ in range(n):\nsequence.append(a)\na, b = b, a + b\nreturn sequence\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13,\n21, 34]"
+        ]
+    },
+    {
+        "question": "Remove Vowels from a String?",
+        "answers": [
+            "Remove all vowels from a given string.\nExample:\ndef remove_vowels(s):\nvowels = \"aeiouAEIOU\"\nreturn ''.join([char for char in s if char not in vowels])\nprint(remove_vowels(\"Automation Testing\"))  # Output: \"tmtn\nTstng\""
+        ]
+    },
+    {
+        "question": "Return Sum of Even Numbers?",
+        "answers": [
+            "Calculate the sum of all even numbers in a given list.\nExample:\ndef sum_of_evens(lst):\nreturn sum(num for num in lst if num % 2 == 0)\nprint(sum_of_evens([1, 2, 3, 4, 5, 6]))  # Output: 12"
+        ]
+    },
+    {
+        "question": "Binary Tree?",
+        "answers": [
+            "A data structure where each node has at most two children.\nUsed for efficient searching and sorting."
+        ]
+    },
+    {
+        "question": "Heap Tree?",
+        "answers": [
+            "A special type of binary tree where the parent node is\neither greater (max heap) or less (min heap) than its\nchildren. Used to implement priority queues."
+        ]
+    },
+    {
+        "question": "Find Largest Number in Linked List?",
+        "answers": [
+            "Iterate through the linked list to find the largest number.\nExample:\nclass Node:\ndef __init__(self, data):\nself.data = data\nself.next = None\ndef find_largest(head):\nlargest = head.data\nwhile head:\nif head.data > largest:\nlargest = head.data\nhead = head.next\nreturn largest\n# Linked list: 1 -> 5 -> 3 -> 9 -> 2\nhead = Node(1)\nhead.next = Node(5)\nhead.next.next = Node(3)\nhead.next.next.next = Node(9)\nhead.next.next.next.next = Node(2)\nprint(find_largest(head))  # Output: 9"
+        ]
+    },
+    {
+        "question": "Extract Numbers from String Using Regex and Sum Them?",
+        "answers": [
+            "Use regular expressions to find all numbers in a string and\nsum them.\nExample:\nimport re\ndef sum_numbers(s):\nnumbers = re.findall(r'\\d+', s)\nreturn sum(map(int, numbers))\ns = \"giuwh55kdhkuw88nsbhksw51545\"\nprint(sum_numbers(s))  # Output: 51688"
+        ]
+    },
+    {
+        "question": "What is a Generator?",
+        "answers": [
+            "A generator is a function that returns an iterator that\nyields a sequence of values using the yield keyword.\nExample:\ndef my_generator():\nyield 1\nyield 2\nyield 3\ngen = my_generator()\nprint(next(gen))  # Output: 1\nprint(next(gen))  # Output: 2"
+        ]
+    },
+    {
+        "question": "What is an Interface?",
+        "answers": [
+            "An interface in Python is often represented by abstract base\nclasses (ABCs) in the abc module. An interface contains\nabstract methods that must be implemented by any class that\ninherits it."
+        ]
     }
 ]

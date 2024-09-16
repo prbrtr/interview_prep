@@ -8,19 +8,7 @@
 
             "Shallow Copy:",
 
-            "  • A shallow copy creates a new object but does not create copies of nested objects. Instead, it references the original nested objects.",
-
-            "  • Modifying the nested objects in the shallow copy will affect the original object because they both reference the same nested objects.",
-
-            "  • Usage: You use `copy.copy(original_object)` from the `copy` module to create a shallow copy.",
-
-            "Deep Copy:",
-
-            "  • A deep copy creates a new object and recursively creates copies of all objects found within the original object, resulting in a completely independent object.",
-
-            "  • Modifying the nested objects in the deep copy will not affect the original object, as they are completely separate.",
-
-            "  • Usage: You use `copy.deepcopy(original_object)` from the `copy` module to create a deep copy."
+            "  • A shallow copy creates a new object but does not creep copy."
 
         ]
 
@@ -34,15 +22,7 @@
 
             "Authentication:",
 
-            "  • Authentication is the process of verifying the identity of a user or system. It answers the question 'Who are you?'",
-
-            "  • Typically involves checking credentials such as username and password, biometric data, or other security tokens.",
-
-            "Authorization:",
-
-            "  • Authorization determines what an authenticated user or system is allowed to do. It answers the question 'What are you allowed to do?'",
-
-            "  • It involves setting permissions and access levels based on roles, policies, and user attributes."
+            "  • Authentication is the process of verify"
 
         ]
 

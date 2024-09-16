@@ -46,6 +46,15 @@ h1 {
     box-sizing: border-box; /* Include padding and border in element's total width and height */
     word-wrap: break-word; /* Ensure long words break and do not overflow */
     overflow-wrap: break-word; /* Handle long words more effectively */
+    text-align: left; /* Align text to the left inside the box */
+    height: auto; /* Allow height to grow with content */
+}
+
+#answer {
+    max-height: 400px; /* Set a maximum height for the answer box */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+    background-color: #eef; /* Subtle background for answers */
 }
 
 #controls {

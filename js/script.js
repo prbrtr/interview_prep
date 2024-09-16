@@ -7,6 +7,8 @@ const questionDiv = document.getElementById('question');
 const answerDiv = document.getElementById('answer');
 const correctCountDiv = document.getElementById('correct-count');
 const reviewedQuestionsDiv = document.getElementById('reviewed-questions');
+const allQuestionsBtn = document.getElementById('all-questions-btn');
+const allQuestionsAnswersBtn = document.getElementById('all-questions-answers-btn');
 
 let currentQuestion = null;
 let lastQuestion = null;  // To track the last question shown
@@ -60,6 +62,32 @@ reviewBtn.addEventListener('click', () => {
     if (currentQuestion && !reviewedQuestions.includes(currentQuestion.question)) {
         reviewedQuestions.push(currentQuestion.question);
         reviewedQuestionsDiv.innerHTML = `Reviewed Questions:<ul>${reviewedQuestions.map(q => `<li>${q}</li>`).join('')}</ul>`;
+    }
+});
+
+// Show all questions when "Show All Questions" is clicked
+allQuestionsBtn.addEventListener('click', () => {
+    if (questions.length > 0) {
+        const allQuestionsHtml = questions.map(q => `<li>${q.question}</li>`).join('');
+        questionDiv.innerHTML = `<strong>All Questions:</strong><ul>${allQuestionsHtml}</ul>`;
+        answerDiv.innerHTML = ''; // Clear previous answers
+    } else {
+        questionDiv.innerHTML = '<strong>Error:</strong> No questions available.';
+    }
+});
+
+// Show all questions with answers when "Show All Questions with Answers" is clicked
+allQuestionsAnswersBtn.addEventListener('click', () => {
+    if (questions.length > 0) {
+        const allQuestionsAnswersHtml = questions.map(q => {
+            const answersHtml = q.answers.map(answer => `<pre>${escapeHtml(answer)}</pre>`).join('<hr>');
+            return `<li><strong>${q.question}</strong><br>${answersHtml}</li>`;
+        }).join('<hr>');  // Join questions with a separator (optional)
+        
+        questionDiv.innerHTML = `<strong>All Questions with Answers:</strong><ul>${allQuestionsAnswersHtml}</ul>`;
+        answerDiv.innerHTML = ''; // Clear previous answers
+    } else {
+        questionDiv.innerHTML = '<strong>Error:</strong> No questions available.';
     }
 });
 

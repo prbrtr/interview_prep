@@ -10,8 +10,9 @@ const reviewedQuestionsDiv = document.getElementById('reviewed-questions');
 const allQuestionsBtn = document.getElementById('all-questions-btn');
 const allQuestionsAnswersBtn = document.getElementById('all-questions-answers-btn');
 
-// New elements for "Write Answer" functionality
+// New elements for "Write Answer" and "Open Online Editor" functionality
 const writeAnswerBtn = document.getElementById('write-answer-btn');
+const openEditorBtn = document.getElementById('open-editor-btn');
 const answerTextarea = document.getElementById('answer-textarea');
 
 let currentQuestion = null;
@@ -100,6 +101,11 @@ allQuestionsAnswersBtn.addEventListener('click', () => {
 // Show the textarea when "Write Answer" button is clicked
 writeAnswerBtn.addEventListener('click', () => {
     answerTextarea.style.display = 'block';  // Display the textarea
+});
+
+// Open the online editor when the play button is clicked
+openEditorBtn.addEventListener('click', () => {
+    window.open('https://www.onlinegdb.com/', '_blank');  // Opens the editor in a new tab
 });
 
 // Function to escape HTML entities

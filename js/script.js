@@ -10,6 +10,10 @@ const reviewedQuestionsDiv = document.getElementById('reviewed-questions');
 const allQuestionsBtn = document.getElementById('all-questions-btn');
 const allQuestionsAnswersBtn = document.getElementById('all-questions-answers-btn');
 
+// New elements for "Write Answer" functionality
+const writeAnswerBtn = document.getElementById('write-answer-btn');
+const answerTextarea = document.getElementById('answer-textarea');
+
 let currentQuestion = null;
 let lastQuestion = null;  // To track the last question shown
 let correctCount = 0;
@@ -33,6 +37,8 @@ askBtn.addEventListener('click', () => {
         currentQuestion = questions[randomIndex];
         questionDiv.innerHTML = `<strong>Question:</strong> ${currentQuestion.question}`;
         answerDiv.innerHTML = ''; // Clear previous answer
+        answerTextarea.style.display = 'none';  // Hide textarea when a new question is asked
+        answerTextarea.value = '';  // Clear the textarea
     } else {
         questionDiv.innerHTML = '<strong>Error:</strong> No questions available.';
     }
@@ -89,6 +95,11 @@ allQuestionsAnswersBtn.addEventListener('click', () => {
     } else {
         questionDiv.innerHTML = '<strong>Error:</strong> No questions available.';
     }
+});
+
+// Show the textarea when "Write Answer" button is clicked
+writeAnswerBtn.addEventListener('click', () => {
+    answerTextarea.style.display = 'block';  // Display the textarea
 });
 
 // Function to escape HTML entities

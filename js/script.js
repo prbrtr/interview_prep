@@ -46,6 +46,10 @@ askBtn.addEventListener('click', () => {
         answerDiv.innerHTML = ''; // Clear previous answer
         answerTextarea.style.display = 'none';  // Hide textarea when a new question is asked
         answerTextarea.value = '';  // Clear the textarea
+
+        // Hide Python code editor and iframe
+        codeTextarea.style.display = 'none';
+        tutorFrame.style.display = 'none';
     } else {
         questionDiv.innerHTML = '<strong>Error:</strong> No questions available.';
     }
@@ -125,4 +129,4 @@ function escapeHtml(text) {
         "'": '&#039;'
     };
     return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-    }
+}

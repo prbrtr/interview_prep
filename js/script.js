@@ -13,6 +13,7 @@ const allQuestionsAnswersBtn = document.getElementById('all-questions-answers-bt
 // New elements for "Write Answer" and "Run Python Code" functionality
 const writeAnswerBtn = document.getElementById('write-answer-btn');
 const openEditorBtn = document.getElementById('open-editor-btn');
+const runCodeBtn = document.getElementById('run-code-btn');  // New "Run Code" button
 const answerTextarea = document.getElementById('answer-textarea');
 const codeTextarea = document.getElementById('code');  // Python code textarea
 const tutorFrame = document.getElementById('tutorFrame');  // Python Tutor iframe
@@ -25,6 +26,7 @@ let reviewedQuestions = [];
 // Initially hide the Python code textarea and iframe
 codeTextarea.style.display = 'none';
 tutorFrame.style.display = 'none';
+runCodeBtn.style.display = 'none';  // Initially hide the "Run Code" button
 
 // Fetch questions from the JSON file
 fetch('data/questions.json')
@@ -50,6 +52,7 @@ askBtn.addEventListener('click', () => {
         // Hide Python code editor and iframe
         codeTextarea.style.display = 'none';
         tutorFrame.style.display = 'none';
+        runCodeBtn.style.display = 'none';  // Hide the "Run Code" button
     } else {
         questionDiv.innerHTML = '<strong>Error:</strong> No questions available.';
     }
@@ -113,20 +116,36 @@ writeAnswerBtn.addEventListener('click', () => {
     answerTextarea.style.display = 'block';  // Display the textarea
 });
 
-// Show the Python code editor and iframe when "Run Python Code" button is clicked
+// Show the Python code editor and "Run Code" button when "Run Python Code" button is clicked
 openEditorBtn.addEventListener('click', () => {
     codeTextarea.style.display = 'block';  // Show the Python code textarea
     tutorFrame.style.display = 'block';  // Show the Python Tutor iframe
+    runCodeBtn.style.display = 'inline-block';  // Show the "Run Code" button
 });
 
-// Function to escape HTML entities
+// Run the Python code and display the result in the Python Tutor iframe
+runCodeBtn.addEventListener('click', () => {
+    const userCode = codeTextarea.value;
+
+    // Construct the Python Tutor iframe URL
+    const encodedCode = encodeURIComponent(userCode);
+    const tutorUrl = `https://pythontutor.com/iframe-embed.html#code=${encodedCode}&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=3&curInstr=0`;
+
+    // Set the iframe's source to the constructed URL
+    tutorFrame.src = tutorUrl;
+
+    // Display the iframe with the result
+    tutorFrame.style.display = 'block';
+});
+
+// Function to escape HTML special characters for display purposes
 function escapeHtml(text) {
-    var map = {
+    const map = {
         '&': '&amp;',
         '<': '&lt;',
         '>': '&gt;',
         '"': '&quot;',
         "'": '&#039;'
     };
-    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    return text.replace(/[&<>"']/g, m => map[m]);
 }

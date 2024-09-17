@@ -18,6 +18,12 @@
             <div id="question" class="question-box"></div>
             <div id="controls">
                 <button id="ask-btn"><i class="fas fa-question-circle"></i> Ask Question</button>
+
+                <!-- Buttons for opening Python Compiler and Textarea (hidden by default) -->
+                <button id="run-python-btn" style="display: none;"><i class="fas fa-play-circle"></i> Run Python Code</button>
+                <textarea id="answer-textarea" rows="4" cols="50" style="display: none;" placeholder="Write your answer here..."></textarea>
+
+                <!-- Button for showing the answer -->
                 <button id="answer-btn"><i class="fas fa-info-circle"></i> Show Answer</button>
             </div>
             <div id="answer" class="answer-box"></div>
@@ -34,6 +40,11 @@
         <div id="all-questions-buttons" class="all-questions-buttons">
             <button id="all-questions-btn"><i class="fas fa-th-list"></i> Show All Questions</button>
             <button id="all-questions-answers-btn"><i class="fas fa-book"></i> Show All Questions with Answers</button>
+        </div>
+
+        <!-- Button to write your own answer -->
+        <div id="write-answer-section">
+            <button id="write-answer-btn"><i class="fas fa-edit"></i> Write Your Own Answer</button>
         </div>
     </main>
     

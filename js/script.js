@@ -10,15 +10,21 @@ const reviewedQuestionsDiv = document.getElementById('reviewed-questions');
 const allQuestionsBtn = document.getElementById('all-questions-btn');
 const allQuestionsAnswersBtn = document.getElementById('all-questions-answers-btn');
 
-// New elements for "Write Answer" and "Open Online Editor" functionality
+// New elements for "Write Answer" and "Run Python Code" functionality
 const writeAnswerBtn = document.getElementById('write-answer-btn');
 const openEditorBtn = document.getElementById('open-editor-btn');
 const answerTextarea = document.getElementById('answer-textarea');
+const codeTextarea = document.getElementById('code');  // Python code textarea
+const tutorFrame = document.getElementById('tutorFrame');  // Python Tutor iframe
 
 let currentQuestion = null;
 let lastQuestion = null;  // To track the last question shown
 let correctCount = 0;
 let reviewedQuestions = [];
+
+// Initially hide the Python code textarea and iframe
+codeTextarea.style.display = 'none';
+tutorFrame.style.display = 'none';
 
 // Fetch questions from the JSON file
 fetch('data/questions.json')
@@ -103,9 +109,10 @@ writeAnswerBtn.addEventListener('click', () => {
     answerTextarea.style.display = 'block';  // Display the textarea
 });
 
-// Open the online editor when the play button is clicked
+// Show the Python code editor and iframe when "Run Python Code" button is clicked
 openEditorBtn.addEventListener('click', () => {
-    window.open('https://www.onlinegdb.com/', '_blank');  // Opens the editor in a new tab
+    codeTextarea.style.display = 'block';  // Show the Python code textarea
+    tutorFrame.style.display = 'block';  // Show the Python Tutor iframe
 });
 
 // Function to escape HTML entities
@@ -118,4 +125,4 @@ function escapeHtml(text) {
         "'": '&#039;'
     };
     return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-}
+    }

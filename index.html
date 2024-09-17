@@ -23,14 +23,17 @@
                 <!-- Write Answer Button -->
                 <button id="write-answer-btn"><i class="fas fa-pencil-alt"></i> Write Your Own Answer</button>
                 
-                <!-- New Play Button for Online Editor -->
-                <button id="open-editor-btn"><i class="fas fa-play-circle"></i> Open Online Editor</button>
+                <!-- Updated Button for Python Tutor Editor -->
+                <button id="open-editor-btn" onclick="embedPythonTutor()"><i class="fas fa-play-circle"></i> Run Python Code</button>
 
                 <button id="answer-btn"><i class="fas fa-info-circle"></i> Show Answer</button>
             </div>
 
-            <!-- Text area for writing custom answer -->
-            <textarea id="answer-textarea" class="answer-textarea" placeholder="Write your own answer here..." style="display: none;"></textarea>
+            <!-- Text area for writing custom Python code -->
+            <textarea id="code" class="code-textarea" rows="10" cols="50" placeholder="Write your Python code here...">print("Hello, World!")</textarea>
+
+            <!-- Iframe to display Python Tutor results -->
+            <iframe id="tutorFrame" width="100%" height="500" frameborder="0" style="margin-top: 20px;"></iframe>
 
             <div id="answer" class="answer-box"></div>
 
@@ -52,6 +55,13 @@
         </div>
     </main>
     
-    <script src="js/script.js"></script>
+    <script>
+        function embedPythonTutor() {
+            var code = encodeURIComponent(document.getElementById("code").value);
+            var iframe = document.getElementById("tutorFrame");
+            iframe.src = "about:blank"; // Clear the src to force reload
+            iframe.src = "https://pythontutor.com/iframe-embed.html#code=" + code + "&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=3&curInstr=0";
+        }
+    </script>
 </body>
 </html>

@@ -2,20 +2,30 @@
     {
         "question": "What is Deep Copy and Shallow Copy?",
         "answers": [
-            "In Python, Shallow Copy creates a new object but still\nreferences the original data inside it. So, changes to the\nshallow copy affect the original object.\nA Deep Copy makes a completely independent copy of the\noriginal object, including all nested objects. Changes made\nto the deep copy don't affect the original object.\nCode Example:\nimport copy\noriginal_list = [[1, 2], [3, 4]]\nshallow_copy = copy.copy(original_list)\ndeep_copy = copy.deepcopy(original_list)\nshallow_copy[0][0] = 100\ndeep_copy[1][0] = 200\nprint(\"Original:\", original_list)   # [[100, 2], [3, 4]]\nprint(\"Shallow:\", shallow_copy)     # [[100, 2], [3, 4]]\nprint(\"Deep:\", deep_copy)           # [[1, 2], [200, 4]]\nHere, changing the shallow copy affects the original, but\nchanging the deep copy does not."
+            "In Python, Shallow Copy creates a new object but still\nreferences the original data inside it. So, changes to the\nshallow copy affect the original object.\nA Deep Copy makes a completely independent copy of the\noriginal object, including all nested objects. Changes made\nto the deep copy don't affect the original object.\n",
+            "Code Example:\nimport copy\noriginal_list = [[1, 2], [3, 4]]\nshallow_copy = copy.copy(original_list)\ndeep_copy = copy.deepcopy(original_list)\nshallow_copy[0][0] = 100\ndeep_copy[1][0] = 200\nprint(\"Original:\", original_list)   # [[100, 2], [3, 4]]\nprint(\"Shallow:\", shallow_copy)     # [[100, 2], [3, 4]]\nprint(\"Deep:\", deep_copy)           # [[1, 2], [200, 4]]\nHere, changing the shallow copy affects the original, but\nchanging the deep copy does not."
         ]
     },
     {
         "question": "Authorization vs. Authentication?",
         "answers": [
-            "Authentication is the process of verifying the identity of a\nuser or system. It answers the question, \"Who are you?\" This\nis typically done through methods such as usernames and\npasswords, biometrics, or security tokens. Authorization, on\nthe other hand, determines what an authenticated user or\nsystem is allowed to do. It answers the question, \"What are\nyou allowed to do?\" Authorization is concerned with\npermissions and access control, defining what resources or\nactions an authenticated user can access or perform."
+            "Authentication is the process of verifying the identity of a\nuser or system. It answers the question, \"Who are you?\" This\nis typically done through methods such as usernames and\npasswords, biometrics, or security tokens. ",
+      "Authorization, on\nthe other hand, determines what an authenticated user or\nsystem is allowed to do. It answers the question, \"What are\nyou allowed to do?\" ",
+      "Authorization is concerned with\npermissions and access control, defining what resources or\nactions an authenticated user can access or perform."
         ]
     },
     {
         "question": "List vs Tuple?",
         "answers": [
-            "List:\n\u2022 Mutable: Can be modified after creation (e.g., add/remove\nelements).\n\u2022 Syntax: Square brackets [].\n\u2022 Example: my_list = [1, 2, 3]\nTuple:\n\u2022 Immutable: Cannot be modified after creation.\n\u2022 Syntax: Parentheses ().\n\u2022 Example: my_tuple = (1, 2, 3)"
-        ]
+            """List:
+• Mutable: Can be modified after creation (e.g., add/remove
+elements).
+• Syntax: Square brackets [].
+• Example: my_list = [1, 2, 3]
+Tuple:
+• Immutable: Cannot be modified after creation.
+• Syntax: Parentheses ().
+• Example: my_tuple = (1, 2, 3) ]"""
     },
     {
         "question": "Push vs Pop?",

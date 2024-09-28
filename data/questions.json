@@ -10,22 +10,14 @@
         "question": "Authorization vs. Authentication?",
         "answers": [
             "Authentication is the process of verifying the identity of a\nuser or system. It answers the question, \"Who are you?\" This\nis typically done through methods such as usernames and\npasswords, biometrics, or security tokens. ",
-      "Authorization, on\nthe other hand, determines what an authenticated user or\nsystem is allowed to do. It answers the question, \"What are\nyou allowed to do?\" ",
-      "Authorization is concerned with\npermissions and access control, defining what resources or\nactions an authenticated user can access or perform."
+            "Authorization, on\nthe other hand, determines what an authenticated user or\nsystem is allowed to do. It answers the question, \"What are\nyou allowed to do?\" ",
+            "Authorization is concerned with\npermissions and access control, defining what resources or\nactions an authenticated user can access or perform."
         ]
     },
     {
         "question": "List vs Tuple?",
-        "answers": [
-            """List:
-• Mutable: Can be modified after creation (e.g., add/remove
-elements).
-• Syntax: Square brackets [].
-• Example: my_list = [1, 2, 3]
-Tuple:
-• Immutable: Cannot be modified after creation.
-• Syntax: Parentheses ().
-• Example: my_tuple = (1, 2, 3) ]"""
+        "answers": ["List:\n\u2022 Mutable: Can be modified after creation (e.g., add/remove\nelements).\n\u2022 Memory: Its slower than tuple.\n\u2022 Syntax: Square brackets [].\n\u2022 Example: my_list = [1, 2, 3]\nTuple:\n\u2022 Immutable: Cannot be modified after creation.\n\u2022 Memory: Its faster than list.\n\u2022 Syntax: Parentheses ().\n\u2022 Example: my_tuple = (1, 2, 3)"]
+        
     },
     {
         "question": "Push vs Pop?",

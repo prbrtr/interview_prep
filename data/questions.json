@@ -244,7 +244,7 @@
         "answers": [
             "Normal Python:\nresult = ''.join([ch for ch in 'welcome' if ch not in\n'aeiou'])\nLambda:\nresult = ''.join(list(filter(lambda ch: ch not in 'aeiou',\n'welcome')))\nRegex:\nimport re\nresult = re.sub(r'[aeiou]', '', 'welcome')",
             "Normal Python:\nresult = [f'{i + 1}a' for i in range(len(['a', 'aa', 'aaa',\n'aaaa']))]\nLambda:\nresult = list(map(lambda i: f'{i + 1}a', range(len(['a',\n'aa', 'aaa', 'aaaa'])))",
-            "Normal Python:\nresult = [i[:3] for i in ['ab12', 'ab13', 'bda53', 'abv65']]\nLambda:\nresult = list(map(lambda s: s[:3], ['ab12', 'ab13', 'bda53',\n'abv65']))\nRegex:\nimport re\nresult = [re.match(r'[a-z]+', i).group() for i in ['ab12',\n'ab13', 'bda53', 'abv65']]"
+            "Normal Python:\nresult = [i[:3] for i in ['ab12', 'ab13', 'bda53', 'abv65']]\nLambda:\nresult = list(map(lambda s: s[:3], ['ab12', 'ab13', 'bda53',\n'abv65']))\nRegex:\nimport re\nresult = [re.match(r'[a-z]+', i).group() for i in ['ab12',\n'ab13', 'bda53', 'abv65']]",
             "Normal Python:\nx = {'a': 6, 'b': 7}\ny = {'c': 5, 'a': 8}\nresult = {k: x.get(k, 0) + y.get(k, 0) for k in set(x) |\nset(y)}\nLambda:\nresult = {k: (lambda a, b: a + b if a and b else a or\nb)(x.get(k), y.get(k)) for k in set(x) | set(y)}"
         ]
     },

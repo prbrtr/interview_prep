@@ -46,49 +46,58 @@
     {
         "question": "Fibonacci Series?",
         "answers": [
-            "A sequence where each number is the sum of the two preceding\nones, starting from 0 and 1.\nExample:\ndef fibonacci(n):\na, b = 0, 1\nsequence = []\nfor _ in range(n):\nsequence.append(a)\na, b = b, a + b\nreturn sequence\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13,\n21, 34]"
+            "A sequence where each number is the sum of the two preceding\nones, starting from 0 and 1.\n",
+            "Example:\ndef fibonacci(n):\n  a, b = 0, 1\n  sequence = []\n  for _ in range(n):\n    sequence.append(a)\n    a, b = b, a + b\n  return sequence\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13,\n21, 34]"
         ]
     },
     {
         "question": "Remove Vowels from a String?",
         "answers": [
-            "Remove all vowels from a given string.\nExample:\ndef remove_vowels(s):\nvowels = \"aeiouAEIOU\"\nreturn ''.join([char for char in s if char not in vowels])\nprint(remove_vowels(\"Automation Testing\"))  # Output: \"tmtn\nTstng\""
+            "Remove all vowels from a given string.\n",
+            "Example:\ndef remove_vowels(s):\n  vowels = \"aeiouAEIOU\"\n  return ''.join([char for char in s if char not in vowels])\nprint(remove_vowels(\"Automation Testing\"))  \n# Output: \"tmtnTstng\""
         ]
     },
     {
         "question": "Return Sum of Even Numbers?",
         "answers": [
-            "Calculate the sum of all even numbers in a given list.\nExample:\ndef sum_of_evens(lst):\nreturn sum(num for num in lst if num % 2 == 0)\nprint(sum_of_evens([1, 2, 3, 4, 5, 6]))  # Output: 12"
+            "Calculate the sum of all even numbers in a given list.\n",
+            "Example:\ndef sum_of_evens(lst):\n  return sum(num for num in lst if num % 2 == 0)\nprint(sum_of_evens([1, 2, 3, 4, 5, 6]))  # Output: 12"
         ]
     },
     {
         "question": "Binary Tree?",
         "answers": [
-            "A data structure where each node has at most two children.\nUsed for efficient searching and sorting."
+            "A data structure where each node has at most two children.\nUsed for efficient searching and sorting.",
+            "Binary tree : \n 3\n /\\\n6 8\nList of nodes : [Node(3), Node(6), Node(8)]\nInorder of nodes : [Node(6), Node(3), Node(8)]\nSize of tree : 3",
+            "More:https://www.javatpoint.com/binary-tree"
         ]
     },
     {
         "question": "Heap Tree?",
         "answers": [
-            "A special type of binary tree where the parent node is\neither greater (max heap) or less (min heap) than its\nchildren. Used to implement priority queues."
+            "A special type of binary tree where the parent node is\neither greater (max heap) or less (min heap) than its\nchildren. Used to implement priority queues.",
+            "More:https://www.geeksforgeeks.org/min-heap-in-python/"
         ]
     },
     {
         "question": "Find Largest Number in Linked List?",
         "answers": [
-            "Iterate through the linked list to find the largest number.\nExample:\nclass Node:\ndef __init__(self, data):\nself.data = data\nself.next = None\ndef find_largest(head):\nlargest = head.data\nwhile head:\nif head.data > largest:\nlargest = head.data\nhead = head.next\nreturn largest\n# Linked list: 1 -> 5 -> 3 -> 9 -> 2\nhead = Node(1)\nhead.next = Node(5)\nhead.next.next = Node(3)\nhead.next.next.next = Node(9)\nhead.next.next.next.next = Node(2)\nprint(find_largest(head))  # Output: 9"
+            "Iterate through the linked list to find the largest number.\n",
+            "Example:\nclass Node:\n  def __init__(self, data):\n    self.data = data\n    self.next = None\n  def find_largest(head):\n    largest = head.data\n    while head:\n      if head.data > largest:\n       largest = head.data\n        head = head.next\n    return largest\n# Linked list: 1 -> 5 -> 3 -> 9 -> 2\nhead = Node(1)\nhead.next = Node(5)\nhead.next.next = Node(3)\nhead.next.next.next = Node(9)\nhead.next.next.next.next = Node(2)\nprint(find_largest(head))  # Output: 9"
         ]
     },
     {
         "question": "Extract Numbers from String Using Regex and Sum Them?",
         "answers": [
-            "Use regular expressions to find all numbers in a string and\nsum them.\nExample:\nimport re\ndef sum_numbers(s):\nnumbers = re.findall(r'\\d+', s)\nreturn sum(map(int, numbers))\ns = \"giuwh55kdhkuw88nsbhksw51545\"\nprint(sum_numbers(s))  # Output: 51688"
+            "Use regular expressions to find all numbers in a string and\nsum them.\n",
+            "Example:\nimport re\ndef sum_numbers(s):\n  numbers = re.findall(r'\\d+', s)\n  return sum(map(int, numbers))\ns = \"giuwh55kdhkuw88nsbhksw51545\"\nprint(sum_numbers(s))  # Output: 51688"
         ]
     },
     {
         "question": "What is a Generator?",
         "answers": [
-            "A generator is a function that returns an iterator that\nyields a sequence of values using the yield keyword.\nExample:\ndef my_generator():\nyield 1\nyield 2\nyield 3\ngen = my_generator()\nprint(next(gen))  # Output: 1\nprint(next(gen))  # Output: 2"
+            "A generator is a function that returns an iterator that\nyields a sequence of values using the yield keyword.\n",
+            "Example:\ndef my_generator():\n  yield 1\n  yield 2\n  yield 3\ngen = my_generator()\nprint(next(gen))  # Output: 1\nprint(next(gen))  # Output: 2"
         ]
     },
     {
@@ -148,7 +157,10 @@
     {
         "question": "unittest vs pytest?",
         "answers": [
-            "unittest:\n\u2022 Benefits: Built-in module, well-integrated with Python,\nsupports test discovery.\n\u2022 Disadvantages: Verbose syntax, less flexible compared to\npytest.\nExample:\nimport unittest\nclass TestExample(unittest.TestCase):\ndef test_addition(self):\nself.assertEqual(1 + 1, 2)\nif __name__ == '__main__':\nunittest.main()\npytest:\n\u2022 Benefits: Simple and easy syntax, supports fixtures,\ndetailed reporting, and rich plugin ecosystem.\n\u2022 Disadvantages: Requires installation, might be less\nfamiliar to those used to unittest.\nExample:\ndef test_addition():\nassert 1 + 1 == 2"
+            "unittest:\n\u2022 Benefits: Built-in module, well-integrated with Python,\nsupports test discovery.\n\u2022 Disadvantages: Verbose syntax, less flexible compared to\npytest.\n",
+            "Example:\nimport unittest\nclass TestExample(unittest.TestCase):\n  def test_addition(self):\n    self.assertEqual(1 + 1, 2)\nif __name__ == '__main__':\n  unittest.main()\n",
+            "pytest:\n\u2022 Benefits: Simple and easy syntax, supports fixtures,\ndetailed reporting, and rich plugin ecosystem.\n\u2022 Disadvantages: Requires installation, might be less\nfamiliar to those used to unittest.\n",
+            "Example:\ndef test_addition():\n  assert 1 + 1 == 2"
         ]
     },
     {
@@ -160,7 +172,7 @@
     {
         "question": "Create Python File with Setup and Teardown Example?",
         "answers": [
-            "Example:\nimport unittest\nclass TestExample(unittest.TestCase):\n@classmethod\ndef setUpClass(cls):\nprint(\"Setup for the entire test class.\")\ndef setUp(self):\nprint(\"Setup for individual test.\")\ndef test1(self):\nprint(\"Running test1\")\ndef tearDown(self):\nprint(\"Teardown for individual test.\")\n@classmethod\ndef tearDownClass(cls):\nprint(\"Teardown for the entire test class.\")\nif __name__ == '__main__':\nunittest.main()\nExplanation:\n\u2022 setUpClass and tearDownClass are class methods that run\nonce before and after all tests in the class.\n\u2022 setUp and tearDown methods run before and after each test\nmethod."
+            "Example:\nimport unittest\nclass TestExample(unittest.TestCase):\n  @classmethod\n  def setUpClass(cls):\n    print(\"Setup for the entire test class.\")\n  def setUp(self):\n    print(\"Setup for individual test.\")\n  def test1(self):\n    print(\"Running test1\")\n  def tearDown(self):\n    print(\"Teardown for individual test.\")\n  @classmethod\n  def tearDownClass(cls):\n  print(\"Teardown for the entire test class.\")\nif __name__ == '__main__':\n  unittest.main()\nExplanation:\n\u2022 setUpClass and tearDownClass are class methods that run\nonce before and after all tests in the class.\n\u2022 setUp and tearDown methods run before and after each test\nmethod."
         ]
     },
     {
@@ -172,7 +184,8 @@
     {
         "question": "How do you test adding items to the cart on Flipkart using Selenium and Python?",
         "answers": [
-            "To test adding items to the cart on Flipkart using Selenium\nand Python, follow these steps:\n1. Setup: Ensure you have Selenium and a compatible\nWebDriver installed.\n2. Python Test Script with Selenium:\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.common.keys import Keys\nimport unittest\nimport time\nclass TestFlipkartCart(unittest.TestCase):\ndef setUp(self):\n# Initialize the WebDriver (Chrome in this case)\nself.driver = webdriver.Chrome()\nself.driver.get(\"https://www.flipkart.com\")\ndef test_add_top_selling_item_to_cart(self):\ndriver = self.driver\n# Close the login popup\ntime.sleep(2)  # Allow time for the popup to load\nclose_button = driver.find_element(By.CSS_SELECTOR,\n\"button._2KpZ6l._2doB4z\")\nclose_button.click()\n# Search for top-selling cameras\nsearch_box = driver.find_element(By.NAME, \"q\")\nsearch_box.send_keys(\"top selling camera\")\nsearch_box.send_keys(Keys.RETURN)\n# Wait for results to load\ntime.sleep(5)\n# Try to click on the first item in the search results\ntry:\nfirst_item = driver.find_element(By.XPATH, \"//div[@data-\nid][1]\")\nfirst_item.click()\ntime.sleep(5)\n# Try to click 'Add to Cart' button\ntry:\nadd_to_cart_button = driver.find_element(By.XPATH,\n\"//button[text()='ADD TO CART']\")\nadd_to_cart_button.click()\ntime.sleep(5)\n# Check if item has been added to the cart\ncart_message = driver.find_element(By.CSS_SELECTOR,\n\"span._2YxCDZ\")\nprint(cart_message.text)\nexcept Exception as e:\nprint(f\"Failed to add item to cart: {e}\")\nexcept Exception as e:\nprint(f\"Failed to find or click on the item: {e}\")\n# Try to search for top-selling books\nsearch_box = driver.find_element(By.NAME, \"q\")\nsearch_box.clear()\nsearch_box.send_keys(\"top selling book\")\nsearch_box.send_keys(Keys.RETURN)\n# Wait for results to load\ntime.sleep(5)\n# Try to click on the first item in the search results\ntry:\nfirst_item = driver.find_element(By.XPATH, \"//div[@data-\nid][1]\")\nfirst_item.click()\ntime.sleep(5)\n# Try to click 'Add to Cart' button\ntry:\nadd_to_cart_button = driver.find_element(By.XPATH,\n\"//button[text()='ADD TO CART']\")\nadd_to_cart_button.click()\ntime.sleep(5)\n# Check if item has been added to the cart\ncart_message = driver.find_element(By.CSS_SELECTOR,\n\"span._2YxCDZ\")\nprint(cart_message.text)\nexcept Exception as e:\nprint(f\"Failed to add item to cart: {e}\")\nexcept Exception as e:\nprint(f\"Failed to find or click on the item: {e}\")\ndef tearDown(self):\n# Close the WebDriver\nself.driver.quit()\nif __name__ == '__main__':\nunittest.main()\nThis script performs the following actions:\nInitializes the WebDriver and opens Flipkart.\nCloses the login popup.\nSearches for top-selling cameras and books.\nAttempts to add the first search result item to the cart.\nPrints the cart message to verify that the item has been\nadded."
+            "To test adding items to the cart on Flipkart using Selenium\nand Python, follow these steps:\n1. Setup: Ensure you have Selenium and a compatible\nWebDriver installed.\n2. Python Test Script with Selenium:\n",
+            "from selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.common.keys import Keys\nimport unittest\nimport time\nclass TestFlipkartCart(unittest.TestCase):\n  def setUp(self):\n# Initialize the WebDriver (Chrome in this case)\n    self.driver = webdriver.Chrome()\n    self.driver.get(\"https://www.flipkart.com\")\n  def test_add_top_selling_item_to_cart(self):\n    driver = self.driver\n# Close the login popup\n    time.sleep(2)  # Allow time for the popup to load\n    close_button = driver.find_element(By.CSS_SELECTOR,\n    \"button._2KpZ6l._2doB4z\")\n    close_button.click()\n    # Search for top-selling cameras\n    search_box = driver.find_element(By.NAME, \"q\")\n    search_box.send_keys(\"top selling camera\")\n    search_box.send_keys(Keys.RETURN)\n    # Wait for results to load\n    time.sleep(5)\n# Try to click on the first item in the search results\n    try:\n      first_item = driver.find_element(By.XPATH, \"//div[@data-\nid][1]\")\n      first_item.click()\n      time.sleep(5)\n# Try to click 'Add to Cart' button\n      try:\n        add_to_cart_button = driver.find_element(By.XPATH,\n        \"//button[text()='ADD TO CART']\")\n        add_to_cart_button.click()\n        time.sleep(5)\n        # Check if item has been added to the cart\n        cart_message = driver.find_element(By.CSS_SELECTOR,\n        \"span._2YxCDZ\")\n        print(cart_message.text)\n      except Exception as e:\n        print(f\"Failed to add item to cart: {e}\")\n    except Exception as e:\n      print(f\"Failed to find or click on the item: {e}\")\n    # Try to search for top-selling books\n    search_box = driver.find_element(By.NAME, \"q\")\n    search_box.clear()\n    search_box.send_keys(\"top selling book\")\n    search_box.send_keys(Keys.RETURN)\n    # Wait for results to load\n    time.sleep(5)\n    # Try to click on the first item in the search results\n    try:\n      first_item = driver.find_element(By.XPATH, \"//div[@data-\nid][1]\")\n      first_item.click()\n      time.sleep(5)\n      # Try to click 'Add to Cart' button\ntry:\n        add_to_cart_button = driver.find_element(By.XPATH,\n      \"//button[text()='ADD TO CART']\")\n      add_to_cart_button.click()\n    time.sleep(5)\n# Check if item has been added to the cart\ncart_message = driver.find_element(By.CSS_SELECTOR,\n\"span._2YxCDZ\")\nprint(cart_message.text)\nexcept Exception as e:\nprint(f\"Failed to add item to cart: {e}\")\nexcept Exception as e:\nprint(f\"Failed to find or click on the item: {e}\")\ndef tearDown(self):\n# Close the WebDriver\nself.driver.quit()\nif __name__ == '__main__':\nunittest.main()\nThis script performs the following actions:\nInitializes the WebDriver and opens Flipkart.\nCloses the login popup.\nSearches for top-selling cameras and books.\nAttempts to add the first search result item to the cart.\nPrints the cart message to verify that the item has been\nadded."
         ]
     },
     {
@@ -184,7 +197,8 @@
     {
         "question": "How can you print each character of a string in a Shell script?",
         "answers": [
-            "To print each character of a string in a Shell script, you\ncan use a loop to iterate over each character. Here\u2019s an\nexample:\n#!/bin/bash\n# Print each character of a string\nstring=\"Hello\"\nfor (( i=0; i<${#string}; i++ )); do\necho \"${string:$i:1}\"\ndone"
+            "To print each character of a string in a Shell script, you\ncan use a loop to iterate over each character. Here\u2019s an\n",
+            "example:\n#!/bin/bash\n# Print each character of a string\nstring=\"Hello\"\nfor (( i=0; i<${#string}; i++ )); do\necho \"${string:$i:1}\"\ndone"
         ]
     },
     {
@@ -196,19 +210,21 @@
     {
         "question": "How do you check if a string is a palindrome in Python?",
         "answers": [
-            "To check if a string is a palindrome in Python, you can use\nthe following function:\ndef is_palindrome(s):\n\"\"\"Check if a string is a palindrome.\"\"\"\nreturn s == s[::-1]\nprint(is_palindrome(\"radar\"))  # Output: True\nprint(is_palindrome(\"hello\"))  # Output: False"
+            "To check if a string is a palindrome in Python, you can use\nthe following function:\n",
+            "def is_palindrome(s):\n\"\"\"Check if a string is a palindrome.\"\"\"\nreturn s == s[::-1]\nprint(is_palindrome(\"radar\"))  # Output: True\nprint(is_palindrome(\"hello\"))  # Output: False"
         ]
     },
     {
         "question": "How do you create a lambda function to add two numbers in Python?",
         "answers": [
-            "To create a lambda function for adding two numbers, you can\nuse the following code:\n# Lambda function to add two numbers\nadd = lambda x, y: x + y\nprint(add(5, 3))  # Output: 8"
+            "To create a lambda function for adding two numbers, you can\nuse the following code:\n",
+            "# Lambda function to add two numbers\nadd = lambda x, y: x + y\nprint(add(5, 3))  # Output: 8"
         ]
     },
     {
         "question": "How do you demonstrate OOP inheritance with Python?",
-        "answers": [
-            "Here\u2019s an example demonstrating OOP inheritance in Python:\n# Base class\nclass Animal:\ndef __init__(self, name):\nself.name = name\ndef speak(self):\nreturn \"Some sound\"\n# Derived class\nclass Dog(Animal):\ndef speak(self):\nreturn \"Woof\"\n# Creating an instance of Dog\nmy_dog = Dog(\"Buddy\")\nprint(my_dog.name)  # Output: Buddy\nprint(my_dog.speak())  # Output: Woof"
+        "answers": ["Inheritance allows us to define a class that inherits\nall the methods and properties from another class. Parent class is\nthe class being inherited from, also called base class. Child class\nis the class that inherits from another class, also called derived class.",
+            "Here\u2019s an example demonstrating OOP inheritance in Python:\n# Base class\nclass Animal:\n  def __init__(self, name):\n    self.name = name\n  def speak(self):\n    return \"Some sound\"\n# Derived class\nclass Dog(Animal):\n  def speak(self):\n    return \"Woof\"\n# Creating an instance of Dog\nmy_dog = Dog(\"Buddy\")\nprint(my_dog.name)  # Output: Buddy\nprint(my_dog.speak())  # Output: Woof"
         ]
     },
     {
@@ -224,39 +240,24 @@
         ]
     },
     {
-        "question": "Solve through regular expression, lambda expression, and normal with Python.",
+        "question": "Solve through regular expression, lambda expression, and normal with Python.'welcome'>>'wlcom',[a, aa, aaa, aaaa]>>[1a, 2a, 3a, 4a],[ab12, ab13, bda53, abv65]>>[ab, ab, bda, abv],x = {a:6, b:7}, y = {c:5, a:8}>>{a:14, b:7, c:5}",
         "answers": [
-            "1. Inp = 'welcome'\nOut = 'wlcom'\n\nNormal Python:\nresult = ''.join([ch for ch in 'welcome' if ch not in\n'aeiou'])\nLambda:\nresult = ''.join(list(filter(lambda ch: ch not in 'aeiou',\n'welcome')))\nRegex:\nimport re\nresult = re.sub(r'[aeiou]', '', 'welcome')"
+            "Normal Python:\nresult = ''.join([ch for ch in 'welcome' if ch not in\n'aeiou'])\nLambda:\nresult = ''.join(list(filter(lambda ch: ch not in 'aeiou',\n'welcome')))\nRegex:\nimport re\nresult = re.sub(r'[aeiou]', '', 'welcome')",
+            "Normal Python:\nresult = [f'{i + 1}a' for i in range(len(['a', 'aa', 'aaa',\n'aaaa']))]\nLambda:\nresult = list(map(lambda i: f'{i + 1}a', range(len(['a',\n'aa', 'aaa', 'aaaa'])))",
+            "Normal Python:\nresult = [i[:3] for i in ['ab12', 'ab13', 'bda53', 'abv65']]\nLambda:\nresult = list(map(lambda s: s[:3], ['ab12', 'ab13', 'bda53',\n'abv65']))\nRegex:\nimport re\nresult = [re.match(r'[a-z]+', i).group() for i in ['ab12',\n'ab13', 'bda53', 'abv65']]"
+            "Normal Python:\nx = {'a': 6, 'b': 7}\ny = {'c': 5, 'a': 8}\nresult = {k: x.get(k, 0) + y.get(k, 0) for k in set(x) |\nset(y)}\nLambda:\nresult = {k: (lambda a, b: a + b if a and b else a or\nb)(x.get(k), y.get(k)) for k in set(x) | set(y)}"
         ]
     },
     {
-        "question": "Inp = [a, aa, aaa, aaaa]",
+        "question": "Print the pattern:\n1\n12\n123\n321\n4321\n12345\n",
         "answers": [
-            "Out = [1a, 2a, 3a, 4a]\n\nNormal Python:\nresult = [f'{i + 1}a' for i in range(len(['a', 'aa', 'aaa',\n'aaaa']))]\nLambda:\nresult = list(map(lambda i: f'{i + 1}a', range(len(['a',\n'aa', 'aaa', 'aaaa'])))"
+            "for i in range(1, 6):\nprint(''.join(map(str, range(1, i + 1))))\nif i >= 3:\nprint(''.join(map(str, range(i, 0, -1))))"
         ]
     },
     {
-        "question": "Inp = [ab12, ab13, bda53, abv65]",
+        "question": "Str1 = 'UST is software company located in Whitefield. You can come by metro from pattandur agrahara. And by bus also'Str2 = 'you can enter through Nexus mall'\n1. Common words in both strings\n2. Remove duplicate words from both strings\n3. Print output vertically and horizontally\n\n",
         "answers": [
-            "Out = [ab, ab, bda, abv]\n\nNormal Python:\nresult = [i[:3] for i in ['ab12', 'ab13', 'bda53', 'abv65']]\nLambda:\nresult = list(map(lambda s: s[:3], ['ab12', 'ab13', 'bda53',\n'abv65']))\nRegex:\nimport re\nresult = [re.match(r'[a-z]+', i).group() for i in ['ab12',\n'ab13', 'bda53', 'abv65']]"
-        ]
-    },
-    {
-        "question": "x = {a:6, b:7}, y = {c:5, a:8}",
-        "answers": [
-            "Output = {a:14, b:7, c:5}\n\nNormal Python:\nx = {'a': 6, 'b': 7}\ny = {'c': 5, 'a': 8}\nresult = {k: x.get(k, 0) + y.get(k, 0) for k in set(x) |\nset(y)}\nLambda:\nresult = {k: (lambda a, b: a + b if a and b else a or\nb)(x.get(k), y.get(k)) for k in set(x) | set(y)}"
-        ]
-    },
-    {
-        "question": "Print the pattern:",
-        "answers": [
-            "1\n12\n123\n321\n4321\n12345\n\nfor i in range(1, 6):\nprint(''.join(map(str, range(1, i + 1))))\nif i >= 3:\nprint(''.join(map(str, range(i, 0, -1))))"
-        ]
-    },
-    {
-        "question": "Str1 = 'UST is software company located in Whitefield. You can come by metro from pattandur agrahara. And by bus also'",
-        "answers": [
-            "Str2 = 'you can enter through Nexus mall'\n1. Common words in both strings\n2. Remove duplicate words from both strings\n3. Print output vertically and horizontally\n\n1. Common words:\nstr1_words = set(Str1.lower().split())\nstr2_words = set(Str2.lower().split())\ncommon_words = str1_words.intersection(str2_words)\nprint(common_words)\n2. Remove duplicates:\nunique_str1 = ' '.join(set(Str1.split()))\nunique_str2 = ' '.join(set(Str2.split()))\nprint(unique_str1)\nprint(unique_str2)\n3. Vertical & Horizontal print:\n# Horizontal\nprint(f\"Horizontal:\\n{unique_str1} \\n{unique_str2}\")\n# Vertical\nprint(\"\\nVertical:\")\nfor word in unique_str1.split():\nprint(word)"
+            "1. Common words:\nstr1_words = set(Str1.lower().split())\nstr2_words = set(Str2.lower().split())\ncommon_words = str1_words.intersection(str2_words)\nprint(common_words)\n2. Remove duplicates:\nunique_str1 = ' '.join(set(Str1.split()))\nunique_str2 = ' '.join(set(Str2.split()))\nprint(unique_str1)\nprint(unique_str2)\n3. Vertical & Horizontal print:\n# Horizontal\nprint(f\"Horizontal:\\n{unique_str1} \\n{unique_str2}\")\n# Vertical\nprint(\"\\nVertical:\")\nfor word in unique_str1.split():\nprint(word)"
         ]
     }
 ]

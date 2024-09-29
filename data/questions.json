@@ -223,7 +223,7 @@
     },
     {
         "question": "How do you demonstrate OOP inheritance with Python?",
-        "answers": ["Inheritance allows us to define a class that inherits\nall the methods and properties from another class. Parent class is\nthe class being inherited from, also called base class. Child class\nis the class that inherits from another class, also called derived class.",
+        "answers": ["Inheritance allows us to define a class that inherits\nall the methods and properties from another class. Parent\nclass isthe class being inherited from, also called base class.\n Child class is the class that inherits from another class,\n also called derived class.",
             "Here\u2019s an example demonstrating OOP inheritance in Python:\n# Base class\nclass Animal:\n  def __init__(self, name):\n    self.name = name\n  def speak(self):\n    return \"Some sound\"\n# Derived class\nclass Dog(Animal):\n  def speak(self):\n    return \"Woof\"\n# Creating an instance of Dog\nmy_dog = Dog(\"Buddy\")\nprint(my_dog.name)  # Output: Buddy\nprint(my_dog.speak())  # Output: Woof"
         ]
     },
@@ -259,5 +259,18 @@
         "answers": [
             "1. Common words:\nstr1_words = set(Str1.lower().split())\nstr2_words = set(Str2.lower().split())\ncommon_words = str1_words.intersection(str2_words)\nprint(common_words)\n2. Remove duplicates:\nunique_str1 = ' '.join(set(Str1.split()))\nunique_str2 = ' '.join(set(Str2.split()))\nprint(unique_str1)\nprint(unique_str2)\n3. Vertical & Horizontal print:\n# Horizontal\nprint(f\"Horizontal:\\n{unique_str1} \\n{unique_str2}\")\n# Vertical\nprint(\"\\nVertical:\")\nfor word in unique_str1.split():\nprint(word)"
         ]
+    },
+    {
+        "question": "Write python code for Prime number ",
+        "answers": [
+            "num = input()\nprime=True\nfor i in range(2,num):\n    if num%i==0:\n        prime=False\nif prime:\n    print(\"Number is prime\")"
+        ]
+    },
+    {
+        "question": "What is encapsulation, And how to achieve",
+        "answers":["Encapsulation is a process of wrapping data \nprotect it from outside controls, there \ntwo type of access controls, one is private(can \naccessed by '__') and protected (accessed \n'_')" ,
+        "\n#code:\nclass Encaps:\n    def __init__(self):\n        self._a='protected'\n        self.__b='private'\n        self.c='normal'\n    def inside_class(self):\n        print(f'Inside class\n{self._a},{self.__b},{self.c}')\n\nobj = Encaps()\nobj.inside_class()\nprint(obj._a)\nprint(obj.__b)\n\nOutput:\nInside class protected,private,normal\nprotected\nTraceback (most recent call last):\nFile.py, line 26,\nin <module>\n    print(obj.__b)\nAttributeError: 'Encaps' object has no\nattribute '__b'\n\n"
+        ]
     }
+
 ]

@@ -15,17 +15,6 @@ body {
     text-align: center; /* Center text by default */
 }
 
-.container {
-    width: 90%;
-    max-width: 700px;
-    margin: 50px auto;
-    background-color: var(--pure);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Left-align text within the container for readability */
-}
-
 h1 {
     font-size: 24px;
     color: var(--primary);
@@ -34,18 +23,20 @@ h1 {
 .note-section {
     margin-bottom: 20px;
 }
-
+.wrapped-text {
+    word-wrap: break-word;
+    white-space: pre-wrap; /* This ensures that whitespace is preserved, but text will wrap */
+    overflow-wrap: break-word;
+    max-width: 100%; /* Adjust as needed */
+}
 .question-box, .answer-box {
-    border: 1px solid var(--ternary);
+    border-top: 1px solid var(--ternary);
     padding: 15px;
-    border-radius: 5px;
     background-color: var(--pure);
     font-size: 18px;
     margin: 0 auto; /* Center the boxes within the container */
     max-width: 100%; /* Ensure the boxes do not exceed container width */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
     word-wrap: break-word; /* Ensure long words break and do not overflow */
-    overflow-wrap: break-word; /* Handle long words more effectively */
     text-align: left; /* Align text to the left inside the box */
     height: auto; /* Allow height to grow with content */
 }

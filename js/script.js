@@ -61,7 +61,7 @@ askBtn.addEventListener('click', () => {
 // Show the answer when "Show Answer" is clicked
 answerBtn.addEventListener('click', () => {
     if (currentQuestion) {
-        const answersHtml = currentQuestion.answers.map(answer => `<pre>${escapeHtml(answer)}</pre>`).join('<hr>');
+        const answersHtml = currentQuestion.answers.map(answer => `<pre class="wrapped-text">${escapeHtml(answer)}</pre>`).join('<hr>');
         answerDiv.innerHTML = answersHtml;
     } else {
         answerDiv.innerHTML = 'Please click "Ask Question" to get a question first!';
@@ -89,7 +89,7 @@ reviewBtn.addEventListener('click', () => {
 allQuestionsBtn.addEventListener('click', () => {
     if (questions.length > 0) {
         const allQuestionsHtml = questions.map(q => `<li>${q.question}</li>`).join('');
-        questionDiv.innerHTML = `<strong>All Questions:</strong><ul>${allQuestionsHtml}</ul>`;
+        questionDiv.innerHTML = `<strong>All Questions:</strong><ul class="wrapped-text">${allQuestionsHtml}</ul>`;
         answerDiv.innerHTML = ''; // Clear previous answers
     } else {
         questionDiv.innerHTML = '<strong>Error:</strong> No questions available.';
@@ -100,7 +100,7 @@ allQuestionsBtn.addEventListener('click', () => {
 allQuestionsAnswersBtn.addEventListener('click', () => {
     if (questions.length > 0) {
         const allQuestionsAnswersHtml = questions.map(q => {
-            const answersHtml = q.answers.map(answer => `<pre>${escapeHtml(answer)}</pre>`).join('<hr>');
+            const answersHtml = q.answers.map(answer => `<pre class="wrapped-text">${escapeHtml(answer)}</pre>`).join('<hr>');
             return `<li><strong>${q.question}</strong><br>${answersHtml}</li>`;
         }).join('<hr>');  // Join questions with a separator (optional)
         
@@ -110,6 +110,7 @@ allQuestionsAnswersBtn.addEventListener('click', () => {
         questionDiv.innerHTML = '<strong>Error:</strong> No questions available.';
     }
 });
+
 
 // Show the textarea when "Write Answer" button is clicked
 writeAnswerBtn.addEventListener('click', () => {

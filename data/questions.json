@@ -3,38 +3,44 @@
         "question": "What is Deep Copy and Shallow Copy?",
         "answers": [
             "In Python, Shallow Copy creates a new object but still references the original data inside it. So, changes to the shallow copy affect the original object. A Deep Copy makes a completely independent copy of the original object, including all nested objects. Changes made to the deep copy don't affect the original object. ",
-            "Code Example: import copy original_list = [[1, 2], [3, 4]] shallow_copy = copy.copy(original_list) deep_copy = copy.deepcopy(original_list) shallow_copy[0][0] = 100 deep_copy[1][0] = 200 print(\"Original:\", original_list)   # [[100, 2], [3, 4]] print(\"Shallow:\", shallow_copy)     # [[100, 2], [3, 4]] print(\"Deep:\", deep_copy)           # [[1, 2], [200, 4]] Here, changing the shallow copy affects the original, but changing the deep copy does not."
+            "code_example : \nimport copy\noriginal_list = [[1, 2], [3, 4]]\nshallow_copy = copy.copy(original_list)\ndeep_copy = copy.deepcopy(original_list)\nshallow_copy[0][0] = 100\ndeep_copy[1][0] = 200\nprint(\"Original:\", original_list)   # [[100, 2], [3, 4]]\nprint(\"Shallow:\", shallow_copy)     # [[100, 2], [3, 4]]\nprint(\"Deep:\", deep_copy)           # [[1, 2], [200, 4]]\nHere, changing the shallow copy affects the original, but changing the deep copy does not."
+        ]
+    },
+    {
+        "question": "What is Deep Copy and Shallow Copy?",
+        "answers": [
+            "In Python, Shallow Copy creates a new object but still references the original data inside it. So, changes to the shallow copy affect the original object. A Deep Copy makes a completely independent copy of the original object, including all nested objects. Changes made to the deep copy don't affect the original object. ",
+            "code_example : \nimport copy\noriginal_list = [[1, 2], [3, 4]]\nshallow_copy = copy.copy(original_list)\ndeep_copy = copy.deepcopy(original_list)\nshallow_copy[0][0] = 100\ndeep_copy[1][0] = 200\nprint(\"Original:\", original_list)   # [[100, 2], [3, 4]]\nprint(\"Shallow:\", shallow_copy)     # [[100, 2], [3, 4]]\nprint(\"Deep:\", deep_copy)           # [[1, 2], [200, 4]]\nHere, changing the shallow copy affects the original, but changing the deep copy does not."
         ]
     },
     {
         "question": "Authorization vs. Authentication?",
         "answers": [
             "Authentication is the process of verifying the identity of a user or system. It answers the question, \"Who are you?\" This is typically done through methods such as usernames and passwords, biometrics, or security tokens. ",
-            "Authorization, on the other hand, determines what an authenticated user or system is allowed to do. It answers the question, \"What are you allowed to do?\" ",
-            "Authorization is concerned with permissions and access control, defining what resources or actions an authenticated user can access or perform."
+            "Authorization, on the other hand, determines what an authenticated user or system is allowed to do. It answers the question, \"What are you allowed to do?\" Authorization is concerned with permissions and access control, defining what resources or actions an authenticated user can access or perform."
         ]
     },
     {
         "question": "List vs Tuple?",
-        "answers": ["List: \u2022 Mutable: Can be modified after creation (e.g., add/remove elements). \u2022 Memory: Its slower than tuple. \u2022 Syntax: Square brackets []. \u2022 Example: my_list = [1, 2, 3] Tuple: \u2022 Immutable: Cannot be modified after creation. \u2022 Memory: Its faster than list. \u2022 Syntax: Parentheses (). \u2022 Example: my_tuple = (1, 2, 3)"]
+        "answers": ["List:\n• Mutable: Can be modified after creation (e.g., add/remove elements).\n• Memory: It's slower than tuple.\n• Syntax: Square brackets [].\n• Example: my_list = [1, 2, 3]\n\nTuple:\n• Immutable: Cannot be modified after creation.\n• Memory: It's faster than list.\n• Syntax: Parentheses ().\n• Example: my_tuple = (1, 2, 3)"]
         
     },
     {
         "question": "Push vs Pop?",
         "answers": [
-            "Push: \u2022 Adds an element to the top of a stack. \u2022 Example: stack.append(10) Pop: \u2022 Removes and returns the top element from the stack. \u2022 Example: top_element = stack.pop()"
+            "Push: \n\u2022 Adds an element to the top of a stack.  \n\u2022 Example: stack.append(10) \nPop: \n\u2022 Removes and returns the top element from the stack.  \n\u2022 Example: top_element = stack.pop()"
         ]
     },
     {
         "question": "Implicit Wait vs Explicit Wait?",
         "answers": [
-            "Implicit Wait: \u2022 WebDriver waits for a specified time for an element before throwing an exception. \u2022 Applies to all elements globally in the script. \u2022 Example: driver.implicitly_wait(10) Explicit Wait: \u2022 WebDriver waits for a specific condition (e.g., element being clickable). \u2022 Targeted to specific elements. \u2022 Example: element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, 'submit')))"
+            "Implicit Wait: \n\u2022 WebDriver waits for a specified time for an element before throwing an exception. \n\u2022 Applies to all elements globally in the script. \n\u2022 Example: driver.implicitly_wait(10) Explicit Wait: \n\u2022 WebDriver waits for a specific condition (e.g., element being clickable). \n\u2022 Targeted to specific elements. \n\u2022 Example: element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, 'submit')))"
         ]
     },
     {
         "question": "XPath vs CSS Selector?",
         "answers": [
-            "XPath: \u2022 Can navigate through elements in an XML structure. \u2022 Example: element = driver.find_element_by_xpath(\"//div[@id='content']\") CSS Selector: \u2022 Generally faster and preferred for locating elements based on style attributes. \u2022 Example: element = driver.find_element_by_css_selector(\"div#content\")"
+            "XPath: \n\u2022 Can navigate through elements in an XML structure. \n\u2022 Example: element = driver.find_element_by_xpath(\"//div[@id='content']\") CSS Selector: \n\u2022 Generally faster and preferred for locating elements based on style attributes. \n\u2022 Example: element = driver.find_element_by_css_selector(\"div#content\")"
         ]
     },
     {
@@ -47,21 +53,21 @@
         "question": "Fibonacci Series?",
         "answers": [
             "A sequence where each number is the sum of the two preceding ones, starting from 0 and 1. ",
-            "Example: def fibonacci(n):   a, b = 0, 1   sequence = []   for _ in range(n):     sequence.append(a)     a, b = b, a + b   return sequence print(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]"
+            "Example: def fibonacci(n):\n    a, b = 0, 1\n    sequence = []\n    for _ in range(n):\n        sequence.append(a)\n        a, b = b, a + b\n    return sequence\n\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]"
         ]
     },
     {
         "question": "Remove Vowels from a String?",
         "answers": [
             "Remove all vowels from a given string. ",
-            "Example: def remove_vowels(s):   vowels = \"aeiouAEIOU\"   return ''.join([char for char in s if char not in vowels]) print(remove_vowels(\"Automation Testing\"))   # Output: \"tmtnTstng\""
+            "Example: def remove_vowels(s):\n    vowels = \"aeiouAEIOU\"\n    return ''.join([char for char in s if char not in vowels])\n\nprint(remove_vowels(\"Automation Testing\"))  # Output: \"tmtnTstng\""
         ]
     },
     {
         "question": "Return Sum of Even Numbers?",
         "answers": [
             "Calculate the sum of all even numbers in a given list. ",
-            "Example: def sum_of_evens(lst):   return sum(num for num in lst if num % 2 == 0) print(sum_of_evens([1, 2, 3, 4, 5, 6]))  # Output: 12"
+            "Example: def sum_of_evens(lst):\n    return sum(num for num in lst if num % 2 == 0)\n\nprint(sum_of_evens([1, 2, 3, 4, 5, 6]))  # Output: 12"
         ]
     },
     {
@@ -83,14 +89,14 @@
         "question": "Find Largest Number in Linked List?",
         "answers": [
             "Iterate through the linked list to find the largest number. ",
-            "Example: class Node:   def __init__(self, data):     self.data = data     self.next = None   def find_largest(head):     largest = head.data     while head:       if head.data > largest:        largest = head.data         head = head.next     return largest # Linked list: 1 -> 5 -> 3 -> 9 -> 2 head = Node(1) head.next = Node(5) head.next.next = Node(3) head.next.next.next = Node(9) head.next.next.next.next = Node(2) print(find_largest(head))  # Output: 9"
+            "Example: class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\ndef find_largest(head):\n    largest = head.data\n    while head:\n        if head.data > largest:\n            largest = head.data\n        head = head.next\n    return largest\n\n# Linked list: 1 -> 5 -> 3 -> 9 -> 2\nhead = Node(1)\nhead.next = Node(5)\nhead.next.next = Node(3)\nhead.next.next.next = Node(9)\nhead.next.next.next.next = Node(2)\n\nprint(find_largest(head))  # Output: 9"
         ]
     },
     {
         "question": "Extract Numbers from String Using Regex and Sum Them?",
         "answers": [
             "Use regular expressions to find all numbers in a string and sum them. ",
-            "Example: import re def sum_numbers(s):   numbers = re.findall(r'\\d+', s)   return sum(map(int, numbers)) s = \"giuwh55kdhkuw88nsbhksw51545\" print(sum_numbers(s))  # Output: 51688"
+            "Example: import re\ndef sum_numbers(s):\n    numbers = re.findall(r'\\d+', s)\n    return sum(map(int, numbers))\n\ns = \"giuwh55kdhkuw88nsbhksw51545\"\nprint(sum_numbers(s))  # Output: 51688"
         ]
     },
     {
@@ -109,13 +115,13 @@
     {
         "question": "Selenium Testing Types?",
         "answers": [
-            "Functional Testing: \u2022 Smoke Testing: Basic tests to check if the application build is stable and can proceed with further testing. \u2022 Sanity Testing: Verifies that specific functionalities work correctly after changes or bug fixes. \u2022 Regression Testing: Ensures that new changes have not adversely affected existing functionalities. \u2022 Database Testing: Validates data integrity and correctness in the database. \u2022 Compatibility Testing: Checks the application\u2019s compatibility with different operating systems, browsers, and devices. \u2022 Cross-Browser Testing: Ensures that the application works correctly across different web browsers. Unit Testing: \u2022 Focuses on testing individual components or units of code for correctness. Parallel Testing: \u2022 Involves executing multiple test cases simultaneously across different environments to speed up the testing process. Data-Driven Testing: \u2022 Tests the application with multiple sets of data to ensure it behaves correctly with different inputs."
+            "Functional Testing: \n\u2022 Smoke Testing: Basic tests to check if the application build is stable and can proceed with further testing. \n\u2022 Sanity Testing: Verifies that specific functionalities work correctly after changes or bug fixes. \n\u2022 Regression Testing: Ensures that new changes have not adversely affected existing functionalities. \n\u2022 Database Testing: Validates data integrity and correctness in the database. \n\u2022 Compatibility Testing: Checks the application\n\u2019s compatibility with different operating systems, browsers, and devices. \n\u2022 Cross-Browser Testing: Ensures that the application works correctly across different web browsers. Unit Testing: \n\u2022 Focuses on testing individual components or units of code for correctness. Parallel Testing: \n\u2022 Involves executing multiple test cases simultaneously across different environments to speed up the testing process. Data-Driven Testing: \n\u2022 Tests the application with multiple sets of data to ensure it behaves correctly with different inputs."
         ]
     },
     {
         "question": "Sanity Testing vs. Regression Testing?",
         "answers": [
-            "Sanity Testing: \u2022 Purpose: Verifies that specific functionalities are working correctly after changes. \u2022 Scope: Narrow and focused on particular functionalities or bug fixes. \u2022 Execution: Often done after receiving a new build or bug fix. Regression Testing: \u2022 Purpose: Ensures that recent code changes have not introduced new bugs in existing functionalities. \u2022 Scope: Broad and covers all or most of the application\u2019s functionalities. \u2022 Execution: Performed after bug fixes, updates, or changes in the application."
+            "Sanity Testing: \n\u2022 Purpose: Verifies that specific functionalities are working correctly after changes. \n\u2022 Scope: Narrow and focused on particular functionalities or bug fixes. \n\u2022 Execution: Often done after receiving a new build or bug fix. Regression Testing: \n\u2022 Purpose: Ensures that recent code changes have not introduced new bugs in existing functionalities. \n\u2022 Scope: Broad and covers all or most of the application\n\u2019s functionalities. \n\u2022 Execution: Performed after bug fixes, updates, or changes in the application."
         ]
     },
     {
@@ -127,7 +133,7 @@
     {
         "question": "Types of Exceptions in Selenium?",
         "answers": [
-            "\u2022 NoSuchElementException: Raised when an element cannot be found. \u2022 TimeoutException: Raised when an element does not appear within the specified time. \u2022 ElementNotInteractableException: Raised when an element is not interactable. \u2022 StaleElementReferenceException: Raised when a reference to an element is stale. \u2022 InvalidSelectorException: Raised when a selector is invalid."
+            "\n\u2022 NoSuchElementException: Raised when an element cannot be found. \n\u2022 TimeoutException: Raised when an element does not appear within the specified time. \n\u2022 ElementNotInteractableException: Raised when an element is not interactable. \n\u2022 StaleElementReferenceException: Raised when a reference to an element is stale. \n\u2022 InvalidSelectorException: Raised when a selector is invalid."
         ]
     },
     {
@@ -139,13 +145,13 @@
     {
         "question": "PUT vs. POST in API Testing?",
         "answers": [
-            "PUT: \u2022 Purpose: Updates or replaces a resource at a specific URL. \u2022 Idempotent: Multiple identical requests result in the same state. \u2022 Usage: When updating or creating a resource with a specific identifier. POST: \u2022 Purpose: Submits data to create a new resource. \u2022 Non-idempotent: Multiple identical requests may create multiple resources. \u2022 Usage: When creating a new resource or submitting data to be processed."
+            "PUT: \n\u2022 Purpose: Updates or replaces a resource at a specific URL. \n\u2022 Idempotent: Multiple identical requests result in the same state. \n\u2022 Usage: When updating or creating a resource with a specific identifier. POST: \n\u2022 Purpose: Submits data to create a new resource. \n\u2022 Non-idempotent: Multiple identical requests may create multiple resources. \n\u2022 Usage: When creating a new resource or submitting data to be processed."
         ]
     },
     {
         "question": "Locators in Selenium?",
         "answers": [
-            "\u2022 ID: find_element_by_id('element_id') \u2022 Name: find_element_by_name('element_name') \u2022 Class Name: find_element_by_class_name('class_name') \u2022 Tag Name: find_element_by_tag_name('tag_name') \u2022 Link Text: find_element_by_link_text('link_text') \u2022 Partial Link Text: find_element_by_partial_link_text('partial_text') \u2022 XPath: find_element_by_xpath('//tag[@attribute=\"value\"]') \u2022 CSS Selector: find_element_by_css_selector('tag#id.class')"
+            "\n\u2022 ID: find_element_by_id('element_id') \n\u2022 Name: find_element_by_name('element_name') \n\u2022 Class Name: find_element_by_class_name('class_name') \n\u2022 Tag Name: find_element_by_tag_name('tag_name') \n\u2022 Link Text: find_element_by_link_text('link_text') \n\u2022 Partial Link Text: find_element_by_partial_link_text('partial_text') \n\u2022 XPath: find_element_by_xpath('//tag[@attribute=\"value\"]') \n\u2022 CSS Selector: find_element_by_css_selector('tag#id.class')"
         ]
     },
     {
@@ -157,48 +163,47 @@
     {
         "question": "unittest vs pytest?",
         "answers": [
-            "unittest: \u2022 Benefits: Built-in module, well-integrated with Python, supports test discovery. \u2022 Disadvantages: Verbose syntax, less flexible compared to pytest. ",
+            "unittest: \n\u2022 Benefits: Built-in module, well-integrated with Python, supports test discovery. \n\u2022 Disadvantages: Verbose syntax, less flexible compared to pytest. ",
             "Example: import unittest class TestExample(unittest.TestCase):   def test_addition(self):     self.assertEqual(1 + 1, 2) if __name__ == '__main__':   unittest.main() ",
-            "pytest: \u2022 Benefits: Simple and easy syntax, supports fixtures, detailed reporting, and rich plugin ecosystem. \u2022 Disadvantages: Requires installation, might be less familiar to those used to unittest. ",
+            "pytest: \n\u2022 Benefits: Simple and easy syntax, supports fixtures, detailed reporting, and rich plugin ecosystem. \n\u2022 Disadvantages: Requires installation, might be less familiar to those used to unittest. ",
             "Example: def test_addition():   assert 1 + 1 == 2"
         ]
     },
     {
         "question": "Embedded Systems: Raspberry Pi, Arduino, and Pin Configuration?",
         "answers": [
-            "Raspberry Pi: \u2022 Description: A small, affordable computer used for various projects. \u2022 Pin Configuration: GPIO pins for interfacing with external hardware (e.g., LEDs, sensors). Example: import RPi.GPIO as GPIO GPIO.setmode(GPIO.BCM) GPIO.setup(18, GPIO.OUT) GPIO.output(18, GPIO.HIGH) Arduino: \u2022 Description: A microcontroller board used for building electronic projects. \u2022 Pin Configuration: Digital and analog pins for input/output operations. Example: void setup() { pinMode(13, OUTPUT); } void loop() { digitalWrite(13, HIGH); delay(1000); digitalWrite(13, LOW); delay(1000); }"
+            "Raspberry Pi: \n\u2022 Description: A small, affordable computer used for various projects. \n\u2022 Pin Configuration: GPIO pins for interfacing with external hardware (e.g., LEDs, sensors). Example: import RPi.GPIO as GPIO GPIO.setmode(GPIO.BCM) GPIO.setup(18, GPIO.OUT) GPIO.output(18, GPIO.HIGH) Arduino: \n\u2022 Description: A microcontroller board used for building electronic projects. \n\u2022 Pin Configuration: Digital and analog pins for input/output operations. Example: void setup() { pinMode(13, OUTPUT); } void loop() { digitalWrite(13, HIGH); delay(1000); digitalWrite(13, LOW); delay(1000); }"
         ]
     },
     {
         "question": "Create Python File with Setup and Teardown Example?",
         "answers": [
-            "Example: import unittest class TestExample(unittest.TestCase):   @classmethod   def setUpClass(cls):     print(\"Setup for the entire test class.\")   def setUp(self):     print(\"Setup for individual test.\")   def test1(self):     print(\"Running test1\")   def tearDown(self):     print(\"Teardown for individual test.\")   @classmethod   def tearDownClass(cls):   print(\"Teardown for the entire test class.\") if __name__ == '__main__':   unittest.main() Explanation: \u2022 setUpClass and tearDownClass are class methods that run once before and after all tests in the class. \u2022 setUp and tearDown methods run before and after each test method."
+            "Example: import unittest\nclass TestExample(unittest.TestCase):\n    @classmethod\n    def setUpClass(cls):\n        print(\"Setup for the entire test class.\")\n\n    def setUp(self):\n        print(\"Setup for individual test.\")\n\n    def test1(self):\n        print(\"Running test1\")\n\n    def tearDown(self):\n        print(\"Teardown for individual test.\")\n\n    @classmethod\n    def tearDownClass(cls):\n        print(\"Teardown for the entire test class.\")\n\nif __name__ == '__main__':\n    unittest.main()\n\nExplanation:\n• setUpClass and tearDownClass are class methods that run once before and after all tests in the class.\n• setUp and tearDown methods run before and after each test method."
         ]
     },
     {
         "question": "API Testing, Models, Admin, and Types of APIs?",
         "answers": [
-            "API Testing: \u2022 Definition: Verifies that APIs function correctly, handling requests and responses as expected. Models: \u2022 Definition: Define the structure of the data handled by the API, including data validation and relationships. Admin: \u2022 Definition: Refers to administrative operations or management functionalities within the API or application. Types of APIs: \u2022 REST API: Uses HTTP requests for CRUD operations. \u2022 SOAP API: Uses XML-based messaging protocol. \u2022 GraphQL: Allows querying specific data requirements. Example: import requests response = requests.get('https://api.example.com/resource') print(response.json())"
+            "API Testing:\n• Definition: Verifies that APIs function correctly, handling requests and responses as expected.\n\nModels:\n• Definition: Define the structure of the data handled by the API, including data validation and relationships.\n\nAdmin:\n• Definition: Refers to administrative operations or management functionalities within the API or application.\n\nTypes of APIs:\n• REST API: Uses HTTP requests for CRUD operations.\n• SOAP API: Uses XML-based messaging protocol.\n• GraphQL: Allows querying specific data requirements.\n\nExample: import requests\nresponse = requests.get('https://api.example.com/resource')\nprint(response.json())"
         ]
     },
     {
         "question": "How do you test adding items to the cart on Flipkart using Selenium and Python?",
         "answers": [
             "To test adding items to the cart on Flipkart using Selenium and Python, follow these steps: 1. Setup: Ensure you have Selenium and a compatible WebDriver installed. 2. Python Test Script with Selenium: ",
-            "from selenium import webdriver from selenium.webdriver.common.by import By from selenium.webdriver.common.keys import Keys import unittest import time class TestFlipkartCart(unittest.TestCase):   def setUp(self): # Initialize the WebDriver (Chrome in this case)     self.driver = webdriver.Chrome()     self.driver.get(\"https://www.flipkart.com\")   def test_add_top_selling_item_to_cart(self):     driver = self.driver # Close the login popup     time.sleep(2)  # Allow time for the popup to load     close_button = driver.find_element(By.CSS_SELECTOR,     \"button._2KpZ6l._2doB4z\")     close_button.click()     # Search for top-selling cameras     search_box = driver.find_element(By.NAME, \"q\")     search_box.send_keys(\"top selling camera\")     search_box.send_keys(Keys.RETURN)     # Wait for results to load     time.sleep(5) # Try to click on the first item in the search results     try:       first_item = driver.find_element(By.XPATH, \"//div[@data- id][1]\")       first_item.click()       time.sleep(5) # Try to click 'Add to Cart' button       try:         add_to_cart_button = driver.find_element(By.XPATH,         \"//button[text()='ADD TO CART']\")         add_to_cart_button.click()         time.sleep(5)         # Check if item has been added to the cart         cart_message = driver.find_element(By.CSS_SELECTOR,         \"span._2YxCDZ\")         print(cart_message.text)       except Exception as e:         print(f\"Failed to add item to cart: {e}\")     except Exception as e:       print(f\"Failed to find or click on the item: {e}\")     # Try to search for top-selling books     search_box = driver.find_element(By.NAME, \"q\")     search_box.clear()     search_box.send_keys(\"top selling book\")     search_box.send_keys(Keys.RETURN)     # Wait for results to load     time.sleep(5)     # Try to click on the first item in the search results     try:       first_item = driver.find_element(By.XPATH, \"//div[@data- id][1]\")       first_item.click()       time.sleep(5)       # Try to click 'Add to Cart' button try:         add_to_cart_button = driver.find_element(By.XPATH,       \"//button[text()='ADD TO CART']\")       add_to_cart_button.click()     time.sleep(5) # Check if item has been added to the cart cart_message = driver.find_element(By.CSS_SELECTOR, \"span._2YxCDZ\") print(cart_message.text) except Exception as e: print(f\"Failed to add item to cart: {e}\") except Exception as e: print(f\"Failed to find or click on the item: {e}\") def tearDown(self): # Close the WebDriver self.driver.quit() if __name__ == '__main__': unittest.main() This script performs the following actions: Initializes the WebDriver and opens Flipkart. Closes the login popup. Searches for top-selling cameras and books. Attempts to add the first search result item to the cart. Prints the cart message to verify that the item has been added."
-        ]
+            "from selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.common.keys import Keys\nimport unittest\nimport time\n\nclass TestFlipkartCart(unittest.TestCase):\n    def setUp(self):\n        # Initialize the WebDriver (Chrome in this case)\n        self.driver = webdriver.Chrome()\n        self.driver.get(\"https://www.flipkart.com\")\n\n    def test_add_top_selling_item_to_cart(self):\n        driver = self.driver\n        # Close the login popup\n        time.sleep(2)  # Allow time for the popup to load\n        close_button = driver.find_element(By.CSS_SELECTOR, \"button._2KpZ6l._2doB4z\")\n        close_button.click()\n        # Search for top-selling cameras\n        search_box = driver.find_element(By.NAME, \"q\")\n        search_box.send_keys(\"top selling camera\")\n        search_box.send_keys(Keys.RETURN)\n        # Wait for results to load\n        time.sleep(5)\n        # Try to click on the first item in the search results\n        try:\n            first_item = driver.find_element(By.XPATH, \"//div[@data-id][1]\")\n            first_item.click()\n            time.sleep(5)\n            # Try to click 'Add to Cart' button\n            try:\n                add_to_cart_button = driver.find_element(By.XPATH, \"//button[text()='ADD TO CART']\")\n                add_to_cart_button.click()\n                time.sleep(5)\n                # Check if item has been added to the cart\n                cart_message = driver.find_element(By.CSS_SELECTOR, \"span._2YxCDZ\")\n                print(cart_message.text)\n            except Exception as e:\n                print(f\"Failed to add item to cart: {e}\")\n        except Exception as e:\n            print(f\"Failed to find or click on the item: {e}\")\n\n        # Try to search for top-selling books\n        search_box = driver.find_element(By.NAME, \"q\")\n        search_box.clear()\n        search_box.send_keys(\"top selling book\")\n        search_box.send_keys(Keys.RETURN)\n        # Wait for results to load\n        time.sleep(5)\n        # Try to click on the first item in the search results\n        try:\n            first_item = driver.find_element(By.XPATH, \"//div[@data-id][1]\")\n            first_item.click()\n            time.sleep(5)\n            # Try to click 'Add to Cart' button\n            try:\n                add_to_cart_button = driver.find_element(By.XPATH, \"//button[text()='ADD TO CART']\")\n                add_to_cart_button.click()\n                time.sleep(5)\n                # Check if item has been added to the cart\n                cart_message = driver.find_element(By.CSS_SELECTOR, \"span._2YxCDZ\")\n                print(cart_message.text)\n            except Exception as e:\n                print(f\"Failed to add item to cart: {e}\")\n        except Exception as e:\n            print(f\"Failed to find or click on the item: {e}\")\n\n    def tearDown(self):\n        # Close the WebDriver\n        self.driver.quit()\n\nif __name__':\n    unittest.main()\n\nThis script performs the following actions:\n- Initializes the WebDriver and opens Flipkart.\n- Closes the login popup.\n- Searches for top-selling cameras and books.\n- Attempts to add the first search result item to the cart.\n- Prints the cart message to verify that the item has been added."   ]
     },
     {
         "question": "How can you find repeating words in a text using Python?",
         "answers": [
-            "To find repeating words in a text using Python, you can use the collections.Counter class to count the occurrences of each word. Here's a simple example: from collections import Counter def find_repeating_words(text): \"\"\"Find repeating words in a given text.\"\"\" words = text.split() word_count = Counter(words) return {word: count for word, count in word_count.items() if count > 1} text = \"this is a test this test is only a test\" print(find_repeating_words(text)) This script will output: {'this': 3, 'test': 3, 'is': 2, 'a': 2}"
-        ]
+           "To find repeating words in a text using Python, you can use the collections.Counter class to count the occurrences of each word. Here's a simple example:\n\nfrom collections import Counter\ndef find_repeating_words(text):\n    \"\"\"Find repeating words in a given text.\"\"\"\n    words = text.split()\n    word_count = Counter(words)\n    return {word: count for word, count in word_count.items() if count > 1}\n\ntext = \"this is a test this test is only a test\"\nprint(find_repeating_words(text))\n\nThis script will output: {'this': 3, 'test': 3, 'is': 2, 'a': 2}"
+ ]
     },
     {
         "question": "How can you print each character of a string in a Shell script?",
         "answers": [
-            "To print each character of a string in a Shell script, you can use a loop to iterate over each character. Here\u2019s an ",
-            "example: #!/bin/bash # Print each character of a string string=\"Hello\" for (( i=0; i<${#string}; i++ )); do echo \"${string:$i:1}\" done"
+            "To print each character of a string in a Shell script, you can use a loop to iterate over each character. Here\n\u2019s an ",
+            "example: #!/bin/bash\n# Print each character of a string\nstring=\"Hello\"\nfor (( i=0; i<${#string}; i++ )); do\n    echo \"${string:$i:1}\"\ndone"
         ]
     },
     {
@@ -224,8 +229,7 @@
     {
         "question": "How do you demonstrate OOP inheritance with Python?",
         "answers": ["Inheritance allows us to define a class that inherits all the methods and properties from another class. Parent class isthe class being inherited from, also called base class.  Child class is the class that inherits from another class,  also called derived class.",
-            "Here\u2019s an example demonstrating OOP inheritance in Python: # Base class class Animal:   def __init__(self, name):     self.name = name   def speak(self):     return \"Some sound\" # Derived class class Dog(Animal):   def speak(self):     return \"Woof\" # Creating an instance of Dog my_dog = Dog(\"Buddy\") print(my_dog.name)  # Output: Buddy print(my_dog.speak())  # Output: Woof"
-        ]
+            "Here’s an example demonstrating OOP inheritance in Python:\n\n# Base class\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"Some sound\"\n\n# Derived class\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\n# Creating an instance of Dog\nmy_dog = Dog(\"Buddy\")\nprint(my_dog.name)  # Output: Buddy\nprint(my_dog.speak())  # Output: Woof"]
     },
     {
         "question": "What is the difference between a hard link and a soft link?",
@@ -257,7 +261,7 @@
     {
         "question": "Str1 = 'UST is software company located in Whitefield. You can come by metro from pattandur agrahara. And by bus also'Str2 = 'you can enter through Nexus mall' 1. Common words in both strings 2. Remove duplicate words from both strings 3. Print output vertically and horizontally  ",
         "answers": [
-            "1. Common words: str1_words = set(Str1.lower().split()) str2_words = set(Str2.lower().split()) common_words = str1_words.intersection(str2_words) print(common_words) 2. Remove duplicates: unique_str1 = ' '.join(set(Str1.split())) unique_str2 = ' '.join(set(Str2.split())) print(unique_str1) print(unique_str2) 3. Vertical & Horizontal print: # Horizontal print(f\"Horizontal:\ {unique_str1} \ {unique_str2}\") # Vertical print(\"\ Vertical:\") for word in unique_str1.split(): print(word)"
+            "1. Common words: str1_words = set(Str1.lower().split()) str2_words = set(Str2.lower().split()) common_words = str1_words.intersection(str2_words) print(common_words) 2. Remove duplicates: unique_str1 = ' '.join(set(Str1.split())) unique_str2 = ' '.join(set(Str2.split())) print(unique_str1) print(unique_str2) 3. Vertical & Horizontal print: # Horizontal print(f\"Horizontal:\\ {unique_str1} \\ {unique_str2}\") # Vertical print(\"\\ Vertical:\") for word in unique_str1.split(): print(word)"
         ]
     },
     {

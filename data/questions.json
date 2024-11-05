@@ -1,9 +1,94 @@
 [
     {
-        "question": "What is Deep Copy and Shallow Copy?",
+        "question": "What is the purpose of if statements in Python, and how do they control the flow of a program?",
         "answers": [
-            "In Python, Shallow Copy creates a new object but still references the original data inside it. So, changes to the shallow copy affect the original object. A Deep Copy makes a completely independent copy of the original object, including all nested objects. Changes made to the deep copy don't affect the original object. ",
-            "code_example : \nimport copy\noriginal_list = [[1, 2], [3, 4]]\nshallow_copy = copy.copy(original_list)\ndeep_copy = copy.deepcopy(original_list)\nshallow_copy[0][0] = 100\ndeep_copy[1][0] = 200\nprint(\"Original:\", original_list)   # [[100, 2], [3, 4]]\nprint(\"Shallow:\", shallow_copy)     # [[100, 2], [3, 4]]\nprint(\"Deep:\", deep_copy)           # [[1, 2], [200, 4]]\nHere, changing the shallow copy affects the original, but changing the deep copy does not."
+            " If statements let you control which code runs based on specific conditions. They help manage program flow by only executing certain parts when a given condition is true."
+        ]
+    },
+    {
+        "question": " How do elif and else statements work with if statements to handle multiple conditions? Provide an example.",
+        "answers": ["elif block run when the if condition isn't met, while else covers the remaining",
+    "x = 5\nif x < 0:\n    print(\"Negative\")\nelif x == 0:\n    print(\"Zero\")\nelse:\n    print(\"Positive\")"]
+    },
+    {
+       "question":"Explain how indentation is used in Python’s control flow statements and why it is essential.",
+       "answers": ["Python relies on indentation (spaces or tabs) to define code blocks, like those under if or for. Without proper indentation, Python can’t tell where blocks start and end, leading to errors."]
+    },
+    {
+        "question": "How do elif and else statements work with if statements to handle multiple conditions? Provide an example.",
+        "answers": [
+            "elif block runs when the if condition isn't met, while else covers the remaining cases.",
+            "x = 5\nif x < 0:\n    print(\"Negative\")\nelif x == 0:\n    print(\"Zero\")\nelse:\n    print(\"Positive\")"
+        ]
+    },
+    {
+        "question": "Explain how indentation is used in Python’s control flow statements and why it is essential.",
+        "answers": [
+            "Python relies on indentation (spaces or tabs) to define code blocks, like those under if or for. Without proper indentation, Python can’t tell where blocks start and end, leading to errors."
+        ]
+    },
+    {
+        "question": "What is the syntax of a for loop in Python, and how is it commonly used with sequences?",
+        "answers": [
+            "A for loop iterates over items in a sequence, like a list, string, or range.",
+            "Example:\nfor item in sequence:\n    print(item)"
+        ]
+    },
+    {
+        "question": "What is the purpose of the range() function, and how can it be used with for loops?",
+        "answers": [
+            "range() generates a sequence of numbers, which we often use to repeat actions a set number of times or to loop through numeric ranges."
+        ]
+    },
+    {
+        "question": "Describe the difference between range(10), range(5, 10), and range(5, 10, 2).",
+        "answers": [
+            "range(10) generates numbers 0 to 9.",
+            "range(5, 10) generates numbers 5 to 9.",
+            "range(5, 10, 2) generates numbers 5, 7, and 9 (increments by 2)."
+        ]
+    },
+    {
+        "question": "What does the break statement do in a loop, and when might you use it?",
+        "answers": [
+            "Break immediately stops a loop. It’s useful for exiting when we’ve found what we need or met a condition that makes further looping unnecessary."
+        ]
+    },
+    {
+        "question": "How does the continue statement affect the flow of a loop, and how is it different from break?",
+        "answers": [
+            "Continue skips to the next iteration without finishing the current one. Unlike break, it doesn’t stop the loop completely; it just skips to the next pass."
+        ]
+    },
+    {
+        "question": "What is an else clause in a loop, and when does it get executed?",
+        "answers": [
+            "The else clause runs if the loop completes all its iterations without hitting a break. It’s a way to handle cases where we complete a loop without interruption."
+        ]
+    },
+    {
+        "question": "Explain the purpose of the pass statement and provide a scenario where it might be useful.",
+        "answers": [
+            "Pass is a placeholder—it does nothing. It’s useful when you’re writing code structure but don’t have specific actions yet. For example, in a try block where you’re just testing syntax."
+        ]
+    },
+    {
+        "question": "How does Python handle nested loops and nested if statements? Provide an example.",
+        "answers": [
+            "Python supports nested loops and if statements, meaning you can place a loop or condition inside another.",
+            "Example:\nfor i in range(3):\n    for j in range(2):\n        if i == j:\n            print(f\"i and j are equal: {i}\")"
+        ]
+    },
+    {
+        "question": "What is the purpose of the match statement introduced in Python 3.10, and how does it differ from if statements?",
+        "answers": [
+            "The match statement does pattern matching, allowing us to check if data fits a specific structure or pattern. This approach can simplify complex conditionals compared to if statements."
+        ]
+    },
+    {
+        "question": "*********************************************************************************************",
+        "answers": [
+            "****************************************************************************************************8"
         ]
     },
     {
@@ -22,8 +107,9 @@
     },
     {
         "question": "List vs Tuple?",
-        "answers": ["List:\n• Mutable: Can be modified after creation (e.g., add/remove elements).\n• Memory: It's slower than tuple.\n• Syntax: Square brackets [].\n• Example: my_list = [1, 2, 3]\n\nTuple:\n• Immutable: Cannot be modified after creation.\n• Memory: It's faster than list.\n• Syntax: Parentheses ().\n• Example: my_tuple = (1, 2, 3)"]
-        
+        "answers": [
+            "List:\n• Mutable: Can be modified after creation (e.g., add/remove elements).\n• Memory: It's slower than tuple.\n• Syntax: Square brackets [].\n• Example: my_list = [1, 2, 3]\n\nTuple:\n• Immutable: Cannot be modified after creation.\n• Memory: It's faster than list.\n• Syntax: Parentheses ().\n• Example: my_tuple = (1, 2, 3)"
+        ]
     },
     {
         "question": "Push vs Pop?",
@@ -191,13 +277,14 @@
         "question": "How do you test adding items to the cart on Flipkart using Selenium and Python?",
         "answers": [
             "To test adding items to the cart on Flipkart using Selenium and Python, follow these steps: 1. Setup: Ensure you have Selenium and a compatible WebDriver installed. 2. Python Test Script with Selenium: ",
-            "from selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.common.keys import Keys\nimport unittest\nimport time\n\nclass TestFlipkartCart(unittest.TestCase):\n    def setUp(self):\n        # Initialize the WebDriver (Chrome in this case)\n        self.driver = webdriver.Chrome()\n        self.driver.get(\"https://www.flipkart.com\")\n\n    def test_add_top_selling_item_to_cart(self):\n        driver = self.driver\n        # Close the login popup\n        time.sleep(2)  # Allow time for the popup to load\n        close_button = driver.find_element(By.CSS_SELECTOR, \"button._2KpZ6l._2doB4z\")\n        close_button.click()\n        # Search for top-selling cameras\n        search_box = driver.find_element(By.NAME, \"q\")\n        search_box.send_keys(\"top selling camera\")\n        search_box.send_keys(Keys.RETURN)\n        # Wait for results to load\n        time.sleep(5)\n        # Try to click on the first item in the search results\n        try:\n            first_item = driver.find_element(By.XPATH, \"//div[@data-id][1]\")\n            first_item.click()\n            time.sleep(5)\n            # Try to click 'Add to Cart' button\n            try:\n                add_to_cart_button = driver.find_element(By.XPATH, \"//button[text()='ADD TO CART']\")\n                add_to_cart_button.click()\n                time.sleep(5)\n                # Check if item has been added to the cart\n                cart_message = driver.find_element(By.CSS_SELECTOR, \"span._2YxCDZ\")\n                print(cart_message.text)\n            except Exception as e:\n                print(f\"Failed to add item to cart: {e}\")\n        except Exception as e:\n            print(f\"Failed to find or click on the item: {e}\")\n\n        # Try to search for top-selling books\n        search_box = driver.find_element(By.NAME, \"q\")\n        search_box.clear()\n        search_box.send_keys(\"top selling book\")\n        search_box.send_keys(Keys.RETURN)\n        # Wait for results to load\n        time.sleep(5)\n        # Try to click on the first item in the search results\n        try:\n            first_item = driver.find_element(By.XPATH, \"//div[@data-id][1]\")\n            first_item.click()\n            time.sleep(5)\n            # Try to click 'Add to Cart' button\n            try:\n                add_to_cart_button = driver.find_element(By.XPATH, \"//button[text()='ADD TO CART']\")\n                add_to_cart_button.click()\n                time.sleep(5)\n                # Check if item has been added to the cart\n                cart_message = driver.find_element(By.CSS_SELECTOR, \"span._2YxCDZ\")\n                print(cart_message.text)\n            except Exception as e:\n                print(f\"Failed to add item to cart: {e}\")\n        except Exception as e:\n            print(f\"Failed to find or click on the item: {e}\")\n\n    def tearDown(self):\n        # Close the WebDriver\n        self.driver.quit()\n\nif __name__':\n    unittest.main()\n\nThis script performs the following actions:\n- Initializes the WebDriver and opens Flipkart.\n- Closes the login popup.\n- Searches for top-selling cameras and books.\n- Attempts to add the first search result item to the cart.\n- Prints the cart message to verify that the item has been added."   ]
+            "from selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.common.keys import Keys\nimport unittest\nimport time\n\nclass TestFlipkartCart(unittest.TestCase):\n    def setUp(self):\n        # Initialize the WebDriver (Chrome in this case)\n        self.driver = webdriver.Chrome()\n        self.driver.get(\"https://www.flipkart.com\")\n\n    def test_add_top_selling_item_to_cart(self):\n        driver = self.driver\n        # Close the login popup\n        time.sleep(2)  # Allow time for the popup to load\n        close_button = driver.find_element(By.CSS_SELECTOR, \"button._2KpZ6l._2doB4z\")\n        close_button.click()\n        # Search for top-selling cameras\n        search_box = driver.find_element(By.NAME, \"q\")\n        search_box.send_keys(\"top selling camera\")\n        search_box.send_keys(Keys.RETURN)\n        # Wait for results to load\n        time.sleep(5)\n        # Try to click on the first item in the search results\n        try:\n            first_item = driver.find_element(By.XPATH, \"//div[@data-id][1]\")\n            first_item.click()\n            time.sleep(5)\n            # Try to click 'Add to Cart' button\n            try:\n                add_to_cart_button = driver.find_element(By.XPATH, \"//button[text()='ADD TO CART']\")\n                add_to_cart_button.click()\n                time.sleep(5)\n                # Check if item has been added to the cart\n                cart_message = driver.find_element(By.CSS_SELECTOR, \"span._2YxCDZ\")\n                print(cart_message.text)\n            except Exception as e:\n                print(f\"Failed to add item to cart: {e}\")\n        except Exception as e:\n            print(f\"Failed to find or click on the item: {e}\")\n\n        # Try to search for top-selling books\n        search_box = driver.find_element(By.NAME, \"q\")\n        search_box.clear()\n        search_box.send_keys(\"top selling book\")\n        search_box.send_keys(Keys.RETURN)\n        # Wait for results to load\n        time.sleep(5)\n        # Try to click on the first item in the search results\n        try:\n            first_item = driver.find_element(By.XPATH, \"//div[@data-id][1]\")\n            first_item.click()\n            time.sleep(5)\n            # Try to click 'Add to Cart' button\n            try:\n                add_to_cart_button = driver.find_element(By.XPATH, \"//button[text()='ADD TO CART']\")\n                add_to_cart_button.click()\n                time.sleep(5)\n                # Check if item has been added to the cart\n                cart_message = driver.find_element(By.CSS_SELECTOR, \"span._2YxCDZ\")\n                print(cart_message.text)\n            except Exception as e:\n                print(f\"Failed to add item to cart: {e}\")\n        except Exception as e:\n            print(f\"Failed to find or click on the item: {e}\")\n\n    def tearDown(self):\n        # Close the WebDriver\n        self.driver.quit()\n\nif __name__':\n    unittest.main()\n\nThis script performs the following actions:\n- Initializes the WebDriver and opens Flipkart.\n- Closes the login popup.\n- Searches for top-selling cameras and books.\n- Attempts to add the first search result item to the cart.\n- Prints the cart message to verify that the item has been added."
+        ]
     },
     {
         "question": "How can you find repeating words in a text using Python?",
         "answers": [
-           "To find repeating words in a text using Python, you can use the collections.Counter class to count the occurrences of each word. Here's a simple example:\n\nfrom collections import Counter\ndef find_repeating_words(text):\n    \"\"\"Find repeating words in a given text.\"\"\"\n    words = text.split()\n    word_count = Counter(words)\n    return {word: count for word, count in word_count.items() if count > 1}\n\ntext = \"this is a test this test is only a test\"\nprint(find_repeating_words(text))\n\nThis script will output: {'this': 3, 'test': 3, 'is': 2, 'a': 2}"
- ]
+            "To find repeating words in a text using Python, you can use the collections.Counter class to count the occurrences of each word. Here's a simple example:\n\nfrom collections import Counter\ndef find_repeating_words(text):\n    \"\"\"Find repeating words in a given text.\"\"\"\n    words = text.split()\n    word_count = Counter(words)\n    return {word: count for word, count in word_count.items() if count > 1}\n\ntext = \"this is a test this test is only a test\"\nprint(find_repeating_words(text))\n\nThis script will output: {'this': 3, 'test': 3, 'is': 2, 'a': 2}"
+        ]
     },
     {
         "question": "How can you print each character of a string in a Shell script?",
@@ -228,8 +315,10 @@
     },
     {
         "question": "How do you demonstrate OOP inheritance with Python?",
-        "answers": ["Inheritance allows us to define a class that inherits all the methods and properties from another class. Parent class isthe class being inherited from, also called base class.  Child class is the class that inherits from another class,  also called derived class.",
-            "Here’s an example demonstrating OOP inheritance in Python:\n\n# Base class\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"Some sound\"\n\n# Derived class\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\n# Creating an instance of Dog\nmy_dog = Dog(\"Buddy\")\nprint(my_dog.name)  # Output: Buddy\nprint(my_dog.speak())  # Output: Woof"]
+        "answers": [
+            "Inheritance allows us to define a class that inherits all the methods and properties from another class. Parent class isthe class being inherited from, also called base class.  Child class is the class that inherits from another class,  also called derived class.",
+            "Here’s an example demonstrating OOP inheritance in Python:\n\n# Base class\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return \"Some sound\"\n\n# Derived class\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\n# Creating an instance of Dog\nmy_dog = Dog(\"Buddy\")\nprint(my_dog.name)  # Output: Buddy\nprint(my_dog.speak())  # Output: Woof"
+        ]
     },
     {
         "question": "What is the difference between a hard link and a soft link?",
@@ -272,9 +361,9 @@
     },
     {
         "question": "What is encapsulation, And how to achieve",
-        "answers":["Encapsulation is a process of wrapping data  protect it from outside controls, there  two type of access controls, one is private(can  accessed by '__') and protected (accessed  '_')" ,
-        " #code: class Encaps:     def __init__(self):         self._a='protected'         self.__b='private'         self.c='normal'     def inside_class(self):         print(f'Inside class {self._a},{self.__b},{self.c}')  obj = Encaps() obj.inside_class() print(obj._a) print(obj.__b)  Output: Inside class protected,private,normal protected Traceback (most recent call last): File.py, line 26, in <module>     print(obj.__b) AttributeError: 'Encaps' object has no attribute '__b'  "
+        "answers": [
+            "Encapsulation is a process of wrapping data  protect it from outside controls, there  two type of access controls, one is private(can  accessed by '__') and protected (accessed  '_')",
+            " #code: class Encaps:     def __init__(self):         self._a='protected'         self.__b='private'         self.c='normal'     def inside_class(self):         print(f'Inside class {self._a},{self.__b},{self.c}')  obj = Encaps() obj.inside_class() print(obj._a) print(obj.__b)  Output: Inside class protected,private,normal protected Traceback (most recent call last): File.py, line 26, in <module>     print(obj.__b) AttributeError: 'Encaps' object has no attribute '__b'  "
         ]
     }
-
 ]

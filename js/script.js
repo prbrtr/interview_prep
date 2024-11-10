@@ -130,16 +130,17 @@ runCodeBtn.addEventListener('click', () => {
 
     // Construct the Python Tutor iframe URL
     const encodedCode = encodeURIComponent(userCode);
-    const timestamp = new Date().getTime(); // Unique timestamp
-    const tutorUrl = `https://pythontutor.com/iframe-embed.html#code=${encodedCode}&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=3&curInstr=0&ts=${timestamp}`;
+    const tutorUrl = `https://pythontutor.com/iframe-embed.html#code=${encodedCode}&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=3&curInstr=0`;
 
-    // Force reload the iframe
-    tutorFrame.src = ''; // Clear the src first
-    tutorFrame.src = tutorUrl; // Set the new URL
+    // Set the iframe's source to the constructed URL
+    tutorFrame.src = tutorUrl;
 
-    // Display the iframe with the result
-    tutorFrame.style.display = 'block';
+    // Force the iframe to reload
+    tutorFrame.onload = () => {
+        tutorFrame.style.display = 'block'; // Show the iframe after it loads
+    };
 });
+
 
 
 // Function to escape HTML special characters for display purposes

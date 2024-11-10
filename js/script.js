@@ -132,14 +132,16 @@ runCodeBtn.addEventListener('click', () => {
     const encodedCode = encodeURIComponent(userCode);
     const tutorUrl = `https://pythontutor.com/iframe-embed.html#code=${encodedCode}&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=3&curInstr=0`;
 
-    // Set the iframe's source to the constructed URL
-    tutorFrame.src = tutorUrl;
+    // Force reload the iframe by setting src to an empty string first
+    tutorFrame.src = ''; // Clear the src to force reload
+    tutorFrame.src = tutorUrl; // Set the new URL
 
-    // Force the iframe to reload
+    // Show the iframe after it loads
     tutorFrame.onload = () => {
-        tutorFrame.style.display = 'block'; // Show the iframe after it loads
+        tutorFrame.style.display = 'block'; // Ensure the iframe is displayed
     };
 });
+
 
 
 

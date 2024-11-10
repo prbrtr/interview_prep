@@ -119,9 +119,9 @@ writeAnswerBtn.addEventListener('click', () => {
 
 // Show the Python code editor and "Run Code" button when "Run Python Code" button is clicked
 openEditorBtn.addEventListener('click', () => {
+    runCodeBtn.style.display = 'block';  // Show the "Run Code" button
     codeTextarea.style.display = 'block';  // Show the Python code textarea
     tutorFrame.style.display = 'block';  // Show the Python Tutor iframe
-    runCodeBtn.style.display = 'inline-block';  // Show the "Run Code" button
 });
 
 // Run the Python code and display the result in the Python Tutor iframe

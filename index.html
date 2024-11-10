@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <h1>Do one thing every day that scares you</h1>
+        <h1>Do one thing every day that scares you!</h1>
     </header>
 
     <div class="question-section">
@@ -21,15 +21,17 @@
             <button id="answer-btn"><i class="fas fa-info-circle"></i> Show Answer</button>
              <!-- Write Answer Button -->
             <button id="write-answer-btn"><i class="fas fa-pencil-alt"></i> Write Your Own Answer</button>
+             <!-- Text area for writing custom answer -->
+             <textarea id="answer-textarea" class="answer-textarea" placeholder="Write your own answer here..." style="display: none;"></textarea>
             
-            <!-- Text area for writing custom answer -->
-            <textarea id="code" rows="10" cols="200" style="display: none;">print("Hello, World!")</textarea>
-             <!-- New Play Button for Python Editor -->
+            <!-- New Play Button for Python Editor -->
             <button id="open-editor-btn"><i class="fas fa-play-circle"></i> Run Python Code</button>
-            <!-- Python Code Textarea -->
-            <textarea id="code">print("Hello, World!")</textarea>
+            
             <!-- New Run Code Button -->
             <button id="run-code-btn" style="display:none;"><i class="fas fa-play-circle"></i> Run Code</button>
+
+            <!-- Python Code Textarea -->
+            <textarea id="code" rows="10"  style="display: none; width: 90%;">print("Hello, World!")</textarea>
             <!-- Python Tutor Iframe -->
             <iframe id="tutorFrame" width="800" height="500" frameborder="0" style="display: none;"></iframe>
         </div>

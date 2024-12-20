@@ -342,5 +342,5 @@
         "answers": [
             "from selenium import webdriver\n\n# Set up the WebDriver (e.g., Chrome)\ndriver = webdriver.Chrome()\n\n# Open a webpage\ndriver.get(\"https://www.example.com\")\n\n# Execute a simple JavaScript command to get the page title\ntitle = driver.execute_script(\"return document.title;\")\nprint(\"Page title is:\", title)\n\n# Close the browser\ndriver.quit()\n\n"
         ]
-    },
+    }
 ]
